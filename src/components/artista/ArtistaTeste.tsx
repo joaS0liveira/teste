@@ -26,6 +26,7 @@ import {
   topMusicasDoArtista,
   ultimasAudicoes,
 } from "@/lib/artist";
+import { formatarNumero, formatarPercentagem, plural } from "@/lib/formatar";
 import { caminhoArtista, nomeDaRota } from "@/lib/rotas";
 import { useAlbumInfo } from "@/hooks/useAlbumInfo";
 import { useArtistInfo } from "@/hooks/useArtistInfo";
@@ -142,8 +143,8 @@ export default function ArtistaTeste() {
       {/* Cards de estatísticas */}
       <Secao titulo="Estatísticas">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-          <Cartao rotulo="Audições" valor={resumo.total.toLocaleString("pt-PT")} />
-          <Cartao rotulo="Do teu total" valor={`${resumo.percentagem.toFixed(1)}%`} />
+          <Cartao rotulo="Audições" valor={formatarNumero(resumo.total)} />
+          <Cartao rotulo="Do teu total" valor={formatarPercentagem(resumo.percentagem)} />
           <Cartao rotulo="Favoritas" valor={String(resumo.favoritas)} />
           <Cartao rotulo="Primeira" valor={resumo.primeira ? formatarDataHora(resumo.primeira) : "—"} />
           <Cartao rotulo="Última" valor={resumo.ultima ? formatarDataHora(resumo.ultima) : "—"} />
@@ -294,11 +295,6 @@ function CartaoAlbum({ album }: { album: AlbumDoArtista }) {
       </div>
     </div>
   );
-}
-
-/** "1 audição" / "3 audições" */
-function plural(n: number, singular: string, varias: string): string {
-  return `${n} ${n === 1 ? singular : varias}`;
 }
 
 /** Painel de diagnóstico: mostra o estado de cada pedido à API. */

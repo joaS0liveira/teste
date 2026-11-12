@@ -20,7 +20,6 @@ import {
   mesesEntre,
   parseDataScrobble,
   proximoMes,
-  temDataValida,
 } from "../src/lib/dates";
 import {
   filtrarPorArtista,
@@ -43,7 +42,6 @@ import {
 } from "../src/lib/stats";
 import {
   albunsDoArtista,
-  artistaExiste,
   artistasSemelhantes,
   coberturaDoAlbum,
   resumoDoArtista,
@@ -78,7 +76,6 @@ verificar('date_iso "nowplaying" → null', parseDataScrobble(s({ date_iso: "now
 verificar("date_uts em segundos", parseDataScrobble(s({ date_uts: 1794100121 }))?.toISOString(), "2026-11-08T01:08:41.000Z");
 verificar("só date_iso", parseDataScrobble(s({ date_iso: "2026-11-08T01:08:41.000Z" }))?.toISOString(), "2026-11-08T01:08:41.000Z");
 verificar("date_iso inválida → null", parseDataScrobble(s({ date_iso: "lixo" })), null);
-verificar("temDataValida", [temDataValida(s({ date_uts: 1 })), temDataValida(s({}))], [true, false]);
 verificar("dataDeReferencia([]) → null", dataDeReferencia([]), null);
 verificar("duracao tudo → null", duracaoDoPeriodoMs("tudo"), null);
 verificar("duracao 7d", duracaoDoPeriodoMs("7d"), 7 * 24 * 3600 * 1000);
@@ -127,8 +124,6 @@ verificar("generoMaisOuvido junta maiúsculas e não conta a mesma tag 2× na me
 verificar("generoMaisOuvido sem tags → null", generoMaisOuvido([s({})]), null);
 
 console.log("\n=== artist.ts: casos limite ===");
-verificar("artistaExiste ignora maiúsculas", artistaExiste(mini, "ADELE"), true);
-verificar("artistaExiste falso", artistaExiste(mini, "Ninguém"), false);
 verificar("resumoDoArtista vazio não divide por zero", resumoDoArtista([], []), { total: 0, percentagem: 0, favoritas: 0, primeira: null, ultima: null });
 verificar("favoritas conta faixas distintas, não audições",
   resumoDoArtista([s({ loved: 1, track_name: "A", date_uts: 1 }), s({ loved: 1, track_name: "a ", date_uts: 2 }), s({ loved: 1, track_name: "B", date_uts: 3 })], []).favoritas, 2);
