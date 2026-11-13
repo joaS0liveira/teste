@@ -11,10 +11,11 @@ import { formatarNumero } from "@/lib/formatar";
 import { caminhoArtista } from "@/lib/rotas";
 
 /**
- * Versão pequena do cartão "Música", a flutuar à direita.
+ * Versão pequena do cartão "Música", a flutuar à esquerda.
  * - Só aparece quando o cartão do topo (`alvo`) sai do ecrã.
- * - Fechado, mostra só "| MÚSICA". Abre ao passar o rato por cima, ao clicar
- *   (telemóvel) ou com o teclado; fecha ao sair com o rato ou com Esc.
+ * - Fechado, é só a barra vermelha presa à margem. Ao passar o rato (ou com o
+ *   foco do teclado) a palavra "MÚSICA" desliza para fora e o painel abre por baixo.
+ *   No telemóvel abre com um toque. Fecha ao sair com o rato, com Esc ou ao tocar fora.
  * - Usa o mesmo estado do topo: mudar aqui o artista ou o período muda o dashboard.
  */
 export function MenuFlutuante({
@@ -76,7 +77,7 @@ export function MenuFlutuante({
       inert={!visivel}
       onPointerEnter={(e) => e.pointerType === "mouse" && setAberto(true)}
       onPointerLeave={(e) => e.pointerType === "mouse" && setAberto(false)}
-      className={`fixed top-4 right-3 z-40 flex flex-col items-end motion-safe:transition sm:top-6 sm:right-6 ${
+      className={`fixed top-4 left-0 z-40 flex flex-col items-start motion-safe:transition sm:top-6 ${
         visivel ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
       }`}
     >
@@ -85,21 +86,30 @@ export function MenuFlutuante({
         aria-expanded={aberto}
         aria-controls={idPainel}
         onClick={() => setAberto((a) => !a)}
-        className="flex min-h-11 items-center gap-2 rounded-xl border-2 border-destaque bg-superficie/95 py-1.5 pr-3 pl-2.5 shadow-[0_10px_30px_-8px_rgb(200_30_38/0.5)] backdrop-blur-sm"
+        className="group flex min-h-12 min-w-11 items-center rounded-r-xl border-2 border-l-0 border-destaque bg-superficie/95 py-1.5 pr-3 pl-3 shadow-[0_10px_30px_-8px_rgb(200_30_38/0.5)] backdrop-blur-sm"
       >
-        <span aria-hidden="true" className="h-6 w-1.5 rounded-full bg-destaque" />
-        <span className="titulo-display text-xl text-destaque">Música</span>
-        <span className="sr-only">: artista em destaque e período</span>
-        <AltArrowDownIcon
-          size={18}
-          aria-hidden="true"
-          className={`text-destaque motion-safe:transition-transform ${aberto ? "rotate-180" : ""}`}
-        />
+        <span aria-hidden="true" className="h-8 w-1.5 shrink-0 rounded-full bg-destaque" />
+        {/* A palavra desliza para fora: a largura passa de 0 à largura do texto (grelha 0fr → 1fr) */}
+        <span
+          className={`grid motion-safe:transition-[grid-template-columns] motion-safe:duration-300 motion-safe:ease-out group-hover:grid-cols-[1fr] group-focus-visible:grid-cols-[1fr] ${
+            aberto ? "grid-cols-[1fr]" : "grid-cols-[0fr]"
+          }`}
+        >
+          <span className="flex min-w-0 items-center gap-2 overflow-hidden whitespace-nowrap">
+            <span className="titulo-display pl-2 text-xl text-destaque">Música</span>
+            <span className="sr-only">: artista em destaque e período</span>
+            <AltArrowDownIcon
+              size={18}
+              aria-hidden="true"
+              className={`shrink-0 text-destaque motion-safe:transition-transform ${aberto ? "rotate-180" : ""}`}
+            />
+          </span>
+        </span>
       </button>
 
       {aberto && (
         // pt-2 em vez de margem: o rato não "cai" no espaço entre o botão e o painel
-        <div id={idPainel} className="pt-2">
+        <div id={idPainel} className="pt-2 pl-3 motion-safe:animate-entrar-menu">
           <div className="flex w-[min(24rem,calc(100vw-1.5rem))] flex-col gap-4 rounded-2xl border-2 border-destaque bg-superficie p-4 shadow-[0_0_0_5px_rgb(200_30_38/0.08),0_20px_50px_-12px_rgb(200_30_38/0.5)]">
             {escolhido && (
               <>
