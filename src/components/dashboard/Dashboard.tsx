@@ -26,6 +26,7 @@ import {
 import { artistasDeMomento } from "@/lib/analise";
 import { filtrarPorArtista } from "@/lib/filters";
 import { useFiltrados } from "@/hooks/useFiltrados";
+import { usePrefereMenosMovimento } from "@/hooks/usePrefereMenosMovimento";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
 import { EstadoCarregar, EstadoErro, EstadoVazio, VazioDoPeriodo } from "@/components/ui/Estados";
@@ -38,10 +39,18 @@ import { TopMusicas } from "./TopMusicas";
 import { TopAlbuns } from "./TopAlbuns";
 import { AnaliseUnica } from "./AnaliseUnica";
 
+/** Uma volta completa por todos os artistas do Top 20 demora 40 segundos. */
+const DURACAO_DA_VOLTA_MS = 40_000;
+
 export default function Dashboard() {
   const { porSeccao, todas, referencia, periodos, setPeriodo, status, error, recarregar } = useFiltrados();
-  // Artista em destaque no topo: escolha local; sem escolha (ou fora do Top 20 do período) → o n.º 1.
-  const [escolha, setEscolha] = useState<string | null>(null);
+  // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_DA_VOLTA_MS
+  // por volta completa). Pára com o botão de pausa, ao escolher no menu flutuante, ou
+  // logo de início se o sistema pedir menos movimento.
+  const [indice, setIndice] = useState(0);
+  const [pausado, setPausado] = useState<boolean | null>(null);
+  const menosMovimento = usePrefereMenosMovimento();
+  const parado = pausado ?? menosMovimento;
 
   const totais = useMemo(() => {
     const lista = porSeccao.totais;
@@ -66,7 +75,12 @@ export default function Dashboard() {
     <FiltroPeriodo periodo={periodos[s]} onMudar={(p) => setPeriodo(s, p)} seccao={nome} />
   );
 
-  const escolhido = artistas.find((a) => a.chave === escolha) ?? artistas[0] ?? null;
+  // `% length`: se o filtro do Top 20 deixar menos artistas, o índice dá a volta.
+  const escolhido = artistas.length > 0 ? artistas[indice % artistas.length] : null;
+  const escolher = (chave: string) => {
+    setIndice(Math.max(0, artistas.findIndex((a) => a.chave === chave)));
+    setPausado(true);
+  };
   const nomeEscolhido = escolhido ? (escolhido.artista ?? escolhido.nome) : null;
   // Capas do topo: os 3 álbuns mais ouvidos do artista em destaque, no período do Top 20.
   const albunsDoEscolhido = useMemo(
@@ -85,7 +99,15 @@ export default function Dashboard() {
         }
         artistas={artistas}
         escolhido={pronto ? escolhido : null}
-        onEscolher={setEscolha}
+        onEscolher={escolher}
+        rotacao={{
+          posicao: artistas.length > 0 ? (indice % artistas.length) + 1 : 0,
+          total: artistas.length,
+          passoMs: DURACAO_DA_VOLTA_MS / Math.max(1, artistas.length),
+          parado,
+          onAvancar: () => setIndice((i) => (i + 1) % Math.max(1, artistas.length)),
+          onAlternar: () => setPausado(!parado),
+        }}
         fraseDoPeriodo={frase("artistas")}
         albuns={albunsDoEscolhido}
       />
