@@ -79,7 +79,7 @@ function PrimeiroLugar({ item }: { item: ItemRanking }) {
         <Link href={caminhoArtista(nome)} className="font-display text-2xl font-black break-words italic hover:text-destaque sm:text-3xl">
           {item.nome}
         </Link>
-        <p className="text-texto-suave">{plural(item.contagem, "audição", "audições")}</p>
+        <p className="text-texto-suave">{plural(item.contagem, "reprodução", "reproduções")}</p>
       </div>
     </div>
   );
@@ -105,7 +105,7 @@ function LinhaArtista({ item, posicao }: { item: ItemRanking; posicao: number })
           <span className="sr-only">{posicao}.º </span>
           {item.nome}
         </Link>
-        <span className="font-bold tabular-nums text-destaque">{plural(item.contagem, "audição", "audições")}</span>
+        <span className="font-bold tabular-nums text-destaque">{plural(item.contagem, "reprodução", "reproduções")}</span>
       </div>
     </li>
   );

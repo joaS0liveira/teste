@@ -2,7 +2,7 @@
 
 /**
  * Scrobbles por mês (página do artista): área com a evolução ao longo do tempo.
- * Os meses sem audições já vêm a 0 de scrobblesPorMes(), por isso a linha
+ * Os meses sem reproduções já vêm a 0 de scrobblesPorMes(), por isso a linha
  * não "salta" períodos.
  */
 import { useId } from "react";
@@ -31,7 +31,7 @@ export function GraficoMeses({ pontos, descricao }: { pontos: PontoMensal[]; des
           {...dica}
           cursor={{ className: "stroke-borda" }}
           labelFormatter={(mes) => formatarMes(String(mes))}
-          formatter={(valor) => [formatarNumero(Number(valor)), "Audições"]}
+          formatter={(valor) => [formatarNumero(Number(valor)), "Reproduções"]}
         />
         <Area
           type="monotone"

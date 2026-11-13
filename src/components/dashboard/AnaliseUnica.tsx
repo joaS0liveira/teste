@@ -19,12 +19,12 @@ export function AnaliseUnica({ itens }: { itens: ArtistaDeMomento[] }) {
     <Bloco
       titulo={PERGUNTA_ANALISE}
       icone={<StarsIcon size={22} />}
-      descricao="A nossa análise única: artistas com pelo menos 10 audições no período que juntam 70% ou mais num só momento do dia (horas UTC)."
+      descricao="A nossa análise única: artistas com pelo menos 10 reproduções no período que juntam 70% ou mais num só momento do dia (horas UTC)."
       variante="separador"
     >
       {itens.length === 0 ? (
         <EstadoVazio titulo="Nenhum artista se concentra num só momento do dia">
-          Neste período, nenhum artista com 10 ou mais audições junta 70% delas no mesmo momento do dia.
+          Neste período, nenhum artista com 10 ou mais reproduções junta 70% delas no mesmo momento do dia.
         </EstadoVazio>
       ) : (
         <ul className="grid gap-3">
@@ -44,7 +44,7 @@ export function AnaliseUnica({ itens }: { itens: ArtistaDeMomento[] }) {
                   <div className="h-full bg-destaque" style={{ width: `${a.percentagem}%` }} />
                 </div>
                 <p className="mt-2 text-sm text-texto-suave">
-                  {a.noMomento} de {plural(a.total, "audição", "audições")} entre as {de}h e as {ate}h
+                  {a.noMomento} de {plural(a.total, "reprodução", "reproduções")} entre as {de}h e as {ate}h
                 </p>
               </li>
             );

@@ -65,7 +65,7 @@ export default function PaginaArtista() {
   if (historico.status === "loading") {
     return (
       <Estado>
-        <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
+        <EstadoCarregar mensagem="A carregar o histórico de reproduções… Da primeira vez pode demorar até um minuto." />
       </Estado>
     );
   }
@@ -83,7 +83,7 @@ export default function PaginaArtista() {
     return (
       <Estado>
         <EstadoVazio titulo="Artista não encontrado">
-          <p>“{nome}” não aparece no teu histórico de audições.</p>
+          <p>“{nome}” não aparece no teu histórico de reproduções.</p>
           <Link href="/" className="mt-3 inline-block text-destaque underline">
             Voltar ao dashboard
           </Link>
@@ -109,7 +109,7 @@ export default function PaginaArtista() {
           icone={<ClockCircleIcon size={20} />}
           descricao={`A que horas ouves este artista (UTC)${dados.pico !== null ? `. Mais vezes às ${formatarHora(dados.pico)}.` : "."}`}
         >
-          <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={300} descricao={`Audições de ${nome} por hora do dia em UTC`} />
+          <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={300} descricao={`Reproduções de ${nome} por hora do dia em UTC`} />
         </Bloco>
       </Faixa>
 
@@ -119,7 +119,7 @@ export default function PaginaArtista() {
 
       <Faixa fundo="rosa">
         <Bloco titulo="Scrobbles por mês" icone={<CalendarIcon size={22} />} descricao="A evolução da tua escuta ao longo do tempo." variante="separador">
-          <GraficoMeses pontos={dados.porMes} descricao={`Audições de ${nome} por mês`} />
+          <GraficoMeses pontos={dados.porMes} descricao={`Reproduções de ${nome} por mês`} />
         </Bloco>
       </Faixa>
 

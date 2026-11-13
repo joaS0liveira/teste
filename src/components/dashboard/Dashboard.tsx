@@ -66,8 +66,8 @@ export default function Dashboard() {
       <Destaque
         subtitulo={
           referencia
-            ? `O teu histórico de audições. Períodos contados a partir da última audição: ${formatarDataHora(referencia)}.`
-            : "O teu histórico de audições."
+            ? `O teu histórico de reproduções. Períodos contados a partir da última reprodução: ${formatarDataHora(referencia)}.`
+            : "O teu histórico de reproduções."
         }
         artistas={dados.topArtistas}
         escolhido={pronto ? escolhido : null}
@@ -78,7 +78,7 @@ export default function Dashboard() {
 
       {status === "loading" && (
         <Faixa>
-          <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
+          <EstadoCarregar mensagem="A carregar o histórico de reproduções… Da primeira vez pode demorar até um minuto." />
         </Faixa>
       )}
 
@@ -90,7 +90,7 @@ export default function Dashboard() {
 
       {status === "success" && scrobbles.length === 0 && (
         <Faixa>
-          <EstadoVazio titulo="Sem audições neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
+          <EstadoVazio titulo="Sem reproduções neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
         </Faixa>
       )}
 
@@ -119,7 +119,7 @@ export default function Dashboard() {
                 porHora={dados.porHora}
                 pico={dados.pico}
                 altura={280}
-                descricao={`Audições por hora do dia em UTC${dados.pico !== null ? `; mais audições às ${formatarHora(dados.pico)}` : ""}`}
+                descricao={`Reproduções por hora do dia em UTC${dados.pico !== null ? `; mais reproduções às ${formatarHora(dados.pico)}` : ""}`}
               />
             </Bloco>
           </Faixa>
