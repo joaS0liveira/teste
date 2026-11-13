@@ -51,14 +51,12 @@
   --font-display: var(--font-archivo);
 }
 
-/* Painel do menu flutuante: entra depois de a palavra "MÚSICA" deslizar */
+/* Animações do cartão do topo */
 @theme {
-  --animate-entrar-menu: entrar-menu 200ms ease-out 150ms both;
-
   /* Barra de tempo do artista em destaque (a duração vem do componente) */
   --animate-progresso: progresso linear both;
   /* Troca de artista em destaque: entra com um fade curto */
-  --animate-aparecer: entrar-menu 250ms ease-out both;
+  --animate-aparecer: aparecer 250ms ease-out both;
 
   @keyframes progresso {
     from {
@@ -69,7 +67,7 @@
     }
   }
 
-  @keyframes entrar-menu {
+  @keyframes aparecer {
     from {
       opacity: 0;
       transform: translateY(-6px);

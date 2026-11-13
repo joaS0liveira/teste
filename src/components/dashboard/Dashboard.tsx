@@ -39,13 +39,13 @@ import { TopMusicas } from "./TopMusicas";
 import { TopAlbuns } from "./TopAlbuns";
 import { AnaliseUnica } from "./AnaliseUnica";
 
-/** Uma volta completa por todos os artistas do Top 20 demora 40 segundos. */
-const DURACAO_DA_VOLTA_MS = 40_000;
+/** Quanto tempo fica cada artista do Top 20 no cartão do topo. */
+const DURACAO_POR_ARTISTA_MS = 10_000;
 
 export default function Dashboard() {
   const { porSeccao, todas, referencia, periodos, setPeriodo, status, error, recarregar } = useFiltrados();
-  // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_DA_VOLTA_MS
-  // por volta completa). Pára com o botão de pausa, ao escolher no menu flutuante, ou
+  // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_POR_ARTISTA_MS
+  // cada um). Os botões anterior/seguinte mudam à mão. Pára com o botão de pausa, ou
   // logo de início se o sistema pedir menos movimento.
   const [indice, setIndice] = useState(0);
   const [pausado, setPausado] = useState<boolean | null>(null);
@@ -77,10 +77,8 @@ export default function Dashboard() {
 
   // `% length`: se o filtro do Top 20 deixar menos artistas, o índice dá a volta.
   const escolhido = artistas.length > 0 ? artistas[indice % artistas.length] : null;
-  const escolher = (chave: string) => {
-    setIndice(Math.max(0, artistas.findIndex((a) => a.chave === chave)));
-    setPausado(true);
-  };
+  const total = Math.max(1, artistas.length);
+  const irPara = (passo: number) => setIndice((i) => (((i % total) + passo) % total + total) % total);
   const nomeEscolhido = escolhido ? (escolhido.artista ?? escolhido.nome) : null;
   // Capas do topo: os 3 álbuns mais ouvidos do artista em destaque, no período do Top 20.
   const albunsDoEscolhido = useMemo(
@@ -97,18 +95,16 @@ export default function Dashboard() {
             ? `O teu histórico de reproduções. Períodos contados a partir da última reprodução: ${formatarDataHora(referencia)}.`
             : "O teu histórico de reproduções."
         }
-        artistas={artistas}
         escolhido={pronto ? escolhido : null}
-        onEscolher={escolher}
         rotacao={{
           posicao: artistas.length > 0 ? (indice % artistas.length) + 1 : 0,
           total: artistas.length,
-          passoMs: DURACAO_DA_VOLTA_MS / Math.max(1, artistas.length),
+          passoMs: DURACAO_POR_ARTISTA_MS,
           parado,
-          onAvancar: () => setIndice((i) => (i + 1) % Math.max(1, artistas.length)),
+          onAnterior: () => irPara(-1),
+          onSeguinte: () => irPara(1),
           onAlternar: () => setPausado(!parado),
         }}
-        fraseDoPeriodo={frase("artistas")}
         albuns={albunsDoEscolhido}
       />
 
