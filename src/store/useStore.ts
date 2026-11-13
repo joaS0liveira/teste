@@ -35,7 +35,7 @@ import {
 // Entry<T>: os estados possíveis de um dado da rede
 // ---------------------------------------------------------------------------
 
-export const entradaVazia = <T>(): Entry<T> => ({ data: null, status: "idle", error: null, updatedAt: null });
+const entradaVazia = <T>(): Entry<T> => ({ data: null, status: "idle", error: null, updatedAt: null });
 const aCarregar = <T>(anterior?: Entry<T>): Entry<T> => ({
   data: anterior?.data ?? null,
   status: "loading",
@@ -98,6 +98,10 @@ export interface StoreState {
   carregarImagemArtista: (nome: string) => Promise<void>;
 }
 
+/** Os registos de perfis em cache, e o tipo de dado de cada um. */
+type Registos = Pick<StoreState, "artistas" | "albuns" | "imagensArtistas">;
+type DadoDe<K extends keyof Registos> = Registos[K][string] extends Entry<infer T> ? T : never;
+
 /** Parte da store que vai para o localStorage. */
 type EstadoPersistido = Pick<StoreState, "periodo" | "artistas" | "albuns" | "imagensArtistas">;
 
@@ -140,74 +144,60 @@ const localStorageSeguro: StateStorage = {
 
 export const useStore = create<StoreState>()(
   persist(
-    (set, get) => ({
-      periodo: "tudo",
-      scrobbles: entradaVazia<Scrobble[]>(),
-      artistas: {},
-      albuns: {},
-      imagensArtistas: {},
-
-      setPeriodo: (periodo) => set({ periodo }),
-
-      carregarScrobbles: () => {
-        if (temResposta(get().scrobbles)) return Promise.resolve();
-        return semDuplicados("scrobbles", async () => {
-          set((s) => ({ scrobbles: aCarregar(s.scrobbles) }));
+    (set, get) => {
+      /**
+       * Os três registos (artistas, álbuns, fotos) carregam-se da mesma maneira:
+       * cache → deduplicação → loading → sucesso / não encontrado / erro.
+       */
+      function carregarNoRegisto<K extends keyof Registos>(
+        campo: K,
+        chave: string,
+        pedido: () => Promise<DadoDe<K>>,
+      ): Promise<void> {
+        if (!chave || temResposta(get()[campo][chave])) return Promise.resolve();
+        return semDuplicados(`${campo}:${chave}`, async () => {
+          const guardar = (entrada: Entry<DadoDe<K>>) =>
+            set((s) => ({ [campo]: { ...s[campo], [chave]: entrada } }) as Partial<StoreState>);
+          guardar(aCarregar(get()[campo][chave] as Entry<DadoDe<K>> | undefined));
           try {
-            set({ scrobbles: comSucesso(await obterScrobbles()) });
+            guardar(comSucesso(await pedido()));
           } catch (erro) {
-            set({ scrobbles: comErro<Scrobble[]>(erro) });
+            guardar(isNotFound(erro) ? naoEncontrado() : comErro(erro));
           }
         });
-      },
+      }
 
-      carregarArtista: (nome) => {
-        const chave = chaveCacheArtista(nome);
-        if (!chave || temResposta(get().artistas[chave])) return Promise.resolve();
-        return semDuplicados(`artista:${chave}`, async () => {
-          set((s) => ({ artistas: { ...s.artistas, [chave]: aCarregar(s.artistas[chave]) } }));
-          let entrada: Entry<ArtistInfo>;
-          try {
-            entrada = comSucesso(await obterArtistInfo(nome));
-          } catch (erro) {
-            entrada = isNotFound(erro) ? naoEncontrado() : comErro(erro);
-          }
-          set((s) => ({ artistas: { ...s.artistas, [chave]: entrada } }));
-        });
-      },
+      return {
+        periodo: "tudo",
+        scrobbles: entradaVazia<Scrobble[]>(),
+        artistas: {},
+        albuns: {},
+        imagensArtistas: {},
 
-      carregarAlbum: (artista, album) => {
-        const chave = chaveCacheAlbum(artista, album);
-        if (temResposta(get().albuns[chave])) return Promise.resolve();
-        return semDuplicados(`album:${chave}`, async () => {
-          set((s) => ({ albuns: { ...s.albuns, [chave]: aCarregar(s.albuns[chave]) } }));
-          let entrada: Entry<AlbumInfo>;
-          try {
-            entrada = comSucesso(await obterAlbumInfo(artista, album));
-          } catch (erro) {
-            entrada = isNotFound(erro) ? naoEncontrado() : comErro(erro);
-          }
-          set((s) => ({ albuns: { ...s.albuns, [chave]: entrada } }));
-        });
-      },
+        setPeriodo: (periodo) => set({ periodo }),
 
-      carregarImagemArtista: (nome) => {
-        const chave = chaveCacheArtista(nome);
-        if (!chave || temResposta(get().imagensArtistas[chave])) return Promise.resolve();
-        return semDuplicados(`imagem:${chave}`, async () => {
-          set((s) => ({
-            imagensArtistas: { ...s.imagensArtistas, [chave]: aCarregar(s.imagensArtistas[chave]) },
-          }));
-          let entrada: Entry<string | null>;
-          try {
-            entrada = comSucesso(await obterImagemArtista(nome));
-          } catch (erro) {
-            entrada = isNotFound(erro) ? naoEncontrado() : comErro(erro);
-          }
-          set((s) => ({ imagensArtistas: { ...s.imagensArtistas, [chave]: entrada } }));
-        });
-      },
-    }),
+        carregarScrobbles: () => {
+          if (temResposta(get().scrobbles)) return Promise.resolve();
+          return semDuplicados("scrobbles", async () => {
+            set((s) => ({ scrobbles: aCarregar(s.scrobbles) }));
+            try {
+              set({ scrobbles: comSucesso(await obterScrobbles()) });
+            } catch (erro) {
+              set({ scrobbles: comErro<Scrobble[]>(erro) });
+            }
+          });
+        },
+
+        carregarArtista: (nome) =>
+          carregarNoRegisto("artistas", chaveCacheArtista(nome), () => obterArtistInfo(nome)),
+
+        carregarAlbum: (artista, album) =>
+          carregarNoRegisto("albuns", chaveCacheAlbum(artista, album), () => obterAlbumInfo(artista, album)),
+
+        carregarImagemArtista: (nome) =>
+          carregarNoRegisto("imagensArtistas", chaveCacheArtista(nome), () => obterImagemArtista(nome)),
+      };
+    },
     {
       name: "fmdata",
       version: 1,

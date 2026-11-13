@@ -42,7 +42,7 @@ let falhas = 0;
 function verificar(descricao: string, obtido: unknown, esperado: unknown) {
   const ok = JSON.stringify(obtido) === JSON.stringify(esperado);
   if (!ok) falhas++;
-  console.log(ok ? "✓" : "✗", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
+  console.log(ok ? "OK" : "FALHA", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
 }
 const contar = (caminho: string) => pedidos.filter((p) => p.startsWith(caminho)).length;
 
@@ -103,7 +103,7 @@ async function main() {
   await loja().carregarArtista("Adele");
   verificar("depois do refresh, Adele vem da cache", contar("/artist-info"), antes);
 
-  console.log(falhas === 0 ? "\nTudo certo ✓" : `\n${falhas} teste(s) falharam ✗`);
+  console.log(falhas === 0 ? "\nTudo certo OK" : `\n${falhas} teste(s) falharam FALHA`);
   process.exit(falhas === 0 ? 0 : 1);
 }
 

@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Tokens de design em três camadas (skill design-system):
+ *   1. Primitivos   → a paleta verde do projeto (--color-verde-*, --color-neon)
+ *   2. Semânticos   → para que serve cada cor (fundo, superfície, texto, destaque…)
+ *   3. Componentes  → valores de um componente concreto (gráficos)
+ * Os componentes só usam as camadas 2 e 3: mudar o tema é mudar só este ficheiro.
+ *
+ * Estilo: verde néon sobre verde escuro (maqueta aprovada). Tema escuro por
+ * decisão (skill impeccable: escolher pelo cenário de uso — ver o próprio
+ * histórico de música é uma atividade de fim de dia).
+ * Contraste: texto suave #9CC9AE sobre o fundo ≈ 10:1; texto escuro sobre o néon ≈ 15:1.
+ */
+
+/* 1. Primitivos */
+@theme {
+  --color-verde-950: #04140c;
+  --color-verde-900: #0a2216;
+  --color-verde-800: #11331f;
+  --color-verde-700: #16422a;
+  --color-verde-600: #1e5a38;
+  --color-verde-500: #2e6b47;
+  --color-verde-200: #9cc9ae;
+  --color-verde-50: #e8fff1;
+  --color-neon: #39ff14;
+  --color-neon-claro: #8cff6b;
 }
 
+/* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-fundo: var(--color-verde-950);
+  --color-superficie: var(--color-verde-900);
+  --color-superficie-alta: var(--color-verde-800);
+  --color-borda: var(--color-verde-700);
+  --color-borda-forte: var(--color-verde-500);
+  --color-texto: var(--color-verde-50);
+  --color-texto-suave: var(--color-verde-200);
+  --color-destaque: var(--color-neon);
+  --color-destaque-forte: var(--color-neon);
+  --color-destaque-claro: var(--color-neon-claro);
+  /* Texto por cima do néon: verde quase preto, para ter contraste */
+  --color-sobre-destaque: var(--color-verde-950);
+  --color-perigo: var(--color-rose-400);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 3. Componentes */
+:root {
+  color-scheme: dark;
+  --grafico-barra: var(--color-verde-600);
+  --grafico-pico: var(--color-neon);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Superfícies do browser também seguem a paleta (skill impeccable: craft floor) */
+@layer base {
+  body {
+    background: var(--color-fundo);
+    color: var(--color-texto);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: var(--color-neon);
+    color: var(--color-verde-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-destaque);
+    outline-offset: 2px;
+  }
+
+  html {
+    scrollbar-color: var(--color-verde-500) var(--color-fundo);
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
 }

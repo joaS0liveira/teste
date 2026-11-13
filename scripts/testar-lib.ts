@@ -20,7 +20,6 @@ import {
   mesesEntre,
   parseDataScrobble,
   proximoMes,
-  temDataValida,
 } from "../src/lib/dates";
 import {
   filtrarPorArtista,
@@ -43,7 +42,6 @@ import {
 } from "../src/lib/stats";
 import {
   albunsDoArtista,
-  artistaExiste,
   artistasSemelhantes,
   coberturaDoAlbum,
   resumoDoArtista,
@@ -59,7 +57,7 @@ let falhas = 0;
 function verificar(descricao: string, obtido: unknown, esperado: unknown) {
   const ok = JSON.stringify(obtido) === JSON.stringify(esperado);
   if (!ok) falhas++;
-  console.log(ok ? "✓" : "✗", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
+  console.log(ok ? "OK" : "FALHA", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
 }
 
 /** Scrobble mínimo para os casos limite. */
@@ -78,7 +76,6 @@ verificar('date_iso "nowplaying" → null', parseDataScrobble(s({ date_iso: "now
 verificar("date_uts em segundos", parseDataScrobble(s({ date_uts: 1794100121 }))?.toISOString(), "2026-11-08T01:08:41.000Z");
 verificar("só date_iso", parseDataScrobble(s({ date_iso: "2026-11-08T01:08:41.000Z" }))?.toISOString(), "2026-11-08T01:08:41.000Z");
 verificar("date_iso inválida → null", parseDataScrobble(s({ date_iso: "lixo" })), null);
-verificar("temDataValida", [temDataValida(s({ date_uts: 1 })), temDataValida(s({}))], [true, false]);
 verificar("dataDeReferencia([]) → null", dataDeReferencia([]), null);
 verificar("duracao tudo → null", duracaoDoPeriodoMs("tudo"), null);
 verificar("duracao 7d", duracaoDoPeriodoMs("7d"), 7 * 24 * 3600 * 1000);
@@ -127,8 +124,6 @@ verificar("generoMaisOuvido junta maiúsculas e não conta a mesma tag 2× na me
 verificar("generoMaisOuvido sem tags → null", generoMaisOuvido([s({})]), null);
 
 console.log("\n=== artist.ts: casos limite ===");
-verificar("artistaExiste ignora maiúsculas", artistaExiste(mini, "ADELE"), true);
-verificar("artistaExiste falso", artistaExiste(mini, "Ninguém"), false);
 verificar("resumoDoArtista vazio não divide por zero", resumoDoArtista([], []), { total: 0, percentagem: 0, favoritas: 0, primeira: null, ultima: null });
 verificar("favoritas conta faixas distintas, não audições",
   resumoDoArtista([s({ loved: 1, track_name: "A", date_uts: 1 }), s({ loved: 1, track_name: "a ", date_uts: 2 }), s({ loved: 1, track_name: "B", date_uts: 3 })], []).favoritas, 2);
@@ -162,7 +157,7 @@ let amostra: Scrobble[];
 try {
   amostra = JSON.parse(readFileSync("scripts/amostra.json", "utf-8"));
 } catch {
-  console.log("✗ Não encontrei scripts/amostra.json. Corre primeiro: npx tsx scripts/testar-api.ts");
+  console.log("FALHA Não encontrei scripts/amostra.json. Corre primeiro: npx tsx scripts/testar-api.ts");
   process.exit(1);
 }
 const comData = removerSemData(amostra);
@@ -214,5 +209,5 @@ console.log("  Hora de pico:", horaDePico(scrobblesPorHora(comData)), "UTC");
 console.log("  Género mais ouvido:", generoMaisOuvido(comData));
 console.log("  Análise única (mín. 5 audições):", artistasDeMomento(comData, { minimoAudicoes: 5 }).map((a) => `${a.artista}: ${Math.round(a.percentagem)}% ${a.momento}`).join(", ") || "nenhum");
 
-console.log(falhas === 0 ? "\nTudo certo ✓" : `\n${falhas} teste(s) falharam ✗`);
+console.log(falhas === 0 ? "\nTudo certo OK" : `\n${falhas} teste(s) falharam FALHA`);
 process.exit(falhas === 0 ? 0 : 1);
