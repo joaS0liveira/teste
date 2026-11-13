@@ -50,7 +50,9 @@ export function Palco({
           sizes="(min-width: 1024px) 768px, 92vw"
           className="mx-auto h-auto w-full max-w-3xl"
         />
-        <p className="titulo-display mt-2 text-center text-3xl leading-[0.95] text-destaque min-[420px]:text-4xl sm:text-6xl lg:text-7xl">
+        {/* Centrado e numa só linha; lg:px-56/xl:px-64 deixam livre o espaço dos cantos de baixo
+            (que são absolutos), para números grandes ("51 522 reproduções") não os taparem. */}
+        <p className="titulo-display mt-4 text-center text-2xl leading-none text-destaque min-[420px]:text-3xl sm:text-4xl lg:px-56 lg:text-3xl xl:px-64 xl:text-5xl">
           <span className="tabular-nums">{formatarNumero(audicoes)}</span> reproduções
         </p>
         <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 lg:contents">
