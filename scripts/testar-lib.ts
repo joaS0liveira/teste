@@ -57,7 +57,7 @@ let falhas = 0;
 function verificar(descricao: string, obtido: unknown, esperado: unknown) {
   const ok = JSON.stringify(obtido) === JSON.stringify(esperado);
   if (!ok) falhas++;
-  console.log(ok ? "✓" : "✗", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
+  console.log(ok ? "OK" : "FALHA", descricao, ok ? "" : `\n    obtido:   ${JSON.stringify(obtido)}\n    esperado: ${JSON.stringify(esperado)}`);
 }
 
 /** Scrobble mínimo para os casos limite. */
@@ -157,7 +157,7 @@ let amostra: Scrobble[];
 try {
   amostra = JSON.parse(readFileSync("scripts/amostra.json", "utf-8"));
 } catch {
-  console.log("✗ Não encontrei scripts/amostra.json. Corre primeiro: npx tsx scripts/testar-api.ts");
+  console.log("FALHA Não encontrei scripts/amostra.json. Corre primeiro: npx tsx scripts/testar-api.ts");
   process.exit(1);
 }
 const comData = removerSemData(amostra);
@@ -209,5 +209,5 @@ console.log("  Hora de pico:", horaDePico(scrobblesPorHora(comData)), "UTC");
 console.log("  Género mais ouvido:", generoMaisOuvido(comData));
 console.log("  Análise única (mín. 5 audições):", artistasDeMomento(comData, { minimoAudicoes: 5 }).map((a) => `${a.artista}: ${Math.round(a.percentagem)}% ${a.momento}`).join(", ") || "nenhum");
 
-console.log(falhas === 0 ? "\nTudo certo ✓" : `\n${falhas} teste(s) falharam ✗`);
+console.log(falhas === 0 ? "\nTudo certo OK" : `\n${falhas} teste(s) falharam FALHA`);
 process.exit(falhas === 0 ? 0 : 1);

@@ -26,8 +26,8 @@ const API_BASE = "https://fmdata-api.onrender.com";
 
 /**
  * Nomes dos parâmetros de query de cada endpoint.
- * - artist: ✅ confirmado (/artist-info?artist=Adele, /artist-image?artist=Adele)
- * - album: ✅ confirmado (/album-info?artist=Adele&album=25)
+ * - artist: confirmado (/artist-info?artist=Adele, /artist-image?artist=Adele)
+ * - album: confirmado (/album-info?artist=Adele&album=25)
  * Se algum estiver errado, a API responde 400 — corrige só aqui.
  */
 export const PARAM = {

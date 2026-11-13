@@ -2,26 +2,30 @@
 
 /*
  * Tokens de design em três camadas (skill design-system):
- *   1. Primitivos   → a paleta do próprio Tailwind (--color-slate-*, --color-violet-*, …)
+ *   1. Primitivos   → a paleta do próprio Tailwind (--color-slate-*, --color-cyan-*, …)
  *   2. Semânticos   → para que serve cada cor (fundo, superfície, texto, destaque…)
  *   3. Componentes  → valores de um componente concreto (gráficos)
  * Os componentes só usam as camadas 2 e 3: mudar o tema é mudar só este ficheiro.
  *
  * Tema escuro por decisão (skill impeccable: escolher pelo cenário de uso):
- * ver o próprio histórico de música é uma atividade de fim de dia, e a
- * identidade que já existia (cabeçalho escuro + violeta) mantém-se.
+ * ver o próprio histórico de música é uma atividade de fim de dia.
+ * Estilo de referência: ardósia escura com destaque azul-turquesa, fotos de
+ * artista como fundo e nomes em letra grande (como num site de rádio).
  */
 
 /* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
-  --color-fundo: var(--color-slate-950);
-  --color-superficie: var(--color-slate-900);
-  --color-superficie-alta: var(--color-slate-800);
-  --color-borda: var(--color-slate-800);
-  --color-texto: var(--color-slate-100);
-  --color-texto-suave: var(--color-slate-400);
-  --color-destaque: var(--color-violet-400);
-  --color-destaque-forte: var(--color-violet-600);
+  --color-fundo: var(--color-slate-900);
+  --color-superficie: var(--color-slate-800);
+  --color-superficie-alta: var(--color-slate-700);
+  --color-borda: var(--color-slate-700);
+  --color-texto: var(--color-slate-50);
+  --color-texto-suave: var(--color-slate-300);
+  --color-destaque: var(--color-cyan-400);
+  --color-destaque-forte: var(--color-cyan-400);
+  --color-destaque-claro: var(--color-cyan-300);
+  /* Texto por cima do turquesa: escuro, para ter contraste (≥ 4,5:1) */
+  --color-sobre-destaque: var(--color-slate-950);
   --color-perigo: var(--color-rose-400);
 
   --font-sans: var(--font-geist-sans);
@@ -31,8 +35,8 @@
 /* 3. Componentes */
 :root {
   color-scheme: dark;
-  --grafico-barra: var(--color-slate-700);
-  --grafico-pico: var(--color-violet-400);
+  --grafico-barra: var(--color-slate-600);
+  --grafico-pico: var(--color-cyan-400);
 }
 
 /* Superfícies do browser também seguem a paleta (skill impeccable: craft floor) */
@@ -44,8 +48,8 @@
   }
 
   ::selection {
-    background: var(--color-violet-600);
-    color: var(--color-white);
+    background: var(--color-cyan-400);
+    color: var(--color-slate-950);
   }
 
   :focus-visible {
@@ -54,7 +58,7 @@
   }
 
   html {
-    scrollbar-color: var(--color-slate-700) var(--color-fundo);
+    scrollbar-color: var(--color-slate-600) var(--color-fundo);
   }
 
   a {

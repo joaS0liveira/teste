@@ -26,7 +26,7 @@ export function EstadoErro({ titulo, mensagem, onTentar }: { titulo: string; men
         <button
           type="button"
           onClick={onTentar}
-          className="mt-1 inline-flex items-center gap-2 rounded-lg bg-destaque-forte px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-500"
+          className="mt-1 inline-flex items-center gap-2 rounded-lg bg-destaque-forte px-4 py-2 text-sm font-semibold text-sobre-destaque transition-colors hover:bg-destaque-claro"
         >
           <RefreshIcon size={18} /> Tentar de novo
         </button>
