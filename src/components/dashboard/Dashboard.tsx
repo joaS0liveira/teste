@@ -24,6 +24,7 @@ import {
   totalScrobbles,
 } from "@/lib/stats";
 import { artistasDeMomento } from "@/lib/analise";
+import { filtrarPorArtista } from "@/lib/filters";
 import { useFiltrados } from "@/hooks/useFiltrados";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
@@ -66,6 +67,12 @@ export default function Dashboard() {
   );
 
   const escolhido = artistas.find((a) => a.chave === escolha) ?? artistas[0] ?? null;
+  const nomeEscolhido = escolhido ? (escolhido.artista ?? escolhido.nome) : null;
+  // Capas do topo: os 3 álbuns mais ouvidos do artista em destaque, no período do Top 20.
+  const albunsDoEscolhido = useMemo(
+    () => (nomeEscolhido ? topAlbuns(filtrarPorArtista(porSeccao.artistas, nomeEscolhido), 3) : []),
+    [porSeccao.artistas, nomeEscolhido],
+  );
   const pronto = status === "success" && todas.length > 0;
 
   return (
@@ -80,6 +87,7 @@ export default function Dashboard() {
         escolhido={pronto ? escolhido : null}
         onEscolher={setEscolha}
         fraseDoPeriodo={frase("artistas")}
+        albuns={albunsDoEscolhido}
       />
 
       {status === "loading" && (

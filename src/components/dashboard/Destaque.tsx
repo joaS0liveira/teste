@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useRef } from "react";
+import { useRef } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
 import { SquareArrowRightUpIcon } from "@solar-icons/react/linear/square-arrow-right-up";
 import { AltArrowRightIcon } from "@solar-icons/react/linear/alt-arrow-right";
-import { AltArrowDownIcon } from "@solar-icons/react/linear/alt-arrow-down";
-import { CalendarIcon } from "@solar-icons/react/linear/calendar";
 import type { ItemRanking } from "@/types";
-import { formatarNumero } from "@/lib/formatar";
+import { plural } from "@/lib/formatar";
 import { caminhoArtista } from "@/lib/rotas";
+import { useImagemArtista } from "@/hooks/useImagemArtista";
+import { Capa } from "@/components/ui/Capa";
 import { MenuFlutuante } from "./MenuFlutuante";
 
 /** Alturas (em %) das barras decorativas ao lado do título: um equalizador parado. */
@@ -17,10 +17,11 @@ const BARRAS = [18, 30, 22, 45, 34, 60, 40, 72, 55, 88, 64, 100, 70, 52, 80, 58,
 
 /**
  * Topo do dashboard: papel quadriculado com linhas finas, que passa por baixo do
- * cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a
- * lista para escolher outro artista do Top 20 (no período do filtro do Top 20).
+ * cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a sua
+ * foto e as capas dos seus álbuns mais ouvidos (no período do filtro do Top 20).
  * Não acrescenta dados: o destaque é do Top 20.
- * Quando o cartão sai do ecrã, aparece a versão pequena (MenuFlutuante) à direita.
+ * Quando o cartão sai do ecrã, aparece a versão pequena (MenuFlutuante) à esquerda,
+ * com a lista para escolher outro artista em destaque.
  */
 export function Destaque({
   subtitulo,
@@ -28,16 +29,18 @@ export function Destaque({
   escolhido,
   onEscolher,
   fraseDoPeriodo,
+  albuns,
 }: {
   subtitulo: string;
   artistas: ItemRanking[];
   escolhido: ItemRanking | null;
   onEscolher: (chave: string) => void;
   fraseDoPeriodo: string;
+  /** Os álbuns mais ouvidos do artista em destaque (até 3). */
+  albuns: ItemRanking[];
 }) {
-  const idLista = useId();
   const nome = escolhido ? (escolhido.artista ?? escolhido.nome) : "";
-  const posicao = escolhido ? artistas.indexOf(escolhido) + 1 : 0;
+  const foto = useImagemArtista(nome);
   const cartao = useRef<HTMLDivElement>(null);
 
   return (
@@ -95,40 +98,24 @@ export function Destaque({
                     </Link>
                   </div>
 
-                  <div className="flex items-center gap-3">
-                    <span className="flex min-w-12 items-center justify-center rounded-md bg-destaque px-3 py-1.5 font-display text-3xl font-black italic tabular-nums text-sobre-destaque">
-                      {formatarNumero(escolhido.contagem)}
-                    </span>
-                    <span className="flex flex-col">
-                      <span className="font-bold">{posicao === 1 ? "Artista mais ouvido" : `N.º ${posicao} do período`}</span>
-                      <span className="text-sm text-texto-suave">reproduções {fraseDoPeriodo}</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor={idLista} className="inline-flex items-center gap-2 text-sm font-bold text-destaque">
-                      <CalendarIcon size={20} aria-hidden="true" /> Escolher artista em destaque
-                    </label>
-                    <div className="relative">
-                      <select
-                        id={idLista}
-                        value={escolhido.chave}
-                        onChange={(e) => onEscolher(e.target.value)}
-                        className="min-h-12 w-full appearance-none rounded-lg border border-destaque/60 bg-superficie pr-11 pl-4"
-                      >
-                        {artistas.map((a, i) => (
-                          <option key={a.chave} value={a.chave}>
-                            {i + 1}. {a.nome} ({formatarNumero(a.contagem)})
-                          </option>
-                        ))}
-                      </select>
-                      <AltArrowDownIcon
-                        size={20}
-                        aria-hidden="true"
-                        className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-destaque"
+                  <ul aria-label={`Foto e álbuns mais ouvidos de ${nome}`} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    <li className="flex min-w-0 flex-col gap-1.5">
+                      <Capa
+                        src={foto.data}
+                        alt={`Foto de ${nome}`}
+                        className="aspect-square w-full rounded-xl border-2 border-destaque"
                       />
-                    </div>
-                  </div>
+                      <p className="truncate text-sm font-bold">{escolhido.nome}</p>
+                      <p className="-mt-1.5 text-xs text-texto-suave">{plural(escolhido.contagem, "reprodução", "reproduções")}</p>
+                    </li>
+                    {albuns.map((a) => (
+                      <li key={a.chave} className="flex min-w-0 flex-col gap-1.5">
+                        <Capa src={a.imagem} alt={`Capa de ${a.nome}`} className="aspect-square w-full rounded-xl border border-borda" />
+                        <p className="truncate text-sm font-bold">{a.nome}</p>
+                        <p className="-mt-1.5 text-xs text-texto-suave">{plural(a.contagem, "reprodução", "reproduções")}</p>
+                      </li>
+                    ))}
+                  </ul>
                 </>
               )}
 
