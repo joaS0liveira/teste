@@ -51,6 +51,18 @@
   --font-display: var(--font-archivo);
 }
 
+/* Painel do menu flutuante: entra depois de a palavra "MÚSICA" deslizar */
+@theme {
+  --animate-entrar-menu: entrar-menu 200ms ease-out 150ms both;
+
+  @keyframes entrar-menu {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+}
+
 /* 3. Componentes */
 :root {
   color-scheme: light;
