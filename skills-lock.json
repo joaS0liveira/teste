@@ -7,6 +7,12 @@
       "skillPath": "skills/better-ui/SKILL.md",
       "computedHash": "36417d09a0d91fb8c8cbbbeeb14f0ac0c0d4399342d80bcec02c8c446ebadce3"
     },
+    "design-system": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/design-system/SKILL.md",
+      "computedHash": "9efdc106c73d8d298b5a90d55c56995840a37f754fb9d498d14e6562bdaadc23"
+    },
     "figma": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",
