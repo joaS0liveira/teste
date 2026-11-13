@@ -5,7 +5,7 @@ import { formatarNumero, plural } from "@/lib/formatar";
 
 /**
  * Totais e género mais ouvido, em palco: a imagem dos auscultadores ao centro,
- * as audições por baixo e os outros números nos 4 cantos (em ecrãs pequenos,
+ * as reproduções por baixo e os outros números nos 4 cantos (em ecrãs pequenos,
  * os cantos passam para uma grelha por baixo da imagem).
  */
 export function Palco({
@@ -26,7 +26,7 @@ export function Palco({
     {
       rotulo: "Género mais ouvido",
       valor: genero ? genero.genero : "Sem etiquetas",
-      extra: genero ? `em ${plural(genero.contagem, "audição", "audições")}` : undefined,
+      extra: genero ? `em ${plural(genero.contagem, "reprodução", "reproduções")}` : undefined,
       lugar: "lg:top-10 lg:right-6 lg:text-right",
     },
     { rotulo: "Hora de pico", valor: pico !== null ? `${formatarHora(pico)} UTC` : "—", lugar: "lg:bottom-10 lg:left-6" },
@@ -45,8 +45,8 @@ export function Palco({
           sizes="(min-width: 1024px) 768px, 92vw"
           className="mx-auto h-auto w-full max-w-3xl"
         />
-        <p className="titulo-display mt-2 text-center text-5xl leading-[0.95] text-destaque sm:text-6xl lg:text-7xl">
-          <span className="tabular-nums">{formatarNumero(audicoes)}</span> audições
+        <p className="titulo-display mt-2 text-center text-3xl leading-[0.95] text-destaque min-[420px]:text-4xl sm:text-6xl lg:text-7xl">
+          <span className="tabular-nums">{formatarNumero(audicoes)}</span> reproduções
         </p>
         <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 lg:contents">
           {cantos.map((c) => (

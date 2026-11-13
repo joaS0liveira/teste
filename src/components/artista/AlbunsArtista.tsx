@@ -31,7 +31,7 @@ function CartaoAlbum({ album }: { album: AlbumDoArtista }) {
       <Capa src={album.imagem} className="aspect-square w-full border-b-2 border-borda-forte" />
       <div className="p-3.5">
         <p className="truncate font-display text-xl font-black italic">{album.nome}</p>
-        <p className="text-sm text-texto-suave">{plural(album.contagem, "audição", "audições")}</p>
+        <p className="text-sm text-texto-suave">{plural(album.contagem, "reprodução", "reproduções")}</p>
         <p className="mt-2 text-sm font-bold">
           {info.status === "loading"
             ? "A ver o álbum…"

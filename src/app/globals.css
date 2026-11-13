@@ -19,6 +19,7 @@
   --color-branco: #ffffff;
   --color-cinza-claro: #e9e7e3;
   --color-rosa: #f6d9d7;
+  --color-pessego: #fdeee6;
   --color-vermelho-linha: #e7b3b0;
   --color-vermelho-barra: #f0b4b1;
   --color-vermelho: #c81e26;
@@ -31,6 +32,8 @@
 /* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
   --color-fundo: var(--color-creme);
+  /* Cor de base da imagem do topo (aparece enquanto a imagem carrega) */
+  --color-fundo-imagem: var(--color-pessego);
   --color-superficie: var(--color-branco);
   --color-superficie-alta: var(--color-rosa);
   --color-superficie-cinza: var(--color-cinza-claro);
@@ -54,6 +57,8 @@
 /* 3. Componentes */
 :root {
   color-scheme: light;
+  /* O topo do dashboard passa por baixo do cabeçalho: os dois usam esta altura */
+  --altura-cabecalho: 4.5rem;
   --grafico-barra: var(--color-vermelho-barra);
   --grafico-pico: var(--color-vermelho);
   --grelha: rgb(200 30 38 / 0.08);

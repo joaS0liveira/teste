@@ -11,7 +11,7 @@ import { Capa } from "@/components/ui/Capa";
  */
 export function EstatisticasArtista({ resumo, info }: { resumo: ResumoArtista; info: ArtistInfo | null }) {
   const cartoes = [
-    { rotulo: "Audições", valor: formatarNumero(resumo.total) },
+    { rotulo: "Reproduções", valor: formatarNumero(resumo.total) },
     { rotulo: "Do teu total", valor: formatarPercentagem(resumo.percentagem) },
     { rotulo: "Favoritas", valor: resumo.favoritas === 0 ? "Nenhuma" : formatarNumero(resumo.favoritas), favoritas: true },
     { rotulo: "Primeira reprodução", valor: resumo.primeira ? formatarData(resumo.primeira) : "—" },

@@ -22,7 +22,7 @@ export function TopMusicas({ itens }: { itens: ItemRanking[] }) {
               <p className="line-clamp-2 text-sm leading-tight font-extrabold text-white">{m.nome}</p>
               {m.album && <p className="truncate text-xs text-white/85">{m.album}</p>}
               <p className="mt-1 inline-block bg-destaque px-1.5 py-0.5 text-[11px] font-extrabold tabular-nums text-sobre-destaque">
-                {plural(m.contagem, "audição", "audições")}
+                {plural(m.contagem, "reprodução", "reproduções")}
               </p>
             </div>
           </li>

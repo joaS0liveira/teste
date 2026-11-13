@@ -33,7 +33,7 @@ export function GraficoHoras({
       <Tooltip
         {...dica}
         labelFormatter={(hora) => `${formatarHora(Number(hora))}–${formatarHora((Number(hora) + 1) % 24)} UTC`}
-        formatter={(valor) => [formatarNumero(Number(valor)), "Audições"]}
+        formatter={(valor) => [formatarNumero(Number(valor)), "Reproduções"]}
       />
       <Bar
         dataKey="audicoes"
