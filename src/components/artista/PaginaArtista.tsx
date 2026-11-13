@@ -22,7 +22,7 @@ import {
 import { nomeDaRota } from "@/lib/rotas";
 import { useArtistInfo } from "@/hooks/useArtistInfo";
 import { useScrobblesDoArtista } from "@/hooks/useScrobblesDoArtista";
-import { Bloco } from "@/components/ui/Bloco";
+import { Bloco, Painel } from "@/components/ui/Bloco";
 import { EstadoCarregar, EstadoErro, EstadoVazio } from "@/components/ui/Estados";
 import { ListaMusicas } from "@/components/ui/ListaMusicas";
 import { GraficoHoras } from "@/components/graficos/GraficoHoras";
@@ -63,70 +63,78 @@ export default function PaginaArtista() {
 
   if (historico.status === "loading") {
     return (
-      <Pagina>
+      <Estado>
         <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
-      </Pagina>
+      </Estado>
     );
   }
 
   if (historico.status === "error") {
     return (
-      <Pagina>
+      <Estado>
         <EstadoErro titulo="Não foi possível carregar o histórico" mensagem={historico.error} onTentar={historico.recarregar} />
-      </Pagina>
+      </Estado>
     );
   }
 
   // Não encontrado: mensagem clara, sem rebentar a página.
   if (!historico.existe) {
     return (
-      <Pagina>
+      <Estado>
         <EstadoVazio titulo="Artista não encontrado">
           <p>“{nome}” não aparece no teu histórico de audições.</p>
           <Link href="/" className="mt-3 inline-block text-destaque underline">
             Voltar ao dashboard
           </Link>
         </EstadoVazio>
-      </Pagina>
+      </Estado>
     );
   }
 
   return (
-    <Pagina>
+    <>
       <CabecalhoArtista nome={nome} perfil={perfil} />
-      <EstatisticasArtista resumo={dados.resumo} />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={20} />} descricao="As faixas deste artista que mais ouves.">
-          <ListaMusicas itens={dados.musicas} mostrarAlbum={false} />
+      <div className="mx-auto max-w-7xl divide-y divide-borda px-4 pb-20 sm:px-6 [&>*]:py-14">
+        <EstatisticasArtista resumo={dados.resumo} info={perfil.data} />
+
+        <div className="grid gap-10 lg:grid-cols-2">
+          <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={24} />} descricao="As faixas deste artista que mais ouves.">
+            <ListaMusicas itens={dados.musicas} mostrarAlbum={false} />
+          </Bloco>
+          <Bloco
+            titulo="Relógio 24h"
+            icone={<ClockCircleIcon size={24} />}
+            descricao={`A que horas ouves este artista (UTC)${dados.pico !== null ? `. Mais vezes às ${formatarHora(dados.pico)}.` : "."}`}
+          >
+            <Painel>
+              <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={300} descricao={`Audições de ${nome} por hora do dia em UTC`} />
+            </Painel>
+          </Bloco>
+        </div>
+
+        <AlbunsArtista albuns={dados.albuns} />
+
+        <Bloco titulo="Scrobbles por mês" icone={<CalendarIcon size={28} />} descricao="A evolução da tua escuta ao longo do tempo." centrado>
+          <Painel>
+            <GraficoMeses pontos={dados.porMes} descricao={`Audições de ${nome} por mês`} />
+          </Painel>
         </Bloco>
-        <Bloco
-          titulo="Relógio 24h"
-          icone={<ClockCircleIcon size={20} />}
-          descricao={`A que horas ouves este artista (UTC)${dados.pico !== null ? `. Mais vezes às ${formatarHora(dados.pico)}.` : "."}`}
-        >
-          <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={260} descricao={`Audições de ${nome} por hora do dia em UTC`} />
-        </Bloco>
+
+        <div className="grid gap-10 lg:grid-cols-2">
+          <UltimasAudicoes audicoes={dados.ultimas} />
+          <Semelhantes artistas={semelhantes} aCarregar={perfil.status === "loading"} />
+        </div>
       </div>
-
-      <AlbunsArtista albuns={dados.albuns} />
-
-      <Bloco titulo="Scrobbles por mês" icone={<CalendarIcon size={20} />} descricao="A evolução da tua escuta ao longo do tempo.">
-        <GraficoMeses pontos={dados.porMes} descricao={`Audições de ${nome} por mês`} />
-      </Bloco>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <UltimasAudicoes audicoes={dados.ultimas} />
-        <Semelhantes artistas={semelhantes} aCarregar={perfil.status === "loading"} />
-      </div>
-    </Pagina>
+    </>
   );
 }
 
-function Pagina({ children }: { children: ReactNode }) {
+/** Moldura dos estados (a carregar, erro, não encontrado), com o caminho de volta. */
+function Estado({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6">
-      <Link href="/" className="inline-flex items-center gap-2 text-sm text-texto-suave hover:text-texto">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <Link href="/" className="inline-flex min-h-11 items-center gap-2 text-texto-suave hover:text-texto">
         <ArrowLeftIcon size={18} aria-hidden="true" /> Dashboard
       </Link>
       {children}

@@ -8,7 +8,8 @@
  * Os dados vêm de useFiltrados (já filtrados pelo período) e os cálculos das
  * funções puras de lib/, dentro de useMemo: o componente só mostra.
  */
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { ClockCircleIcon } from "@solar-icons/react/linear/clock-circle";
 import { formatarDataHora, formatarHora } from "@/lib/dates";
 import {
   generoMaisOuvido,
@@ -23,21 +24,22 @@ import {
 import { artistasDeMomento } from "@/lib/analise";
 import { useFiltrados } from "@/hooks/useFiltrados";
 import { usePeriodo } from "@/hooks/usePeriodo";
-import { Bloco } from "@/components/ui/Bloco";
+import { Bloco, Painel } from "@/components/ui/Bloco";
 import { EstadoCarregar, EstadoErro, EstadoVazio } from "@/components/ui/Estados";
 import { GraficoHoras } from "@/components/graficos/GraficoHoras";
-import { FiltroPeriodo } from "./FiltroPeriodo";
-import { Totais } from "./Totais";
-import { Genero } from "./Genero";
+import { FiltroPeriodo, OPCOES_PERIODO } from "./FiltroPeriodo";
+import { Destaque } from "./Destaque";
+import { Resumo } from "./Resumo";
 import { TopArtistas } from "./TopArtistas";
 import { TopMusicas } from "./TopMusicas";
 import { TopAlbuns } from "./TopAlbuns";
 import { AnaliseUnica } from "./AnaliseUnica";
-import { ClockCircleIcon } from "@solar-icons/react/linear/clock-circle";
 
 export default function Dashboard() {
   const { scrobbles, referencia, status, error, recarregar } = useFiltrados();
   const { periodo, setPeriodo } = usePeriodo();
+  // Artista em destaque no topo: escolha local; sem escolha (ou fora do Top 20 do período) → o n.º 1.
+  const [escolha, setEscolha] = useState<string | null>(null);
 
   const dados = useMemo(() => {
     const porHora = scrobblesPorHora(scrobbles);
@@ -54,66 +56,74 @@ export default function Dashboard() {
     };
   }, [scrobbles]);
 
+  const escolhido = dados.topArtistas.find((a) => a.chave === escolha) ?? dados.topArtistas[0] ?? null;
+  const frase = OPCOES_PERIODO.find((o) => o.valor === periodo)?.frase ?? "";
+  const pronto = status === "success" && scrobbles.length > 0;
+
   return (
-    <div className="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-balance">O teu histórico de audições</h1>
-          {referencia && (
-            <p className="mt-1 text-sm text-texto-suave">
-              Períodos contados a partir da última audição: {formatarDataHora(referencia)}
-            </p>
-          )}
-        </div>
-        <FiltroPeriodo periodo={periodo} onMudar={setPeriodo} />
-      </div>
+    <>
+      <Destaque
+        subtitulo={
+          referencia
+            ? `O teu histórico de audições. Períodos contados a partir da última audição: ${formatarDataHora(referencia)}.`
+            : "O teu histórico de audições."
+        }
+        artistas={dados.topArtistas}
+        escolhido={pronto ? escolhido : null}
+        onEscolher={setEscolha}
+        fraseDoPeriodo={frase}
+        filtro={<FiltroPeriodo periodo={periodo} onMudar={setPeriodo} />}
+      />
 
-      {status === "loading" && (
-        <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
-      )}
+      <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        {status === "loading" && (
+          <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
+        )}
 
-      {status === "error" && (
-        <EstadoErro titulo="Não foi possível carregar o histórico" mensagem={error} onTentar={recarregar} />
-      )}
+        {status === "error" && (
+          <EstadoErro titulo="Não foi possível carregar o histórico" mensagem={error} onTentar={recarregar} />
+        )}
 
-      {status === "success" && scrobbles.length === 0 && (
-        <EstadoVazio titulo="Sem audições neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
-      )}
+        {status === "success" && scrobbles.length === 0 && (
+          <EstadoVazio titulo="Sem audições neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
+        )}
 
-      {status === "success" && scrobbles.length > 0 && (
-        <>
-          <div className="grid gap-6 lg:grid-cols-3">
-            <Totais audicoes={dados.audicoes} artistas={dados.artistas} className="lg:col-span-2" />
-            <Genero genero={dados.genero} />
-          </div>
+        {pronto && (
+          <div className="divide-y divide-borda [&>*]:py-14">
+            <Resumo
+              audicoes={dados.audicoes}
+              artistas={dados.artistas}
+              genero={dados.genero}
+              artistaDaFoto={dados.topArtistas[0]?.artista ?? ""}
+            />
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div className="space-y-6 lg:col-span-2">
-              <Bloco
-                titulo="A que horas ouves mais música"
-                icone={<ClockCircleIcon size={20} />}
-                descricao={
-                  dados.pico !== null
-                    ? `24 horas (0–23 UTC). Hora de maior escuta: ${formatarHora(dados.pico)}.`
-                    : "24 horas (0–23 UTC)."
-                }
-              >
+            <TopArtistas itens={dados.topArtistas} />
+
+            <Bloco
+              titulo="A que horas ouves"
+              icone={<ClockCircleIcon size={28} />}
+              descricao={`24 horas (0–23 UTC).${dados.pico !== null ? ` Hora de maior escuta: ${formatarHora(dados.pico)}.` : ""}`}
+              centrado
+            >
+              <Painel>
                 <GraficoHoras
                   porHora={dados.porHora}
                   pico={dados.pico}
+                  altura={280}
                   descricao={`Audições por hora do dia em UTC${dados.pico !== null ? `; mais audições às ${formatarHora(dados.pico)}` : ""}`}
                 />
-              </Bloco>
+              </Painel>
+            </Bloco>
+
+            <div className="grid gap-10 lg:grid-cols-2">
               <TopMusicas itens={dados.topMusicas} />
               <TopAlbuns itens={dados.topAlbuns} />
             </div>
-            <div className="space-y-6">
-              <TopArtistas itens={dados.topArtistas} />
-              <AnaliseUnica itens={dados.analise} />
-            </div>
+
+            <AnaliseUnica itens={dados.analise} />
           </div>
-        </>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }

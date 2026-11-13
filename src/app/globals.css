@@ -2,30 +2,45 @@
 
 /*
  * Tokens de design em três camadas (skill design-system):
- *   1. Primitivos   → a paleta do próprio Tailwind (--color-slate-*, --color-cyan-*, …)
+ *   1. Primitivos   → a paleta verde do projeto (--color-verde-*, --color-neon)
  *   2. Semânticos   → para que serve cada cor (fundo, superfície, texto, destaque…)
  *   3. Componentes  → valores de um componente concreto (gráficos)
  * Os componentes só usam as camadas 2 e 3: mudar o tema é mudar só este ficheiro.
  *
- * Tema escuro por decisão (skill impeccable: escolher pelo cenário de uso):
- * ver o próprio histórico de música é uma atividade de fim de dia.
- * Estilo de referência: ardósia escura com destaque azul-turquesa, fotos de
- * artista como fundo e nomes em letra grande (como num site de rádio).
+ * Estilo: verde néon sobre verde escuro (maqueta aprovada). Tema escuro por
+ * decisão (skill impeccable: escolher pelo cenário de uso — ver o próprio
+ * histórico de música é uma atividade de fim de dia).
+ * Contraste: texto suave #9CC9AE sobre o fundo ≈ 10:1; texto escuro sobre o néon ≈ 15:1.
  */
+
+/* 1. Primitivos */
+@theme {
+  --color-verde-950: #04140c;
+  --color-verde-900: #0a2216;
+  --color-verde-800: #11331f;
+  --color-verde-700: #16422a;
+  --color-verde-600: #1e5a38;
+  --color-verde-500: #2e6b47;
+  --color-verde-200: #9cc9ae;
+  --color-verde-50: #e8fff1;
+  --color-neon: #39ff14;
+  --color-neon-claro: #8cff6b;
+}
 
 /* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
-  --color-fundo: var(--color-slate-900);
-  --color-superficie: var(--color-slate-800);
-  --color-superficie-alta: var(--color-slate-700);
-  --color-borda: var(--color-slate-700);
-  --color-texto: var(--color-slate-50);
-  --color-texto-suave: var(--color-slate-300);
-  --color-destaque: var(--color-cyan-400);
-  --color-destaque-forte: var(--color-cyan-400);
-  --color-destaque-claro: var(--color-cyan-300);
-  /* Texto por cima do turquesa: escuro, para ter contraste (≥ 4,5:1) */
-  --color-sobre-destaque: var(--color-slate-950);
+  --color-fundo: var(--color-verde-950);
+  --color-superficie: var(--color-verde-900);
+  --color-superficie-alta: var(--color-verde-800);
+  --color-borda: var(--color-verde-700);
+  --color-borda-forte: var(--color-verde-500);
+  --color-texto: var(--color-verde-50);
+  --color-texto-suave: var(--color-verde-200);
+  --color-destaque: var(--color-neon);
+  --color-destaque-forte: var(--color-neon);
+  --color-destaque-claro: var(--color-neon-claro);
+  /* Texto por cima do néon: verde quase preto, para ter contraste */
+  --color-sobre-destaque: var(--color-verde-950);
   --color-perigo: var(--color-rose-400);
 
   --font-sans: var(--font-geist-sans);
@@ -35,8 +50,8 @@
 /* 3. Componentes */
 :root {
   color-scheme: dark;
-  --grafico-barra: var(--color-slate-600);
-  --grafico-pico: var(--color-cyan-400);
+  --grafico-barra: var(--color-verde-600);
+  --grafico-pico: var(--color-neon);
 }
 
 /* Superfícies do browser também seguem a paleta (skill impeccable: craft floor) */
@@ -48,8 +63,8 @@
   }
 
   ::selection {
-    background: var(--color-cyan-400);
-    color: var(--color-slate-950);
+    background: var(--color-neon);
+    color: var(--color-verde-950);
   }
 
   :focus-visible {
@@ -58,7 +73,7 @@
   }
 
   html {
-    scrollbar-color: var(--color-slate-600) var(--color-fundo);
+    scrollbar-color: var(--color-verde-500) var(--color-fundo);
   }
 
   a {

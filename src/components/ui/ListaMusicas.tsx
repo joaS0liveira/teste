@@ -10,11 +10,11 @@ export function ListaMusicas({ itens, mostrarAlbum }: { itens: ItemRanking[]; mo
   return (
     <ol className="divide-y divide-borda">
       {itens.map((m, i) => (
-        <li key={m.chave} className="flex items-center gap-3 py-2">
-          <span className="w-6 shrink-0 text-right text-sm tabular-nums text-texto-suave">{i + 1}</span>
-          <Capa src={m.imagem} className="size-10 rounded-md" />
+        <li key={m.chave} className="flex items-center gap-3 py-2.5">
+          <span className="w-6 shrink-0 text-right font-bold tabular-nums text-destaque">{i + 1}</span>
+          <Capa src={m.imagem} className="size-11 rounded-lg" />
           <div className="min-w-0 flex-1">
-            <p className="truncate font-medium">{m.nome}</p>
+            <p className="truncate font-semibold">{m.nome}</p>
             {mostrarAlbum && m.album && <p className="truncate text-sm text-texto-suave">{m.album}</p>}
           </div>
           <span className="shrink-0 text-sm tabular-nums text-texto-suave">{formatarNumero(m.contagem)}</span>
