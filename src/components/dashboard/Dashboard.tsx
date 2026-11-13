@@ -5,10 +5,12 @@
  * Responde às 4 perguntas do enunciado: quem ouves mais, o que ouves mais,
  * quando ouves e que género domina; e mostra a análise única.
  *
- * Os dados vêm de useFiltrados (já filtrados pelo período) e os cálculos das
- * funções puras de lib/, dentro de useMemo: o componente só mostra.
+ * Cada secção tem o seu filtro de período: useFiltrados devolve as reproduções
+ * de cada secção já filtradas, e os cálculos vêm das funções puras de lib/,
+ * dentro de useMemo (um por secção: mudar o filtro de uma só recalcula essa).
  */
 import { useMemo, useState } from "react";
+import type { Seccao } from "@/types";
 import { ClockCircleIcon } from "@solar-icons/react/linear/clock-circle";
 import { formatarDataHora, formatarHora } from "@/lib/dates";
 import {
@@ -23,10 +25,9 @@ import {
 } from "@/lib/stats";
 import { artistasDeMomento } from "@/lib/analise";
 import { useFiltrados } from "@/hooks/useFiltrados";
-import { usePeriodo } from "@/hooks/usePeriodo";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
-import { EstadoCarregar, EstadoErro, EstadoVazio } from "@/components/ui/Estados";
+import { EstadoCarregar, EstadoErro, EstadoVazio, VazioDoPeriodo } from "@/components/ui/Estados";
 import { GraficoHoras } from "@/components/graficos/GraficoHoras";
 import { FiltroPeriodo, OPCOES_PERIODO } from "./FiltroPeriodo";
 import { Destaque } from "./Destaque";
@@ -37,29 +38,35 @@ import { TopAlbuns } from "./TopAlbuns";
 import { AnaliseUnica } from "./AnaliseUnica";
 
 export default function Dashboard() {
-  const { scrobbles, referencia, status, error, recarregar } = useFiltrados();
-  const { periodo, setPeriodo } = usePeriodo();
+  const { porSeccao, todas, referencia, periodos, setPeriodo, status, error, recarregar } = useFiltrados();
   // Artista em destaque no topo: escolha local; sem escolha (ou fora do Top 20 do período) → o n.º 1.
   const [escolha, setEscolha] = useState<string | null>(null);
 
-  const dados = useMemo(() => {
-    const porHora = scrobblesPorHora(scrobbles);
+  const totais = useMemo(() => {
+    const lista = porSeccao.totais;
     return {
-      audicoes: totalScrobbles(scrobbles),
-      artistas: totalArtistasDistintos(scrobbles),
-      genero: generoMaisOuvido(scrobbles),
-      porHora,
-      pico: horaDePico(porHora),
-      topArtistas: topArtistas(scrobbles, 20),
-      topMusicas: topMusicas(scrobbles, 10),
-      topAlbuns: topAlbuns(scrobbles, 8),
-      analise: artistasDeMomento(scrobbles),
+      audicoes: totalScrobbles(lista),
+      artistas: totalArtistasDistintos(lista),
+      genero: generoMaisOuvido(lista),
+      pico: horaDePico(scrobblesPorHora(lista)),
     };
-  }, [scrobbles]);
+  }, [porSeccao.totais]);
+  const artistas = useMemo(() => topArtistas(porSeccao.artistas, 20), [porSeccao.artistas]);
+  const horas = useMemo(() => {
+    const porHora = scrobblesPorHora(porSeccao.horas);
+    return { porHora, pico: horaDePico(porHora), total: porSeccao.horas.length };
+  }, [porSeccao.horas]);
+  const musicas = useMemo(() => topMusicas(porSeccao.musicas, 10), [porSeccao.musicas]);
+  const albuns = useMemo(() => topAlbuns(porSeccao.albuns, 8), [porSeccao.albuns]);
+  const analise = useMemo(() => artistasDeMomento(porSeccao.analise), [porSeccao.analise]);
 
-  const escolhido = dados.topArtistas.find((a) => a.chave === escolha) ?? dados.topArtistas[0] ?? null;
-  const frase = OPCOES_PERIODO.find((o) => o.valor === periodo)?.frase ?? "";
-  const pronto = status === "success" && scrobbles.length > 0;
+  const frase = (s: Seccao) => OPCOES_PERIODO.find((o) => o.valor === periodos[s])?.frase ?? "";
+  const filtro = (s: Seccao, nome: string) => (
+    <FiltroPeriodo periodo={periodos[s]} onMudar={(p) => setPeriodo(s, p)} seccao={nome} />
+  );
+
+  const escolhido = artistas.find((a) => a.chave === escolha) ?? artistas[0] ?? null;
+  const pronto = status === "success" && todas.length > 0;
 
   return (
     <>
@@ -69,11 +76,10 @@ export default function Dashboard() {
             ? `O teu histórico de reproduções. Períodos contados a partir da última reprodução: ${formatarDataHora(referencia)}.`
             : "O teu histórico de reproduções."
         }
-        artistas={dados.topArtistas}
+        artistas={artistas}
         escolhido={pronto ? escolhido : null}
         onEscolher={setEscolha}
-        fraseDoPeriodo={frase}
-        filtro={<FiltroPeriodo periodo={periodo} onMudar={setPeriodo} />}
+        fraseDoPeriodo={frase("artistas")}
       />
 
       {status === "loading" && (
@@ -88,47 +94,53 @@ export default function Dashboard() {
         </Faixa>
       )}
 
-      {status === "success" && scrobbles.length === 0 && (
+      {status === "success" && todas.length === 0 && (
         <Faixa>
-          <EstadoVazio titulo="Sem reproduções neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
+          <EstadoVazio titulo="Ainda não há reproduções">O teu histórico do Last.fm está vazio.</EstadoVazio>
         </Faixa>
       )}
 
-      {pronto && escolhido && (
+      {pronto && (
         <>
           <Palco
-            audicoes={dados.audicoes}
-            artistas={dados.artistas}
-            genero={dados.genero}
-            pico={dados.pico}
-            fraseDoPeriodo={frase}
+            audicoes={totais.audicoes}
+            artistas={totais.artistas}
+            genero={totais.genero}
+            pico={totais.pico}
+            fraseDoPeriodo={frase("totais")}
+            filtro={filtro("totais", "totais")}
           />
 
           <Faixa>
-            <TopArtistas itens={dados.topArtistas} />
+            <TopArtistas itens={artistas} filtro={filtro("artistas", "Top 20 artistas")} />
           </Faixa>
 
           <Faixa fundo="rosa">
             <Bloco
               titulo="A que horas ouves"
               icone={<ClockCircleIcon size={22} />}
-              descricao={`24 horas (0–23 UTC).${dados.pico !== null ? ` Hora de maior escuta: ${formatarHora(dados.pico)}.` : ""}`}
+              descricao={`24 horas (0–23 UTC).${horas.pico !== null ? ` Hora de maior escuta: ${formatarHora(horas.pico)}.` : ""}`}
               variante="separador"
+              filtro={filtro("horas", "A que horas ouves")}
             >
-              <GraficoHoras
-                porHora={dados.porHora}
-                pico={dados.pico}
-                altura={280}
-                descricao={`Reproduções por hora do dia em UTC${dados.pico !== null ? `; mais reproduções às ${formatarHora(dados.pico)}` : ""}`}
-              />
+              {horas.total === 0 ? (
+                <VazioDoPeriodo />
+              ) : (
+                <GraficoHoras
+                  porHora={horas.porHora}
+                  pico={horas.pico}
+                  altura={280}
+                  descricao={`Reproduções por hora do dia em UTC${horas.pico !== null ? `; mais reproduções às ${formatarHora(horas.pico)}` : ""}`}
+                />
+              )}
             </Bloco>
           </Faixa>
 
           <Faixa className="space-y-10">
-            <TopMusicas itens={dados.topMusicas} />
-            <TopAlbuns itens={dados.topAlbuns} />
+            <TopMusicas itens={musicas} filtro={filtro("musicas", "Top 10 músicas")} />
+            <TopAlbuns itens={albuns} filtro={filtro("albuns", "Top 8 álbuns")} />
             <div className="mx-auto max-w-4xl">
-              <AnaliseUnica itens={dados.analise} />
+              <AnaliseUnica itens={analise} filtro={filtro("analise", "análise única")} />
             </div>
           </Faixa>
         </>

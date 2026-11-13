@@ -1,13 +1,16 @@
 import { AlbumIcon } from "@solar-icons/react/linear/album";
+import type { ReactNode } from "react";
 import type { ItemRanking } from "@/types";
 import { formatarNumero } from "@/lib/formatar";
 import { Bloco } from "@/components/ui/Bloco";
 import { Capa } from "@/components/ui/Capa";
+import { VazioDoPeriodo } from "@/components/ui/Estados";
 
 /** Top 8 álbuns em grelha visual: capa como fundo, com título, artista e plays. */
-export function TopAlbuns({ itens }: { itens: ItemRanking[] }) {
+export function TopAlbuns({ itens, filtro }: { itens: ItemRanking[]; filtro?: ReactNode }) {
   return (
-    <Bloco titulo="Top 8 álbuns" icone={<AlbumIcon size={20} />} descricao="Os álbuns mais ouvidos.">
+    <Bloco titulo="Top 8 álbuns" icone={<AlbumIcon size={20} />} descricao="Os álbuns mais ouvidos no período." filtro={filtro}>
+      {itens.length === 0 && <VazioDoPeriodo />}
       <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         {itens.map((a) => (
           <li key={a.chave} className="relative aspect-square overflow-hidden border border-borda">

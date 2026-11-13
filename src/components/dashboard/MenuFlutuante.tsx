@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useRef, useState, type ReactNode, type RefObject } from "react";
+import { useEffect, useId, useRef, useState, type RefObject } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
 import { AltArrowDownIcon } from "@solar-icons/react/linear/alt-arrow-down";
 import { AltArrowRightIcon } from "@solar-icons/react/linear/alt-arrow-right";
@@ -16,7 +16,7 @@ import { caminhoArtista } from "@/lib/rotas";
  * - Fechado, é só a barra vermelha presa à margem. Ao passar o rato (ou com o
  *   foco do teclado) a palavra "MÚSICA" desliza para fora e o painel abre por baixo.
  *   No telemóvel abre com um toque. Fecha ao sair com o rato, com Esc ou ao tocar fora.
- * - Usa o mesmo estado do topo: mudar aqui o artista ou o período muda o dashboard.
+ * - Usa o mesmo estado do topo: mudar aqui o artista muda também o cartão do topo.
  */
 export function MenuFlutuante({
   alvo,
@@ -24,14 +24,12 @@ export function MenuFlutuante({
   escolhido,
   onEscolher,
   fraseDoPeriodo,
-  filtro,
 }: {
   alvo: RefObject<HTMLElement | null>;
   artistas: ItemRanking[];
   escolhido: ItemRanking | null;
   onEscolher: (chave: string) => void;
   fraseDoPeriodo: string;
-  filtro: ReactNode;
 }) {
   const [visivel, setVisivel] = useState(false);
   const [aberto, setAberto] = useState(false);
@@ -97,7 +95,7 @@ export function MenuFlutuante({
         >
           <span className="flex min-w-0 items-center gap-2 overflow-hidden whitespace-nowrap">
             <span className="titulo-display pl-2 text-xl text-destaque">Música</span>
-            <span className="sr-only">: artista em destaque e período</span>
+            <span className="sr-only">: artista em destaque</span>
             <AltArrowDownIcon
               size={18}
               aria-hidden="true"
@@ -166,7 +164,6 @@ export function MenuFlutuante({
               </>
             )}
 
-            {filtro}
           </div>
         </div>
       )}

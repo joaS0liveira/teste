@@ -11,18 +11,28 @@ export const OPCOES_PERIODO: { valor: Periodo; rotulo: string; frase: string }[]
 ];
 
 /**
- * O filtro de período: tudo, últimos 30, 14, 7 dias ou 24 horas. Aplica-se a todo o dashboard.
- * O tamanho da letra segue o espaço que o filtro tem (container query), não o ecrã:
- * assim serve no cartão grande do topo e no menu flutuante.
+ * O filtro de período: tudo, últimos 30, 14, 7 dias ou 24 horas.
+ * Cada secção do dashboard tem o seu (no cabeçalho do Bloco), e `seccao` dá nome
+ * ao grupo para os leitores de ecrã ("Período: Top 20 artistas").
+ * O tamanho da letra segue o espaço que o filtro tem (container query), não o ecrã.
  */
-export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar: (p: Periodo) => void }) {
+export function FiltroPeriodo({
+  periodo,
+  onMudar,
+  seccao,
+}: {
+  periodo: Periodo;
+  onMudar: (p: Periodo) => void;
+  seccao: string;
+}) {
   const rotulo = useId();
   return (
-    <div className="@container flex flex-col gap-2">
-      <span id={rotulo} className="inline-flex items-center gap-2 text-sm font-bold text-destaque">
-        <ClockCircleIcon size={20} aria-hidden="true" /> Período
+    <div className="@container flex items-center gap-2">
+      <span id={rotulo} className="inline-flex shrink-0 items-center text-destaque">
+        <ClockCircleIcon size={20} aria-hidden="true" />
+        <span className="sr-only">Período: {seccao}</span>
       </span>
-      <div role="group" aria-labelledby={rotulo} className="grid grid-cols-5 gap-1 @md:gap-2">
+      <div role="group" aria-labelledby={rotulo} className="grid flex-1 grid-cols-5 gap-1 @md:gap-1.5">
         {OPCOES_PERIODO.map(({ valor, rotulo: texto }) => {
           const ativo = valor === periodo;
           return (
@@ -31,9 +41,9 @@ export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar:
               type="button"
               aria-pressed={ativo}
               onClick={() => onMudar(valor)}
-              className={`min-h-11 rounded-lg border px-1 text-xs transition @md:px-3 @md:text-base ${
+              className={`min-h-10 rounded-lg border px-1 text-xs whitespace-nowrap transition @md:px-2 @md:text-sm ${
                 ativo
-                  ? "border-destaque bg-destaque font-bold text-sobre-destaque shadow-[0_0_0_3px_white,0_6px_18px_rgb(200_30_38/0.45)]"
+                  ? "border-destaque bg-destaque font-bold text-sobre-destaque shadow-[0_4px_12px_rgb(200_30_38/0.4)]"
                   : "border-destaque/50 bg-superficie text-destaque hover:bg-superficie-alta"
               }`}
             >

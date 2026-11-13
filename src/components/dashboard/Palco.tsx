@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { GeneroContagem } from "@/types";
 import { formatarHora } from "@/lib/dates";
 import { formatarNumero, plural } from "@/lib/formatar";
@@ -14,12 +15,15 @@ export function Palco({
   genero,
   pico,
   fraseDoPeriodo,
+  filtro,
 }: {
   audicoes: number;
   artistas: number;
   genero: GeneroContagem | null;
   pico: number | null;
   fraseDoPeriodo: string;
+  /** Filtro de período dos totais. */
+  filtro?: ReactNode;
 }) {
   const cantos = [
     { rotulo: "Artistas distintos", valor: formatarNumero(artistas), lugar: "lg:top-10 lg:left-6" },
@@ -37,6 +41,7 @@ export function Palco({
     <section aria-labelledby="titulo-totais" className="border-b border-borda-forte bg-superficie">
       <h2 id="titulo-totais" className="sr-only">Totais</h2>
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-16">
+        {filtro && <div className="mx-auto mb-6 max-w-sm">{filtro}</div>}
         <Image
           src="/palco-auscultadores.webp"
           alt=""

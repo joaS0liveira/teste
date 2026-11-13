@@ -2,7 +2,7 @@
  * store/useStore.ts — store global (Zustand).
  *
  * Resolve os quatro problemas do enunciado:
- *  1. Estado global   → `periodo`, partilhado por todo o dashboard.
+ *  1. Estado global   → `periodos`: o período escolhido em cada secção do dashboard.
  *  2. Cache           → cada pedido fica guardado num `Entry<T>`; se já há
  *                       resposta ("success" ou "not-found"), não se pede outra vez.
  *  3. Persistência    → middleware `persist` em localStorage, com `skipHydration`
@@ -12,7 +12,7 @@
  *
  * Decisão sobre o que persistir:
  *  O histórico completo tem ~51 700 scrobbles (~25 MB) e o localStorage aguenta
- *  ~5 MB. Por isso persistem o período e os perfis (artistas, álbuns, fotos),
+ *  ~5 MB. Por isso persistem os períodos e os perfis (artistas, álbuns, fotos),
  *  que são pequenos; os scrobbles ficam em cache só em memória, durante a sessão
  *  (são pedidos uma vez e partilhados por todas as páginas).
  *
@@ -20,7 +20,7 @@
  */
 import { create } from "zustand";
 import { createJSONStorage, persist, type StateStorage } from "zustand/middleware";
-import type { AlbumInfo, ArtistInfo, Entry, Periodo, Scrobble } from "@/types";
+import type { AlbumInfo, ArtistInfo, Entry, Periodo, PeriodosPorSeccao, Scrobble, Seccao } from "@/types";
 import { normalizarNome } from "@/lib/filters";
 import {
   isNotFound,
@@ -76,12 +76,18 @@ function semDuplicados(chave: string, pedido: () => Promise<void>): Promise<void
   return promessa;
 }
 
+/** O mesmo período em todas as secções (estado inicial e migração da v1). */
+function periodosIniciais(periodo: Periodo): PeriodosPorSeccao {
+  return { totais: periodo, artistas: periodo, horas: periodo, musicas: periodo, albuns: periodo, analise: periodo };
+}
+
 // ---------------------------------------------------------------------------
 // Forma da store
 // ---------------------------------------------------------------------------
 
 export interface StoreState {
-  periodo: Periodo;
+  /** Cada secção do dashboard tem o seu filtro de período. */
+  periodos: PeriodosPorSeccao;
   /** Histórico completo. Só em memória (não persiste: ~25 MB). */
   scrobbles: Entry<Scrobble[]>;
   /** Perfis de artista, por nome normalizado. */
@@ -91,7 +97,7 @@ export interface StoreState {
   /** Fotos de artista (top 20 do dashboard), por nome normalizado. */
   imagensArtistas: Record<string, Entry<string | null>>;
 
-  setPeriodo: (periodo: Periodo) => void;
+  setPeriodo: (seccao: Seccao, periodo: Periodo) => void;
   carregarScrobbles: () => Promise<void>;
   carregarArtista: (nome: string) => Promise<void>;
   carregarAlbum: (artista: string, album: string) => Promise<void>;
@@ -103,7 +109,7 @@ type Registos = Pick<StoreState, "artistas" | "albuns" | "imagensArtistas">;
 type DadoDe<K extends keyof Registos> = Registos[K][string] extends Entry<infer T> ? T : never;
 
 /** Parte da store que vai para o localStorage. */
-type EstadoPersistido = Pick<StoreState, "periodo" | "artistas" | "albuns" | "imagensArtistas">;
+type EstadoPersistido = Pick<StoreState, "periodos" | "artistas" | "albuns" | "imagensArtistas">;
 
 /** Só guarda respostas definitivas: nunca "loading" (ficaria preso) nem "error". */
 function soRespostas<T>(registo: Record<string, Entry<T>>): Record<string, Entry<T>> {
@@ -168,13 +174,13 @@ export const useStore = create<StoreState>()(
       }
 
       return {
-        periodo: "tudo",
+        periodos: periodosIniciais("tudo"),
         scrobbles: entradaVazia<Scrobble[]>(),
         artistas: {},
         albuns: {},
         imagensArtistas: {},
 
-        setPeriodo: (periodo) => set({ periodo }),
+        setPeriodo: (seccao, periodo) => set((s) => ({ periodos: { ...s.periodos, [seccao]: periodo } })),
 
         carregarScrobbles: () => {
           if (temResposta(get().scrobbles)) return Promise.resolve();
@@ -200,11 +206,20 @@ export const useStore = create<StoreState>()(
     },
     {
       name: "fmdata",
-      version: 1,
+      // v1 tinha um só `periodo` para o dashboard todo; v2 tem um por secção.
+      version: 2,
+      migrate: (guardado, versao) => {
+        const antigo = (guardado ?? {}) as Partial<EstadoPersistido> & { periodo?: Periodo };
+        if (versao < 2) {
+          const { periodo, ...resto } = antigo;
+          return { ...resto, periodos: periodosIniciais(periodo ?? "tudo") } as EstadoPersistido;
+        }
+        return antigo as EstadoPersistido;
+      },
       storage: createJSONStorage<EstadoPersistido>(() => localStorageSeguro),
       skipHydration: true,
       partialize: (s): EstadoPersistido => ({
-        periodo: s.periodo,
+        periodos: s.periodos,
         artistas: soRespostas(s.artistas),
         albuns: soRespostas(s.albuns),
         imagensArtistas: soRespostas(s.imagensArtistas),

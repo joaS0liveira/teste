@@ -6,12 +6,14 @@ import { useId, type ReactNode } from "react";
  * - "separador": caixa com borda vermelha e o título num separador vermelho;
  * - "aberto": sem caixa, título centrado (para secções largas).
  * Título em letra larga, itálica e maiúscula, com um ícone Solar.
+ * `filtro` (opcional) fica no cabeçalho, à direita do título: o filtro de período da secção.
  */
 export function Bloco({
   titulo,
   icone,
   descricao,
   variante = "colchetes",
+  filtro,
   children,
   className = "",
 }: {
@@ -19,6 +21,8 @@ export function Bloco({
   /** Ícone Solar (linear) que identifica a secção. */
   icone?: ReactNode;
   descricao?: ReactNode;
+  /** Filtro de período desta secção. */
+  filtro?: ReactNode;
   variante?: "colchetes" | "separador" | "aberto";
   children: ReactNode;
   className?: string;
@@ -39,6 +43,7 @@ export function Bloco({
             {titulo}
           </h2>
           {descricao && <p className="mx-auto mt-2 max-w-[70ch] text-texto-suave">{descricao}</p>}
+          {filtro && <div className="mx-auto mt-4 max-w-sm">{filtro}</div>}
         </div>
         {children}
       </section>
@@ -54,12 +59,16 @@ export function Bloco({
             {titulo}
           </h2>
           {descricao && <p className="px-4 py-2 text-sm text-texto-suave">{descricao}</p>}
+          {filtro && <div className="w-full px-3 pb-3 sm:ml-auto sm:w-96 sm:py-2">{filtro}</div>}
         </div>
       ) : (
         <>
-          <h2 id={id} className="titulo-display flex items-center gap-2.5 border-b-2 border-borda-forte px-4 py-3.5 text-lg text-destaque sm:px-5">
-            {marca}[ {titulo} ]
-          </h2>
+          <div className="flex flex-wrap items-center gap-x-4 border-b-2 border-borda-forte">
+            <h2 id={id} className="titulo-display flex items-center gap-2.5 px-4 py-3.5 text-lg text-destaque sm:px-5">
+              {marca}[ {titulo} ]
+            </h2>
+            {filtro && <div className="w-full px-3 pb-3 sm:ml-auto sm:w-96 sm:py-2">{filtro}</div>}
+          </div>
           {descricao && <p className="px-4 pt-3 text-sm text-texto-suave sm:px-5">{descricao}</p>}
         </>
       )}

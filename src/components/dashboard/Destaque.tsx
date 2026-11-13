@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useRef, type ReactNode } from "react";
+import { useId, useRef } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
 import { SquareArrowRightUpIcon } from "@solar-icons/react/linear/square-arrow-right-up";
 import { AltArrowRightIcon } from "@solar-icons/react/linear/alt-arrow-right";
@@ -18,7 +18,7 @@ const BARRAS = [18, 30, 22, 45, 34, 60, 40, 72, 55, 88, 64, 100, 70, 52, 80, 58,
 /**
  * Topo do dashboard: papel quadriculado com linhas finas, que passa por baixo do
  * cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a
- * lista para escolher outro artista do Top 20 e o filtro de período.
+ * lista para escolher outro artista do Top 20 (no período do filtro do Top 20).
  * Não acrescenta dados: o destaque é do Top 20.
  * Quando o cartão sai do ecrã, aparece a versão pequena (MenuFlutuante) à direita.
  */
@@ -28,14 +28,12 @@ export function Destaque({
   escolhido,
   onEscolher,
   fraseDoPeriodo,
-  filtro,
 }: {
   subtitulo: string;
   artistas: ItemRanking[];
   escolhido: ItemRanking | null;
   onEscolher: (chave: string) => void;
   fraseDoPeriodo: string;
-  filtro: ReactNode;
 }) {
   const idLista = useId();
   const nome = escolhido ? (escolhido.artista ?? escolhido.nome) : "";
@@ -134,7 +132,6 @@ export function Destaque({
                 </>
               )}
 
-              {filtro}
             </div>
           </div>
         </div>
@@ -146,7 +143,6 @@ export function Destaque({
         escolhido={escolhido}
         onEscolher={onEscolher}
         fraseDoPeriodo={fraseDoPeriodo}
-        filtro={filtro}
       />
     </>
   );

@@ -5,9 +5,11 @@ import { Microphone3Icon } from "@solar-icons/react/linear/microphone-3";
 import type { ItemRanking } from "@/types";
 import { formatarNumero, plural } from "@/lib/formatar";
 import { caminhoArtista } from "@/lib/rotas";
+import type { ReactNode } from "react";
 import { useImagemArtista } from "@/hooks/useImagemArtista";
 import { Bloco } from "@/components/ui/Bloco";
 import { Capa } from "@/components/ui/Capa";
+import { VazioDoPeriodo } from "@/components/ui/Estados";
 
 /**
  * Top 20 artistas, com o foco no n.º 1:
@@ -15,13 +17,14 @@ import { Capa } from "@/components/ui/Capa";
  * - 2.º ao 10.º numa lista em duas colunas (foto redonda com a posição, nome, contagem);
  * - 11.º ao 20.º numa lista compacta como a do Top 10 músicas.
  */
-export function TopArtistas({ itens }: { itens: ItemRanking[] }) {
+export function TopArtistas({ itens, filtro }: { itens: ItemRanking[]; filtro?: ReactNode }) {
   const [primeiro, ...outros] = itens;
   const ate10 = outros.slice(0, 9);
   const resto = outros.slice(9);
 
   return (
-    <Bloco titulo="Top 20 artistas" icone={<Microphone3Icon size={22} />} descricao="Quem ouves mais no período." variante="separador">
+    <Bloco titulo="Top 20 artistas" icone={<Microphone3Icon size={22} />} descricao="Quem ouves mais no período." variante="separador" filtro={filtro}>
+      {itens.length === 0 && <VazioDoPeriodo />}
       <div className="flex flex-wrap gap-8">
         {primeiro && <PrimeiroLugar item={primeiro} />}
 
