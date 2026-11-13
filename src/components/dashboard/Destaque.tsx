@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
 import { SquareArrowRightUpIcon } from "@solar-icons/react/linear/square-arrow-right-up";
 import { AltArrowLeftIcon } from "@solar-icons/react/linear/alt-arrow-left";
@@ -31,11 +31,14 @@ export function Destaque({
   escolhido,
   albuns,
   rotacao,
+  filtro,
 }: {
   subtitulo: string;
   escolhido: ItemRanking | null;
   /** Os álbuns mais ouvidos do artista em destaque (até 3). */
   albuns: ItemRanking[];
+  /** Filtro de período global (de todo o dashboard). */
+  filtro: ReactNode;
   rotacao: {
     /** Posição do artista em destaque no Top 20 (1 a total). */
     posicao: number;
@@ -177,6 +180,8 @@ export function Destaque({
                 </span>
               </div>
             )}
+
+            <div className="border-t border-borda pt-5">{filtro}</div>
           </div>
         </div>
       </div>
