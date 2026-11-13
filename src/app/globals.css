@@ -51,30 +51,6 @@
   --font-display: var(--font-archivo);
 }
 
-/* Animações do cartão do topo */
-@theme {
-  /* Barra de tempo do artista em destaque (a duração vem do componente) */
-  --animate-progresso: progresso linear both;
-  /* Troca de artista em destaque: entra com um fade curto */
-  --animate-aparecer: aparecer 250ms ease-out both;
-
-  @keyframes progresso {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
-  }
-
-  @keyframes aparecer {
-    from {
-      opacity: 0;
-      transform: translateY(-6px);
-    }
-  }
-}
-
 /* 3. Componentes */
 :root {
   color-scheme: light;
