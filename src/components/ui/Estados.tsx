@@ -45,3 +45,8 @@ export function EstadoVazio({ titulo, children }: { titulo: string; children?: R
     </div>
   );
 }
+
+/** Secção sem reproduções no período que escolheu (cada secção tem o seu filtro). */
+export function VazioDoPeriodo() {
+  return <EstadoVazio titulo="Sem reproduções neste período">Escolhe um período maior no filtro desta secção.</EstadoVazio>;
+}

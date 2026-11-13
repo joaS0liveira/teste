@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { StarsIcon } from "@solar-icons/react/linear/stars";
 import { MOMENTOS, PERGUNTA_ANALISE, type ArtistaDeMomento, type MomentoDoDia } from "@/lib/analise";
 import { formatarPercentagem, plural } from "@/lib/formatar";
@@ -14,13 +15,14 @@ const NO_MOMENTO: Record<MomentoDoDia, string> = {
 };
 
 /** A análise única: a pergunta como título e a resposta por baixo. */
-export function AnaliseUnica({ itens }: { itens: ArtistaDeMomento[] }) {
+export function AnaliseUnica({ itens, filtro }: { itens: ArtistaDeMomento[]; filtro?: ReactNode }) {
   return (
     <Bloco
       titulo={PERGUNTA_ANALISE}
       icone={<StarsIcon size={22} />}
       descricao="A nossa análise única: artistas com pelo menos 10 reproduções no período que juntam 70% ou mais num só momento do dia (horas UTC)."
       variante="separador"
+      filtro={filtro}
     >
       {itens.length === 0 ? (
         <EstadoVazio titulo="Nenhum artista se concentra num só momento do dia">

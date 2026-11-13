@@ -17,6 +17,12 @@ export interface RespostaImagem {
 /** Opções do filtro de período do dashboard. */
 export type Periodo = "tudo" | "30d" | "14d" | "7d" | "24h";
 
+/** Secções do dashboard com filtro de período próprio. */
+export type Seccao = "totais" | "artistas" | "horas" | "musicas" | "albuns" | "analise";
+
+/** O período escolhido em cada secção. */
+export type PeriodosPorSeccao = Record<Seccao, Periodo>;
+
 /** Estado de qualquer dado que vem da rede. */
 export type Status = "idle" | "loading" | "success" | "error" | "not-found";
 

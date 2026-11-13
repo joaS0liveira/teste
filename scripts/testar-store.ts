@@ -84,9 +84,9 @@ async function main() {
   verificar("álbum: 1 fetch (mesma chave)", contar("/album-info"), 1);
 
   console.log("\n=== Persistência (localStorage) ===");
-  loja().setPeriodo("7d");
+  loja().setPeriodo("musicas", "7d");
   const guardado = JSON.parse(memoria.get("fmdata") ?? "{}").state ?? {};
-  verificar("guarda o período", guardado.periodo, "7d");
+  verificar("guarda o período de cada secção", [guardado.periodos?.musicas, guardado.periodos?.artistas], ["7d", "tudo"]);
   verificar("NÃO guarda os scrobbles (~25 MB)", "scrobbles" in guardado, false);
   verificar("guarda perfis com resposta (success e not-found)", Object.keys(guardado.artistas).sort(), ["adele", "beyoncé", "ninguém"]);
   verificar("guarda fotos e álbuns", [Object.keys(guardado.imagensArtistas), Object.keys(guardado.albuns)], [["adele"], ["adele::25"]]);
@@ -94,14 +94,19 @@ async function main() {
   console.log("\n=== Reidratação (simula um refresh) ===");
   // Simula abrir a página de novo: memória limpa, localStorage intacto.
   const noDisco = memoria.get("fmdata") as string;
-  useStore.setState({ periodo: "tudo", artistas: {}, albuns: {}, imagensArtistas: {} });
+  useStore.setState({ periodos: { ...loja().periodos, musicas: "tudo" }, artistas: {}, albuns: {}, imagensArtistas: {} });
   memoria.set("fmdata", noDisco); // o setState acima também grava; repõe o que estava
   await useStore.persist.rehydrate();
-  verificar("período volta", loja().periodo, "7d");
+  verificar("período da secção volta", loja().periodos.musicas, "7d");
   verificar("perfil volta sem novo fetch", loja().artistas["adele"]?.data?.name, "Adele");
   const antes = contar("/artist-info");
   await loja().carregarArtista("Adele");
   verificar("depois do refresh, Adele vem da cache", contar("/artist-info"), antes);
+
+  console.log("\n=== Migração v1 → v2 (um período → um por secção) ===");
+  memoria.set("fmdata", JSON.stringify({ state: { periodo: "30d", artistas: {}, albuns: {}, imagensArtistas: {} }, version: 1 }));
+  await useStore.persist.rehydrate();
+  verificar("o período antigo passa para todas as secções", Object.values(loja().periodos), ["30d", "30d", "30d", "30d", "30d", "30d"]);
 
   console.log(falhas === 0 ? "\nTudo certo OK" : `\n${falhas} teste(s) falharam FALHA`);
   process.exit(falhas === 0 ? 0 : 1);

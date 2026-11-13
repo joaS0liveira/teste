@@ -1,13 +1,16 @@
 import { MusicNotesIcon } from "@solar-icons/react/linear/music-notes";
+import type { ReactNode } from "react";
 import type { ItemRanking } from "@/types";
 import { plural } from "@/lib/formatar";
 import { Bloco } from "@/components/ui/Bloco";
 import { Capa } from "@/components/ui/Capa";
+import { VazioDoPeriodo } from "@/components/ui/Estados";
 
 /** Top 10 músicas em grelha, como os álbuns: capa como fundo, posição, faixa, álbum e contagem. */
-export function TopMusicas({ itens }: { itens: ItemRanking[] }) {
+export function TopMusicas({ itens, filtro }: { itens: ItemRanking[]; filtro?: ReactNode }) {
   return (
-    <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={20} />} descricao="As faixas que mais ouves no período.">
+    <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={20} />} descricao="As faixas que mais ouves no período." filtro={filtro}>
+      {itens.length === 0 && <VazioDoPeriodo />}
       <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
         {itens.map((m, i) => (
           <li key={m.chave} className="relative aspect-square overflow-hidden border border-borda">
