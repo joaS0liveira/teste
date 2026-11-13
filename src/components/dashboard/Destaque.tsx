@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useId, type ReactNode } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
@@ -16,8 +15,8 @@ import { caminhoArtista } from "@/lib/rotas";
 const BARRAS = [18, 30, 22, 45, 34, 60, 40, 72, 55, 88, 64, 100, 70, 52, 80, 58, 92, 66, 48, 74, 38, 56, 28, 20];
 
 /**
- * Topo do dashboard: imagem de fundo (ondas e auscultadores) que passa por baixo
- * do cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a
+ * Topo do dashboard: papel quadriculado com linhas finas, que passa por baixo do
+ * cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a
  * lista para escolher outro artista do Top 20 e o filtro de período.
  * Não acrescenta dados: o destaque é do Top 20.
  */
@@ -41,8 +40,15 @@ export function Destaque({
   const posicao = escolhido ? artistas.indexOf(escolhido) + 1 : 0;
 
   return (
-    <section className="relative -mt-(--altura-cabecalho) overflow-hidden border-b border-borda-forte bg-fundo-imagem pt-(--altura-cabecalho)">
-      <Image src="/fundo-musica.webp" alt="" fill priority sizes="100vw" className="object-cover" />
+    <section className="papel relative -mt-(--altura-cabecalho) overflow-hidden border-b border-borda-forte pt-(--altura-cabecalho)">
+      {/* Linhas de desenho técnico (decoração) */}
+      <div aria-hidden="true" className="hidden lg:block">
+        <div className="absolute top-28 left-10 h-56 w-72 border border-borda" />
+        <div className="absolute top-38 left-16 h-px w-60 bg-borda" />
+        <div className="absolute top-32 right-14 size-56 rounded-full border border-borda" />
+        <div className="absolute top-46 right-28 size-28 rounded-full border border-borda" />
+        <div className="absolute right-10 bottom-9 left-10 h-px bg-borda" />
+      </div>
 
       <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-10 sm:px-6 sm:py-16">
         <div className="relative w-full max-w-3xl">

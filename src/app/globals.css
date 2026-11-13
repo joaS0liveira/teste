@@ -19,7 +19,6 @@
   --color-branco: #ffffff;
   --color-cinza-claro: #e9e7e3;
   --color-rosa: #f6d9d7;
-  --color-pessego: #fdeee6;
   --color-vermelho-linha: #e7b3b0;
   --color-vermelho-barra: #f0b4b1;
   --color-vermelho: #c81e26;
@@ -32,8 +31,6 @@
 /* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
   --color-fundo: var(--color-creme);
-  /* Cor de base da imagem do topo (aparece enquanto a imagem carrega) */
-  --color-fundo-imagem: var(--color-pessego);
   --color-superficie: var(--color-branco);
   --color-superficie-alta: var(--color-rosa);
   --color-superficie-cinza: var(--color-cinza-claro);

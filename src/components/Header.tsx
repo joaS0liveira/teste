@@ -5,8 +5,8 @@ import { HeadphonesRoundSoundIcon } from "@solar-icons/react/bold/headphones-rou
  * Cabeçalho comum a todas as páginas: o logótipo, que leva ao dashboard.
  * - Ícone Solar de auscultadores com som num anel vermelho (skills solar-icons e
  *   impeccable: ícones de uma biblioteca real, nunca caracteres ou emoji).
- * - Fundo transparente e altura fixa (--altura-cabecalho): no dashboard, a imagem
- *   do topo passa por baixo do cabeçalho.
+ * - Fundo transparente e altura fixa (--altura-cabecalho): no dashboard, o papel
+ *   quadriculado do topo passa por baixo do cabeçalho.
  * - O logótipo não é <h1>: cada página tem o seu próprio título principal.
  */
 export default function Header() {
