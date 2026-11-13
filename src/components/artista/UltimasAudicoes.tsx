@@ -6,7 +6,7 @@ import { HistoryIcon } from "@solar-icons/react/linear/history";
 /** Últimas 10 audições: da mais recente para a mais antiga, com faixa e data. */
 export function UltimasAudicoes({ audicoes }: { audicoes: Scrobble[] }) {
   return (
-    <Bloco titulo="Últimas 10 audições" icone={<HistoryIcon size={24} />} descricao="O teu histórico recente com este artista.">
+    <Bloco titulo="Últimas 10 audições" icone={<HistoryIcon size={20} />} descricao="O teu histórico recente com este artista.">
       <ol className="divide-y divide-borda">
         {audicoes.map((s) => {
           const data = parseDataScrobble(s);

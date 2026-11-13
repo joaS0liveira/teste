@@ -27,22 +27,22 @@ export function EstatisticasArtista({ resumo, info }: { resumo: ResumoArtista; i
       />
       <div className="flex min-w-0 flex-[999_1_420px] flex-col gap-5">
         {info && (info.bio_summary || info.bio_content) && (
-          <p className="max-w-[70ch] text-lg leading-relaxed whitespace-pre-line text-texto-suave">
+          <p className="max-w-[70ch] text-lg leading-relaxed whitespace-pre-line text-texto">
             {info.bio_summary || info.bio_content}
           </p>
         )}
-        <h2 id="titulo-estatisticas" className="inline-flex items-center gap-3 text-sm font-bold tracking-[0.2em] text-destaque uppercase">
+        <h2 id="titulo-estatisticas" className="titulo-display inline-flex items-center gap-2.5 text-lg text-destaque">
           <GraphUpIcon size={20} aria-hidden="true" /> Estatísticas
         </h2>
         <p className="-mt-3 text-texto-suave">Resumo da tua relação com este artista.</p>
-        <dl className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+        <dl className="grid grid-cols-2 gap-px border-2 border-borda-forte bg-borda sm:grid-cols-3 lg:grid-cols-5">
           {cartoes.map((c) => (
-            <div key={c.rotulo}>
+            <div key={c.rotulo} className="bg-superficie p-3.5">
               <dt className="flex items-center gap-1.5 text-sm text-texto-suave">
                 {c.favoritas && <HeartIcon size={16} aria-hidden="true" />}
                 {c.rotulo}
               </dt>
-              <dd className="text-2xl font-extrabold tabular-nums sm:text-3xl">{c.valor}</dd>
+              <dd className="font-display text-2xl font-black tabular-nums italic">{c.valor}</dd>
             </div>
           ))}
         </dl>
