@@ -8,7 +8,7 @@ Transforma o histórico de reproduções (scrobbles) de um utilizador numa anál
 
 | Rota | O que mostra |
 |---|---|
-| `/` — Dashboard | Totais, Top 20 artistas, Top 10 músicas, Top 8 álbuns, gráfico das 24 horas (UTC), género mais ouvido e a análise única. Filtro de período global no topo (tudo, 30, 14, 7 dias ou 24 horas), que muda todas as secções; cada secção pode ainda ter uma exceção no seu próprio filtro. |
+| `/` — Dashboard | Totais, Top 20 artistas, Top 10 músicas, Top 8 álbuns, gráfico das 24 horas (UTC), género mais ouvido e a análise única. Cada secção tem o seu filtro de período, no cabeçalho: tudo, 30, 14, 7 dias ou 24 horas. |
 | `/artistas/[nome]` — Página do artista | Cabeçalho (foto, tags, links, biografia), estatísticas, Top 10 músicas, álbuns ("Ouviste X de Y faixas"), reproduções por mês, relógio das 24 horas, últimas 10 reproduções e artistas semelhantes. Sempre com o histórico todo. |
 
 **Análise única:** *Que artistas ouves só a certas horas do dia?* — artistas com pelo menos 10 reproduções que juntam 70% ou mais num só momento do dia (madrugada, manhã, tarde ou noite, em UTC).
@@ -66,7 +66,7 @@ src/
 - **Funções puras em `lib/`.** Toda a transformação de dados vive aqui: sem `fetch`, sem store e sem `Date.now()`. Entram scrobbles, sai o resultado. Por isso são fáceis de testar (`scripts/testar-lib.ts`).
 - **Os períodos contam a partir da última reprodução**, não da hora atual. "24 horas" são as 24 horas antes do scrobble mais recente.
 - **Store Zustand com quatro papéis:**
-  - *estado global* — `periodo`, o filtro de todo o dashboard, e as exceções de cada secção (o filtro global apaga-as);
+  - *estado global* — o período de cada secção do dashboard (`periodo` + `excecoes`), lido com `usePeriodo` / `usePeriodoDasSeccoes`;
   - *cache* — cada pedido fica num `Entry<T>` (`data`, `status`, `error`); com resposta, não se volta a pedir;
   - *persistência* — `persist` em localStorage com `skipHydration` (a reidratação é feita no cliente, em `useHydrated`);
   - *deduplicação* — pedidos iguais em simultâneo partilham a mesma promessa.
