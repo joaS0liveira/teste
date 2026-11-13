@@ -135,9 +135,7 @@ export default function Dashboard() {
           <Faixa className="space-y-10">
             <TopMusicas itens={musicas} filtro={filtro("musicas", "Top 10 músicas")} />
             <TopAlbuns itens={albuns} filtro={filtro("albuns", "Top 8 álbuns")} />
-            <div className="mx-auto max-w-4xl">
-              <AnaliseUnica itens={analise} filtro={filtro("analise", "análise única")} />
-            </div>
+            <AnaliseUnica itens={analise} filtro={filtro("analise", "análise única")} />
           </Faixa>
         </>
       )}
