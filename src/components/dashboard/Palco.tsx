@@ -1,59 +1,60 @@
-"use client";
-
+import Image from "next/image";
 import type { GeneroContagem } from "@/types";
 import { formatarHora } from "@/lib/dates";
 import { formatarNumero, plural } from "@/lib/formatar";
-import { useImagemArtista } from "@/hooks/useImagemArtista";
-import { Capa } from "@/components/ui/Capa";
 
 /**
- * Totais e género mais ouvido, em palco: a foto do artista em destaque a cinzento
- * (vinda da API), as audições ao centro e os outros números nos 4 cantos.
+ * Totais e género mais ouvido, em palco: a imagem dos auscultadores ao centro,
+ * as audições por baixo e os outros números nos 4 cantos (em ecrãs pequenos,
+ * os cantos passam para uma grelha por baixo da imagem).
  */
 export function Palco({
-  artista,
   audicoes,
   artistas,
   genero,
   pico,
   fraseDoPeriodo,
 }: {
-  artista: string;
   audicoes: number;
   artistas: number;
   genero: GeneroContagem | null;
   pico: number | null;
   fraseDoPeriodo: string;
 }) {
-  const foto = useImagemArtista(artista);
   const cantos = [
-    { rotulo: "Artistas distintos", valor: formatarNumero(artistas), lugar: "md:top-12 md:left-12" },
+    { rotulo: "Artistas distintos", valor: formatarNumero(artistas), lugar: "lg:top-10 lg:left-6" },
     {
       rotulo: "Género mais ouvido",
       valor: genero ? genero.genero : "Sem etiquetas",
       extra: genero ? `em ${plural(genero.contagem, "audição", "audições")}` : undefined,
-      lugar: "md:top-12 md:right-12 md:text-right",
+      lugar: "lg:top-10 lg:right-6 lg:text-right",
     },
-    { rotulo: "Hora de pico", valor: pico !== null ? `${formatarHora(pico)} UTC` : "—", lugar: "md:bottom-12 md:left-12" },
-    { rotulo: "Período", valor: fraseDoPeriodo, lugar: "md:right-12 md:bottom-12 md:text-right" },
+    { rotulo: "Hora de pico", valor: pico !== null ? `${formatarHora(pico)} UTC` : "—", lugar: "lg:bottom-10 lg:left-6" },
+    { rotulo: "Período", valor: fraseDoPeriodo, lugar: "lg:right-6 lg:bottom-10 lg:text-right" },
   ];
 
   return (
-    <section aria-labelledby="titulo-totais" className="relative overflow-hidden border-b border-borda-forte bg-superficie-cinza">
+    <section aria-labelledby="titulo-totais" className="border-b border-borda-forte bg-superficie">
       <h2 id="titulo-totais" className="sr-only">Totais</h2>
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-12 sm:px-6 md:min-h-[660px] md:justify-center">
-        <div className="relative">
-          <Capa src={foto.data} alt={`Foto de ${artista}, a cinzento`} className="h-[400px] w-[320px] grayscale md:h-[560px] md:w-[460px]" />
-          <p className="titulo-display absolute inset-0 flex flex-col items-center justify-center text-center text-5xl leading-[0.95] text-destaque [text-shadow:0_2px_16px_rgb(255_255_255/0.9)] md:text-7xl">
-            <span className="tabular-nums">{formatarNumero(audicoes)}</span>
-            <span>audições</span>
-          </p>
-        </div>
-        <dl className="mt-8 grid w-full grid-cols-2 gap-6 md:contents">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-16">
+        <Image
+          src="/palco-auscultadores.webp"
+          alt=""
+          width={1774}
+          height={887}
+          sizes="(min-width: 1024px) 768px, 92vw"
+          className="mx-auto h-auto w-full max-w-3xl"
+        />
+        <p className="titulo-display mt-2 text-center text-5xl leading-[0.95] text-destaque sm:text-6xl lg:text-7xl">
+          <span className="tabular-nums">{formatarNumero(audicoes)}</span> audições
+        </p>
+        <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 lg:contents">
           {cantos.map((c) => (
-            <div key={c.rotulo} className={`md:absolute ${c.lugar}`}>
-              <dt className="font-display text-sm font-extrabold tracking-wide text-destaque uppercase italic">{c.rotulo}</dt>
-              <dd className="font-display text-2xl font-black text-destaque italic first-letter:uppercase md:text-3xl">{c.valor}</dd>
+            <div key={c.rotulo} className={`min-w-0 lg:absolute lg:max-w-60 ${c.lugar}`}>
+              <dt className="font-display text-xs font-extrabold tracking-wide text-destaque uppercase italic sm:text-sm">{c.rotulo}</dt>
+              <dd className="font-display text-xl font-black break-words text-destaque italic first-letter:uppercase sm:text-2xl lg:text-3xl">
+                {c.valor}
+              </dd>
               {c.extra && <dd className="text-sm text-texto-suave">{c.extra}</dd>}
             </div>
           ))}

@@ -97,7 +97,6 @@ export default function Dashboard() {
       {pronto && escolhido && (
         <>
           <Palco
-            artista={escolhido.artista ?? escolhido.nome}
             audicoes={dados.audicoes}
             artistas={dados.artistas}
             genero={dados.genero}

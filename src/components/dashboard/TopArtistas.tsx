@@ -72,13 +72,15 @@ function PrimeiroLugar({ item }: { item: ItemRanking }) {
   const nome = item.artista ?? item.nome;
   const foto = useImagemArtista(nome);
   return (
-    <div className="flex flex-[1_1_240px] flex-col gap-2 sm:max-w-72">
-      <Capa src={foto.data} alt={`Foto de ${nome}`} className="aspect-square w-full border-2 border-borda-forte" />
-      <p className="font-display text-sm font-extrabold tracking-wide text-destaque uppercase italic">1.º do período</p>
-      <Link href={caminhoArtista(nome)} className="font-display text-3xl font-black italic hover:text-destaque">
-        {item.nome}
-      </Link>
-      <p className="text-texto-suave">{plural(item.contagem, "audição", "audições")}</p>
+    <div className="flex flex-[1_1_240px] items-center gap-4 sm:max-w-72 sm:flex-col sm:items-stretch sm:gap-2">
+      <Capa src={foto.data} alt={`Foto de ${nome}`} className="aspect-square w-28 shrink-0 border-2 border-borda-forte sm:w-full" />
+      <div className="flex min-w-0 flex-col gap-1 sm:gap-2">
+        <p className="font-display text-sm font-extrabold tracking-wide text-destaque uppercase italic">1.º do período</p>
+        <Link href={caminhoArtista(nome)} className="font-display text-2xl font-black break-words italic hover:text-destaque sm:text-3xl">
+          {item.nome}
+        </Link>
+        <p className="text-texto-suave">{plural(item.contagem, "audição", "audições")}</p>
+      </div>
     </div>
   );
 }
