@@ -2,7 +2,8 @@
  * store/useStore.ts — store global (Zustand).
  *
  * Resolve os quatro problemas do enunciado:
- *  1. Estado global   → `periodos`: o período escolhido em cada secção do dashboard.
+ *  1. Estado global   → `periodo`, o filtro de todo o dashboard; cada secção pode
+ *                       ter uma exceção (`excecoes`), que o filtro global apaga.
  *  2. Cache           → cada pedido fica guardado num `Entry<T>`; se já há
  *                       resposta ("success" ou "not-found"), não se pede outra vez.
  *  3. Persistência    → middleware `persist` em localStorage, com `skipHydration`
@@ -12,16 +13,16 @@
  *
  * Decisão sobre o que persistir:
  *  O histórico completo tem ~51 700 scrobbles (~25 MB) e o localStorage aguenta
- *  ~5 MB. Por isso persistem os períodos e os perfis (artistas, álbuns, fotos),
- *  que são pequenos; os scrobbles ficam em cache só em memória, durante a sessão
- *  (são pedidos uma vez e partilhados por todas as páginas).
+ *  ~5 MB. Por isso no localStorage ficam o período e os perfis (artistas, álbuns,
+ *  fotos), que são pequenos; os scrobbles vão para o IndexedDB
+ *  (services/armazemLocal.ts), que aguenta o tamanho, e valem durante 1 hora.
  *
  * Os componentes não usam esta store diretamente: usam os hooks de hooks/.
  */
 import { create } from "zustand";
 import { createJSONStorage, persist, type StateStorage } from "zustand/middleware";
-import type { AlbumInfo, ArtistInfo, Entry, Periodo, PeriodosPorSeccao, Scrobble, Seccao } from "@/types";
-import { normalizarNome } from "@/lib/filters";
+import type { AlbumInfo, ArtistInfo, Entry, ExcecoesDePeriodo, Periodo, PeriodosPorSeccao, Scrobble, Seccao } from "@/types";
+import { normalizarNome, SECCOES } from "@/lib/filters";
 import {
   isNotFound,
   mensagemDeErro,
@@ -30,6 +31,7 @@ import {
   obterImagemArtista,
   obterScrobbles,
 } from "@/services/api";
+import { guardarScrobbles, lerScrobblesGuardados } from "@/services/armazemLocal";
 
 // ---------------------------------------------------------------------------
 // Entry<T>: os estados possíveis de um dado da rede
@@ -76,18 +78,15 @@ function semDuplicados(chave: string, pedido: () => Promise<void>): Promise<void
   return promessa;
 }
 
-/** O mesmo período em todas as secções (estado inicial e migração da v1). */
-function periodosIniciais(periodo: Periodo): PeriodosPorSeccao {
-  return { totais: periodo, artistas: periodo, horas: periodo, musicas: periodo, albuns: periodo, analise: periodo };
-}
-
 // ---------------------------------------------------------------------------
 // Forma da store
 // ---------------------------------------------------------------------------
 
 export interface StoreState {
-  /** Cada secção do dashboard tem o seu filtro de período. */
-  periodos: PeriodosPorSeccao;
+  /** Filtro de período de todo o dashboard. */
+  periodo: Periodo;
+  /** Secções com um período diferente do global (o filtro global apaga-as). */
+  excecoes: ExcecoesDePeriodo;
   /** Histórico completo. Só em memória (não persiste: ~25 MB). */
   scrobbles: Entry<Scrobble[]>;
   /** Perfis de artista, por nome normalizado. */
@@ -97,7 +96,10 @@ export interface StoreState {
   /** Fotos de artista (top 20 do dashboard), por nome normalizado. */
   imagensArtistas: Record<string, Entry<string | null>>;
 
-  setPeriodo: (seccao: Seccao, periodo: Periodo) => void;
+  /** Muda o período de TODO o dashboard (e apaga as exceções das secções). */
+  setPeriodo: (periodo: Periodo) => void;
+  /** Muda só uma secção; igual ao global deixa de ser exceção. */
+  setPeriodoDaSeccao: (seccao: Seccao, periodo: Periodo) => void;
   carregarScrobbles: () => Promise<void>;
   carregarArtista: (nome: string) => Promise<void>;
   carregarAlbum: (artista: string, album: string) => Promise<void>;
@@ -109,7 +111,7 @@ type Registos = Pick<StoreState, "artistas" | "albuns" | "imagensArtistas">;
 type DadoDe<K extends keyof Registos> = Registos[K][string] extends Entry<infer T> ? T : never;
 
 /** Parte da store que vai para o localStorage. */
-type EstadoPersistido = Pick<StoreState, "periodos" | "artistas" | "albuns" | "imagensArtistas">;
+type EstadoPersistido = Pick<StoreState, "periodo" | "excecoes" | "artistas" | "albuns" | "imagensArtistas">;
 
 /** Só guarda respostas definitivas: nunca "loading" (ficaria preso) nem "error". */
 function soRespostas<T>(registo: Record<string, Entry<T>>): Record<string, Entry<T>> {
@@ -174,20 +176,37 @@ export const useStore = create<StoreState>()(
       }
 
       return {
-        periodos: periodosIniciais("tudo"),
+        periodo: "tudo",
+        excecoes: {},
         scrobbles: entradaVazia<Scrobble[]>(),
         artistas: {},
         albuns: {},
         imagensArtistas: {},
 
-        setPeriodo: (seccao, periodo) => set((s) => ({ periodos: { ...s.periodos, [seccao]: periodo } })),
+        setPeriodo: (periodo) => set({ periodo, excecoes: {} }),
+        setPeriodoDaSeccao: (seccao, periodo) =>
+          set((s) => {
+            const excecoes = { ...s.excecoes };
+            if (periodo === s.periodo) delete excecoes[seccao];
+            else excecoes[seccao] = periodo;
+            return { excecoes };
+          }),
 
         carregarScrobbles: () => {
           if (temResposta(get().scrobbles)) return Promise.resolve();
           return semDuplicados("scrobbles", async () => {
             set((s) => ({ scrobbles: aCarregar(s.scrobbles) }));
+            // 1.º o IndexedDB: depois de um refresh, o histórico já lá está e não se pede outra vez.
+            const guardado = await lerScrobblesGuardados(Date.now());
+            if (guardado) {
+              set({ scrobbles: { data: guardado.dados, status: "success", error: null, updatedAt: guardado.em } });
+              return;
+            }
             try {
-              set({ scrobbles: comSucesso(await obterScrobbles()) });
+              const dados = await obterScrobbles();
+              const agora = Date.now();
+              set({ scrobbles: { data: dados, status: "success", error: null, updatedAt: agora } });
+              void guardarScrobbles(dados, agora);
             } catch (erro) {
               set({ scrobbles: comErro<Scrobble[]>(erro) });
             }
@@ -206,20 +225,24 @@ export const useStore = create<StoreState>()(
     },
     {
       name: "fmdata",
-      // v1 tinha um só `periodo` para o dashboard todo; v2 tem um por secção.
-      version: 2,
+      // v1: só `periodo`; v2: `periodos`, um por secção; v3: `periodo` global + `excecoes`.
+      version: 3,
       migrate: (guardado, versao) => {
-        const antigo = (guardado ?? {}) as Partial<EstadoPersistido> & { periodo?: Periodo };
-        if (versao < 2) {
-          const { periodo, ...resto } = antigo;
-          return { ...resto, periodos: periodosIniciais(periodo ?? "tudo") } as EstadoPersistido;
+        const antigo = (guardado ?? {}) as Partial<EstadoPersistido> & { periodos?: PeriodosPorSeccao };
+        if (versao === 2 && antigo.periodos) {
+          const { periodos, ...resto } = antigo;
+          // O global passa a ser o dos totais; as secções diferentes ficam como exceção.
+          const periodo = periodos.totais ?? "tudo";
+          const excecoes = Object.fromEntries(SECCOES.filter((s) => periodos[s] !== periodo).map((s) => [s, periodos[s]]));
+          return { ...resto, periodo, excecoes } as EstadoPersistido;
         }
-        return antigo as EstadoPersistido;
+        return { ...antigo, periodo: antigo.periodo ?? "tudo", excecoes: antigo.excecoes ?? {} } as EstadoPersistido;
       },
       storage: createJSONStorage<EstadoPersistido>(() => localStorageSeguro),
       skipHydration: true,
       partialize: (s): EstadoPersistido => ({
-        periodos: s.periodos,
+        periodo: s.periodo,
+        excecoes: s.excecoes,
         artistas: soRespostas(s.artistas),
         albuns: soRespostas(s.albuns),
         imagensArtistas: soRespostas(s.imagensArtistas),

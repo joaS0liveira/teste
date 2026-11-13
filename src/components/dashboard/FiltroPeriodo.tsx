@@ -12,24 +12,29 @@ export const OPCOES_PERIODO: { valor: Periodo; rotulo: string; frase: string }[]
 
 /**
  * O filtro de período: tudo, últimos 30, 14, 7 dias ou 24 horas.
- * Cada secção do dashboard tem o seu (no cabeçalho do Bloco), e `seccao` dá nome
- * ao grupo para os leitores de ecrã ("Período: Top 20 artistas").
+ * Serve para o filtro global do topo (com `titulo` visível) e para o de cada
+ * secção (no cabeçalho do Bloco); `seccao` dá nome ao grupo para os leitores de
+ * ecrã ("Período: Top 20 artistas").
  * O tamanho da letra segue o espaço que o filtro tem (container query), não o ecrã.
  */
 export function FiltroPeriodo({
   periodo,
   onMudar,
   seccao,
+  titulo,
 }: {
   periodo: Periodo;
   onMudar: (p: Periodo) => void;
   seccao: string;
+  /** Texto visível por cima dos botões (só no filtro global). */
+  titulo?: string;
 }) {
   const rotulo = useId();
   return (
-    <div className="@container flex items-center gap-2">
-      <span id={rotulo} className="inline-flex shrink-0 items-center text-destaque">
+    <div className={`@container flex gap-2 ${titulo ? "flex-col" : "items-center"}`}>
+      <span id={rotulo} className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-destaque">
         <ClockCircleIcon size={20} aria-hidden="true" />
+        {titulo ? <span aria-hidden="true">{titulo}</span> : null}
         <span className="sr-only">Período: {seccao}</span>
       </span>
       <div role="group" aria-labelledby={rotulo} className="grid flex-1 grid-cols-5 gap-1 @md:gap-1.5">

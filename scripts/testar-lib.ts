@@ -25,6 +25,7 @@ import {
   filtrarPorArtista,
   filtrarPorPeriodo,
   normalizarNome,
+  periodosDasSeccoes,
   removerSemData,
   separarLista,
 } from "../src/lib/filters";
@@ -97,6 +98,8 @@ verificar("separarLista ;", separarLista("Hello; Remedy;River Lea", ";"), ["Hell
 verificar("separarLista vazio", separarLista(""), []);
 verificar("filtrarPorPeriodo([])", filtrarPorPeriodo([], "24h"), []);
 verificar("filtrarPorPeriodo só nowplaying → []", filtrarPorPeriodo([s({ nowplaying: true })], "7d"), []);
+verificar("periodosDasSeccoes: sem exceções, todas iguais ao global", Object.values(periodosDasSeccoes("7d", {})), ["7d", "7d", "7d", "7d", "7d", "7d"]);
+verificar("periodosDasSeccoes: a exceção ganha ao global", periodosDasSeccoes("7d", { musicas: "tudo" }).musicas, "tudo");
 verificar("filtrarPorArtista nome vazio → []", filtrarPorArtista([s({})], "  "), []);
 
 console.log("\n=== stats.ts: casos limite ===");
