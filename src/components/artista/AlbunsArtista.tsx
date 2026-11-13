@@ -11,7 +11,7 @@ import { Capa } from "@/components/ui/Capa";
 /** Álbuns do artista, agrupados por álbum, com "Ouviste X de Y faixas". */
 export function AlbunsArtista({ albuns }: { albuns: AlbumDoArtista[] }) {
   return (
-    <Bloco titulo="Álbuns" icone={<AlbumIcon size={28} />} descricao="Os álbuns deste artista e quanto os ouves." centrado>
+    <Bloco titulo="Álbuns" icone={<AlbumIcon size={30} />} descricao="Os álbuns deste artista e quanto os ouves." variante="aberto">
       <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {albuns.map((album) => (
           <CartaoAlbum key={album.chave} album={album} />
@@ -27,12 +27,12 @@ function CartaoAlbum({ album }: { album: AlbumDoArtista }) {
   const { ouvidas, total } = coberturaDoAlbum(album, info.data);
 
   return (
-    <li className="overflow-hidden rounded-2xl border border-borda bg-superficie">
-      <Capa src={album.imagem} className="aspect-square w-full" />
+    <li className="border-2 border-borda-forte bg-superficie">
+      <Capa src={album.imagem} className="aspect-square w-full border-b-2 border-borda-forte" />
       <div className="p-3.5">
-        <p className="truncate text-lg font-extrabold">{album.nome}</p>
+        <p className="truncate font-display text-xl font-black italic">{album.nome}</p>
         <p className="text-sm text-texto-suave">{plural(album.contagem, "audição", "audições")}</p>
-        <p className="mt-2 text-sm">
+        <p className="mt-2 text-sm font-bold">
           {info.status === "loading"
             ? "A ver o álbum…"
             : total !== null
@@ -40,8 +40,8 @@ function CartaoAlbum({ album }: { album: AlbumDoArtista }) {
               : plural(ouvidas, "faixa ouvida", "faixas ouvidas")}
         </p>
         {total !== null && total > 0 && (
-          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-superficie-alta" aria-hidden="true">
-            <div className="h-full rounded-full bg-destaque" style={{ width: `${Math.min(100, (ouvidas / total) * 100)}%` }} />
+          <div className="mt-2 h-1.5 overflow-hidden bg-superficie-alta" aria-hidden="true">
+            <div className="h-full bg-destaque" style={{ width: `${Math.min(100, (ouvidas / total) * 100)}%` }} />
           </div>
         )}
       </div>

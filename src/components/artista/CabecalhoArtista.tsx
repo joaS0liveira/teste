@@ -18,58 +18,62 @@ export function CabecalhoArtista({ nome, perfil }: { nome: string; perfil: Estad
     : [];
 
   return (
-    <section className="relative overflow-hidden border-b border-borda">
-      {info?.image_url && <Capa src={info.image_url} alt="" className="absolute inset-0 size-full object-[center_25%]" />}
-      <div className="absolute inset-0 bg-linear-to-t from-fundo via-fundo/70 to-fundo/30" />
+    <section className="papel border-b border-borda-forte">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-end gap-10 px-4 pt-6 pb-12 sm:px-6">
+        <div className="flex min-w-0 flex-[999_1_520px] flex-col gap-5">
+          <Link href="/" className="inline-flex min-h-11 w-fit items-center gap-2 text-texto-suave hover:text-texto">
+            <ArrowLeftIcon size={18} aria-hidden="true" /> Dashboard
+          </Link>
+          <h1 className="titulo-display mt-10 text-6xl leading-[0.85] text-balance text-destaque sm:text-8xl lg:text-9xl">
+            {info?.name ?? nome}
+          </h1>
 
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-5 px-4 pt-8 pb-12 sm:px-6">
-        <Link href="/" className="inline-flex min-h-11 w-fit items-center gap-2 text-texto-suave hover:text-texto">
-          <ArrowLeftIcon size={18} aria-hidden="true" /> Dashboard
-        </Link>
-        <h1 className="mt-16 text-6xl leading-[0.9] font-black tracking-tight text-balance uppercase sm:mt-24 sm:text-8xl">
-          {info?.name ?? nome}
-        </h1>
+          {perfil.status === "loading" && (
+            <p role="status" className="text-texto-suave">A carregar o perfil…</p>
+          )}
+          {perfil.status === "not-found" && <p className="text-texto-suave">A Last.fm não tem perfil para este artista.</p>}
+          {perfil.status === "error" && (
+            <p role="alert" className="text-perigo">
+              Não foi possível carregar o perfil.{" "}
+              <button type="button" onClick={perfil.recarregar} className="underline">
+                Tentar de novo
+              </button>
+            </p>
+          )}
 
-        {perfil.status === "loading" && (
-          <p role="status" className="text-texto-suave">A carregar o perfil…</p>
-        )}
-        {perfil.status === "not-found" && <p className="text-texto-suave">A Last.fm não tem perfil para este artista.</p>}
-        {perfil.status === "error" && (
-          <p role="alert" className="text-perigo">
-            Não foi possível carregar o perfil.{" "}
-            <button type="button" onClick={perfil.recarregar} className="underline">
-              Tentar de novo
-            </button>
-          </p>
-        )}
-
-        {info && (
-          <>
-            <ul aria-label="Tags" className="flex flex-wrap gap-2">
-              {separarLista(info.tags).map((tag) => (
-                <li key={tag} className="rounded-full border border-destaque px-3.5 py-1.5 text-sm font-semibold text-destaque">
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            <ul aria-label="Links externos" className="flex flex-wrap gap-5">
-              {links.map((l) => (
-                <li key={l.rotulo}>
-                  <a
-                    href={l.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-destaque hover:text-destaque-claro"
-                  >
-                    {l.rotulo}
-                    <SquareArrowRightUpIcon size={16} aria-hidden="true" />
-                    <span className="sr-only">(abre noutro separador)</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+          {info && (
+            <>
+              <ul aria-label="Tags" className="flex flex-wrap gap-2">
+                {separarLista(info.tags).map((tag) => (
+                  <li key={tag} className="border-2 border-borda-forte px-3 py-1 font-display text-sm font-extrabold text-destaque uppercase italic">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+              <ul aria-label="Links externos" className="flex flex-wrap gap-5">
+                {links.map((l) => (
+                  <li key={l.rotulo}>
+                    <a
+                      href={l.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-11 items-center gap-1.5 font-extrabold text-destaque hover:text-destaque-claro"
+                    >
+                      {l.rotulo}
+                      <SquareArrowRightUpIcon size={16} aria-hidden="true" />
+                      <span className="sr-only">(abre noutro separador)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+        <Capa
+          src={info?.image_url}
+          alt={info ? `Foto de ${info.name}` : ""}
+          className="aspect-[4/5] w-full max-w-sm flex-[1_1_300px] border-2 border-borda-forte"
+        />
       </div>
     </section>
   );

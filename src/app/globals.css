@@ -2,56 +2,80 @@
 
 /*
  * Tokens de design em três camadas (skill design-system):
- *   1. Primitivos   → a paleta verde do projeto (--color-verde-*, --color-neon)
+ *   1. Primitivos   → a paleta do projeto (creme, vermelho, rosa, tinta…)
  *   2. Semânticos   → para que serve cada cor (fundo, superfície, texto, destaque…)
- *   3. Componentes  → valores de um componente concreto (gráficos)
+ *   3. Componentes  → valores de um componente concreto (gráficos, papel quadriculado)
  * Os componentes só usam as camadas 2 e 3: mudar o tema é mudar só este ficheiro.
  *
- * Estilo: verde néon sobre verde escuro (maqueta aprovada). Tema escuro por
- * decisão (skill impeccable: escolher pelo cenário de uso — ver o próprio
- * histórico de música é uma atividade de fim de dia).
- * Contraste: texto suave #9CC9AE sobre o fundo ≈ 10:1; texto escuro sobre o néon ≈ 15:1.
+ * Estilo: vermelho e branco (maqueta aprovada) — papel quadriculado, linhas
+ * vermelhas finas e títulos em letra larga, itálica e maiúscula.
+ * Contraste (skill impeccable): vermelho #C81E26 sobre creme ≈ 5,2:1;
+ * texto suave #5C5552 sobre creme ≈ 6,4:1; branco sobre o vermelho ≈ 6:1.
  */
 
 /* 1. Primitivos */
 @theme {
-  --color-verde-950: #04140c;
-  --color-verde-900: #0a2216;
-  --color-verde-800: #11331f;
-  --color-verde-700: #16422a;
-  --color-verde-600: #1e5a38;
-  --color-verde-500: #2e6b47;
-  --color-verde-200: #9cc9ae;
-  --color-verde-50: #e8fff1;
-  --color-neon: #39ff14;
-  --color-neon-claro: #8cff6b;
+  --color-creme: #f3f0ea;
+  --color-branco: #ffffff;
+  --color-cinza-claro: #e9e7e3;
+  --color-rosa: #f6d9d7;
+  --color-vermelho-linha: #e7b3b0;
+  --color-vermelho-barra: #f0b4b1;
+  --color-vermelho: #c81e26;
+  --color-vermelho-escuro: #8f141a;
+  --color-tinta: #1a1a1a;
+  --color-tinta-suave: #5c5552;
+  --color-grafite: #1e1e1e;
 }
 
 /* 2. Semânticos — geram utilitários: bg-fundo, text-texto-suave, border-borda… */
 @theme inline {
-  --color-fundo: var(--color-verde-950);
-  --color-superficie: var(--color-verde-900);
-  --color-superficie-alta: var(--color-verde-800);
-  --color-borda: var(--color-verde-700);
-  --color-borda-forte: var(--color-verde-500);
-  --color-texto: var(--color-verde-50);
-  --color-texto-suave: var(--color-verde-200);
-  --color-destaque: var(--color-neon);
-  --color-destaque-forte: var(--color-neon);
-  --color-destaque-claro: var(--color-neon-claro);
-  /* Texto por cima do néon: verde quase preto, para ter contraste */
-  --color-sobre-destaque: var(--color-verde-950);
-  --color-perigo: var(--color-rose-400);
+  --color-fundo: var(--color-creme);
+  --color-superficie: var(--color-branco);
+  --color-superficie-alta: var(--color-rosa);
+  --color-superficie-cinza: var(--color-cinza-claro);
+  --color-borda: var(--color-vermelho-linha);
+  --color-borda-forte: var(--color-vermelho);
+  --color-texto: var(--color-tinta);
+  --color-texto-suave: var(--color-tinta-suave);
+  --color-destaque: var(--color-vermelho);
+  --color-destaque-forte: var(--color-vermelho);
+  --color-destaque-claro: var(--color-vermelho-escuro);
+  /* Texto por cima do vermelho: branco */
+  --color-sobre-destaque: var(--color-branco);
+  --color-perigo: var(--color-vermelho-escuro);
+  --color-rodape: var(--color-grafite);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-archivo);
 }
 
 /* 3. Componentes */
 :root {
-  color-scheme: dark;
-  --grafico-barra: var(--color-verde-600);
-  --grafico-pico: var(--color-neon);
+  color-scheme: light;
+  --grafico-barra: var(--color-vermelho-barra);
+  --grafico-pico: var(--color-vermelho);
+  --grelha: rgb(200 30 38 / 0.08);
+}
+
+/* Títulos: letra larga, itálica e maiúscula (a assinatura do estilo) */
+@utility titulo-display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Papel quadriculado com linhas vermelhas finas */
+@utility papel {
+  background-color: var(--color-fundo);
+  background-image:
+    linear-gradient(var(--grelha) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grelha) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Superfícies do browser também seguem a paleta (skill impeccable: craft floor) */
@@ -63,8 +87,8 @@
   }
 
   ::selection {
-    background: var(--color-neon);
-    color: var(--color-verde-950);
+    background: var(--color-vermelho);
+    color: var(--color-branco);
   }
 
   :focus-visible {
@@ -73,7 +97,7 @@
   }
 
   html {
-    scrollbar-color: var(--color-verde-500) var(--color-fundo);
+    scrollbar-color: var(--color-vermelho-linha) var(--color-fundo);
   }
 
   a {

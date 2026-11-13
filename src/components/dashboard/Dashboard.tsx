@@ -24,12 +24,13 @@ import {
 import { artistasDeMomento } from "@/lib/analise";
 import { useFiltrados } from "@/hooks/useFiltrados";
 import { usePeriodo } from "@/hooks/usePeriodo";
-import { Bloco, Painel } from "@/components/ui/Bloco";
+import { Bloco } from "@/components/ui/Bloco";
+import { Faixa } from "@/components/ui/Faixa";
 import { EstadoCarregar, EstadoErro, EstadoVazio } from "@/components/ui/Estados";
 import { GraficoHoras } from "@/components/graficos/GraficoHoras";
 import { FiltroPeriodo, OPCOES_PERIODO } from "./FiltroPeriodo";
 import { Destaque } from "./Destaque";
-import { Resumo } from "./Resumo";
+import { Palco } from "./Palco";
 import { TopArtistas } from "./TopArtistas";
 import { TopMusicas } from "./TopMusicas";
 import { TopAlbuns } from "./TopAlbuns";
@@ -75,55 +76,66 @@ export default function Dashboard() {
         filtro={<FiltroPeriodo periodo={periodo} onMudar={setPeriodo} />}
       />
 
-      <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-        {status === "loading" && (
+      {status === "loading" && (
+        <Faixa>
           <EstadoCarregar mensagem="A carregar o histórico de audições… Da primeira vez pode demorar até um minuto." />
-        )}
+        </Faixa>
+      )}
 
-        {status === "error" && (
+      {status === "error" && (
+        <Faixa>
           <EstadoErro titulo="Não foi possível carregar o histórico" mensagem={error} onTentar={recarregar} />
-        )}
+        </Faixa>
+      )}
 
-        {status === "success" && scrobbles.length === 0 && (
+      {status === "success" && scrobbles.length === 0 && (
+        <Faixa>
           <EstadoVazio titulo="Sem audições neste período">Escolhe um período maior no filtro acima.</EstadoVazio>
-        )}
+        </Faixa>
+      )}
 
-        {pronto && (
-          <div className="divide-y divide-borda [&>*]:py-14">
-            <Resumo
-              audicoes={dados.audicoes}
-              artistas={dados.artistas}
-              genero={dados.genero}
-              artistaDaFoto={dados.topArtistas[0]?.artista ?? ""}
-            />
+      {pronto && escolhido && (
+        <>
+          <Palco
+            artista={escolhido.artista ?? escolhido.nome}
+            audicoes={dados.audicoes}
+            artistas={dados.artistas}
+            genero={dados.genero}
+            pico={dados.pico}
+            fraseDoPeriodo={frase}
+          />
 
+          <Faixa>
             <TopArtistas itens={dados.topArtistas} />
+          </Faixa>
 
+          <Faixa fundo="rosa">
             <Bloco
               titulo="A que horas ouves"
-              icone={<ClockCircleIcon size={28} />}
+              icone={<ClockCircleIcon size={22} />}
               descricao={`24 horas (0–23 UTC).${dados.pico !== null ? ` Hora de maior escuta: ${formatarHora(dados.pico)}.` : ""}`}
-              centrado
+              variante="separador"
             >
-              <Painel>
-                <GraficoHoras
-                  porHora={dados.porHora}
-                  pico={dados.pico}
-                  altura={280}
-                  descricao={`Audições por hora do dia em UTC${dados.pico !== null ? `; mais audições às ${formatarHora(dados.pico)}` : ""}`}
-                />
-              </Painel>
+              <GraficoHoras
+                porHora={dados.porHora}
+                pico={dados.pico}
+                altura={280}
+                descricao={`Audições por hora do dia em UTC${dados.pico !== null ? `; mais audições às ${formatarHora(dados.pico)}` : ""}`}
+              />
             </Bloco>
+          </Faixa>
 
-            <div className="grid gap-10 lg:grid-cols-2">
+          <Faixa className="space-y-10">
+            <div className="grid gap-6 lg:grid-cols-2">
               <TopMusicas itens={dados.topMusicas} />
               <TopAlbuns itens={dados.topAlbuns} />
             </div>
-
-            <AnaliseUnica itens={dados.analise} />
-          </div>
-        )}
-      </div>
+            <div className="mx-auto max-w-4xl">
+              <AnaliseUnica itens={dados.analise} />
+            </div>
+          </Faixa>
+        </>
+      )}
     </>
   );
 }

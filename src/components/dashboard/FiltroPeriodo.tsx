@@ -14,9 +14,9 @@ export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar:
   const rotulo = useId();
   return (
     <div className="flex flex-col gap-1.5">
-      <span id={rotulo} className="text-sm font-semibold text-texto-suave">Período</span>
-      <div role="group" aria-labelledby={rotulo} className="flex flex-wrap gap-1 rounded-xl border border-borda-forte bg-superficie/90 p-1">
-        {OPCOES_PERIODO.map(({ valor, rotulo: texto }) => {
+      <span id={rotulo} className="text-sm font-bold text-texto-suave">Período</span>
+      <div role="group" aria-labelledby={rotulo} className="flex flex-wrap border-2 border-borda-forte bg-superficie">
+        {OPCOES_PERIODO.map(({ valor, rotulo: texto }, i) => {
           const ativo = valor === periodo;
           return (
             <button
@@ -24,10 +24,8 @@ export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar:
               type="button"
               aria-pressed={ativo}
               onClick={() => onMudar(valor)}
-              className={`min-h-10 rounded-lg px-3.5 text-sm transition-colors ${
-                ativo
-                  ? "bg-destaque-forte font-bold text-sobre-destaque"
-                  : "font-medium text-texto-suave hover:bg-superficie-alta hover:text-texto"
+              className={`min-h-11 flex-auto px-3 text-sm transition-colors ${i > 0 ? "border-l border-borda" : ""} ${
+                ativo ? "bg-destaque font-bold text-sobre-destaque" : "hover:bg-superficie-alta"
               }`}
             >
               {texto}

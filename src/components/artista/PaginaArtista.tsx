@@ -22,7 +22,8 @@ import {
 import { nomeDaRota } from "@/lib/rotas";
 import { useArtistInfo } from "@/hooks/useArtistInfo";
 import { useScrobblesDoArtista } from "@/hooks/useScrobblesDoArtista";
-import { Bloco, Painel } from "@/components/ui/Bloco";
+import { Bloco } from "@/components/ui/Bloco";
+import { Faixa } from "@/components/ui/Faixa";
 import { EstadoCarregar, EstadoErro, EstadoVazio } from "@/components/ui/Estados";
 import { ListaMusicas } from "@/components/ui/ListaMusicas";
 import { GraficoHoras } from "@/components/graficos/GraficoHoras";
@@ -95,37 +96,37 @@ export default function PaginaArtista() {
     <>
       <CabecalhoArtista nome={nome} perfil={perfil} />
 
-      <div className="mx-auto max-w-7xl divide-y divide-borda px-4 pb-20 sm:px-6 [&>*]:py-14">
+      <Faixa fundo="branco">
         <EstatisticasArtista resumo={dados.resumo} info={perfil.data} />
+      </Faixa>
 
-        <div className="grid gap-10 lg:grid-cols-2">
-          <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={24} />} descricao="As faixas deste artista que mais ouves.">
-            <ListaMusicas itens={dados.musicas} mostrarAlbum={false} />
-          </Bloco>
-          <Bloco
-            titulo="Relógio 24h"
-            icone={<ClockCircleIcon size={24} />}
-            descricao={`A que horas ouves este artista (UTC)${dados.pico !== null ? `. Mais vezes às ${formatarHora(dados.pico)}.` : "."}`}
-          >
-            <Painel>
-              <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={300} descricao={`Audições de ${nome} por hora do dia em UTC`} />
-            </Painel>
-          </Bloco>
-        </div>
-
-        <AlbunsArtista albuns={dados.albuns} />
-
-        <Bloco titulo="Scrobbles por mês" icone={<CalendarIcon size={28} />} descricao="A evolução da tua escuta ao longo do tempo." centrado>
-          <Painel>
-            <GraficoMeses pontos={dados.porMes} descricao={`Audições de ${nome} por mês`} />
-          </Painel>
+      <Faixa className="grid gap-6 lg:grid-cols-2">
+        <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={20} />} descricao="As faixas deste artista que mais ouves.">
+          <ListaMusicas itens={dados.musicas} mostrarAlbum={false} />
         </Bloco>
+        <Bloco
+          titulo="Relógio 24h"
+          icone={<ClockCircleIcon size={20} />}
+          descricao={`A que horas ouves este artista (UTC)${dados.pico !== null ? `. Mais vezes às ${formatarHora(dados.pico)}.` : "."}`}
+        >
+          <GraficoHoras porHora={dados.porHora} pico={dados.pico} altura={300} descricao={`Audições de ${nome} por hora do dia em UTC`} />
+        </Bloco>
+      </Faixa>
 
-        <div className="grid gap-10 lg:grid-cols-2">
-          <UltimasAudicoes audicoes={dados.ultimas} />
-          <Semelhantes artistas={semelhantes} aCarregar={perfil.status === "loading"} />
-        </div>
-      </div>
+      <Faixa fundo="branco">
+        <AlbunsArtista albuns={dados.albuns} />
+      </Faixa>
+
+      <Faixa fundo="rosa">
+        <Bloco titulo="Scrobbles por mês" icone={<CalendarIcon size={22} />} descricao="A evolução da tua escuta ao longo do tempo." variante="separador">
+          <GraficoMeses pontos={dados.porMes} descricao={`Audições de ${nome} por mês`} />
+        </Bloco>
+      </Faixa>
+
+      <Faixa className="grid gap-6 lg:grid-cols-2">
+        <UltimasAudicoes audicoes={dados.ultimas} />
+        <Semelhantes artistas={semelhantes} aCarregar={perfil.status === "loading"} />
+      </Faixa>
     </>
   );
 }

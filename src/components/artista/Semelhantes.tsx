@@ -7,7 +7,7 @@ import { UsersGroupRoundedIcon } from "@solar-icons/react/linear/users-group-rou
 /** Artistas semelhantes (do perfil): só os que já ouves são clicáveis. */
 export function Semelhantes({ artistas, aCarregar }: { artistas: ArtistaSemelhante[]; aCarregar: boolean }) {
   return (
-    <Bloco titulo="Artistas semelhantes" icone={<UsersGroupRoundedIcon size={24} />} descricao="Artistas parecidos, com destaque para os que já ouves. Só esses abrem a página.">
+    <Bloco titulo="Artistas semelhantes" icone={<UsersGroupRoundedIcon size={20} />} descricao="Artistas parecidos, com destaque para os que já ouves. Só esses abrem a página.">
       {aCarregar ? (
         <p role="status" className="text-sm text-texto-suave">A carregar…</p>
       ) : artistas.length === 0 ? (
@@ -19,12 +19,12 @@ export function Semelhantes({ artistas, aCarregar }: { artistas: ArtistaSemelhan
               {a.ouvido ? (
                 <Link
                   href={caminhoArtista(a.nome)}
-                  className="inline-flex min-h-11 items-center rounded-full bg-destaque-forte px-4 font-bold text-sobre-destaque hover:bg-destaque-claro"
+                  className="inline-flex min-h-11 items-center bg-destaque px-4 font-display font-extrabold text-sobre-destaque italic hover:bg-destaque-claro"
                 >
                   {a.nome}
                 </Link>
               ) : (
-                <span className="inline-flex min-h-11 items-center rounded-full border border-borda-forte px-4 text-texto-suave">
+                <span className="inline-flex min-h-11 items-center border border-borda px-4 text-texto-suave">
                   {a.nome}
                   <span className="sr-only"> (ainda não ouviste)</span>
                 </span>
