@@ -19,11 +19,11 @@ export function EstatisticasArtista({ resumo, info }: { resumo: ResumoArtista; i
   ];
 
   return (
-    <section aria-labelledby="titulo-estatisticas" className="flex flex-wrap items-center gap-10">
+    <section aria-labelledby="titulo-estatisticas" className="flex flex-wrap items-center gap-6 sm:gap-10">
       <Capa
         src={info?.image_url}
         alt={info ? `Foto de ${info.name}` : ""}
-        className="size-44 rounded-full border-4 border-destaque sm:size-52"
+        className="size-28 rounded-full border-4 border-destaque sm:size-52"
       />
       <div className="flex min-w-0 flex-[999_1_420px] flex-col gap-5">
         {info && (info.bio_summary || info.bio_content) && (
@@ -37,7 +37,7 @@ export function EstatisticasArtista({ resumo, info }: { resumo: ResumoArtista; i
         <p className="-mt-3 text-texto-suave">Resumo da tua relação com este artista.</p>
         <dl className="grid grid-cols-2 gap-px border-2 border-borda-forte bg-borda sm:grid-cols-3 lg:grid-cols-5">
           {cartoes.map((c) => (
-            <div key={c.rotulo} className="bg-superficie p-3.5">
+            <div key={c.rotulo} className="bg-superficie p-3.5 last:odd:col-span-2 sm:last:odd:col-span-1">
               <dt className="flex items-center gap-1.5 text-sm text-texto-suave">
                 {c.favoritas && <HeartIcon size={16} aria-hidden="true" />}
                 {c.rotulo}

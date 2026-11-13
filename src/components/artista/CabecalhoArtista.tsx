@@ -24,7 +24,7 @@ export function CabecalhoArtista({ nome, perfil }: { nome: string; perfil: Estad
           <Link href="/" className="inline-flex min-h-11 w-fit items-center gap-2 text-texto-suave hover:text-texto">
             <ArrowLeftIcon size={18} aria-hidden="true" /> Dashboard
           </Link>
-          <h1 className="titulo-display mt-10 text-6xl leading-[0.85] text-balance text-destaque sm:text-8xl lg:text-9xl">
+          <h1 className="titulo-display mt-6 text-5xl sm:mt-10 sm:text-6xl md:text-8xl leading-[0.85] text-balance text-destaque lg:text-9xl">
             {info?.name ?? nome}
           </h1>
 
@@ -72,7 +72,7 @@ export function CabecalhoArtista({ nome, perfil }: { nome: string; perfil: Estad
         <Capa
           src={info?.image_url}
           alt={info ? `Foto de ${info.name}` : ""}
-          className="aspect-[4/5] w-full max-w-sm flex-[1_1_300px] border-2 border-borda-forte"
+          className="aspect-[4/5] w-full max-w-48 flex-[1_1_300px] sm:max-w-sm border-2 border-borda-forte"
         />
       </div>
     </section>

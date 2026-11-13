@@ -15,7 +15,7 @@ export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar:
   return (
     <div className="flex flex-col gap-1.5">
       <span id={rotulo} className="text-sm font-bold text-texto-suave">Período</span>
-      <div role="group" aria-labelledby={rotulo} className="flex flex-wrap border-2 border-borda-forte bg-superficie">
+      <div role="group" aria-labelledby={rotulo} className="grid grid-cols-5 border-2 border-borda-forte bg-superficie">
         {OPCOES_PERIODO.map(({ valor, rotulo: texto }, i) => {
           const ativo = valor === periodo;
           return (
@@ -24,7 +24,7 @@ export function FiltroPeriodo({ periodo, onMudar }: { periodo: Periodo; onMudar:
               type="button"
               aria-pressed={ativo}
               onClick={() => onMudar(valor)}
-              className={`min-h-11 flex-auto px-3 text-sm transition-colors ${i > 0 ? "border-l border-borda" : ""} ${
+              className={`min-h-11 px-1 text-xs sm:px-3 sm:text-sm transition-colors ${i > 0 ? "border-l border-borda" : ""} ${
                 ativo ? "bg-destaque font-bold text-sobre-destaque" : "hover:bg-superficie-alta"
               }`}
             >
