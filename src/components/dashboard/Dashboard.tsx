@@ -10,7 +10,7 @@
  * useFiltrados devolve as reproduções de cada secção já filtradas, e os cálculos
  * vêm das funções puras de lib/, dentro de useMemo (um por secção).
  */
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { Seccao } from "@/types";
 import { ClockCircleIcon } from "@solar-icons/react/linear/clock-circle";
 import { formatarDataHora, formatarHora } from "@/lib/dates";
@@ -25,10 +25,8 @@ import {
   totalScrobbles,
 } from "@/lib/stats";
 import { artistasDeMomento } from "@/lib/analise";
-import { filtrarPorArtista } from "@/lib/filters";
 import { useFiltrados } from "@/hooks/useFiltrados";
 import { usePeriodoDasSeccoes } from "@/hooks/usePeriodo";
-import { usePrefereMenosMovimento } from "@/hooks/usePrefereMenosMovimento";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
 import { EstadoCarregar, EstadoErro, EstadoVazio, VazioDoPeriodo } from "@/components/ui/Estados";
@@ -41,19 +39,9 @@ import { TopMusicas } from "./TopMusicas";
 import { TopAlbuns } from "./TopAlbuns";
 import { AnaliseUnica } from "./AnaliseUnica";
 
-/** Quanto tempo fica cada artista do Top 20 no cartão do topo. */
-const DURACAO_POR_ARTISTA_MS = 10_000;
-
 export default function Dashboard() {
   const { porSeccao, todos, referencia, status, error, recarregar } = useFiltrados();
   const { periodos, setPeriodoDaSeccao } = usePeriodoDasSeccoes();
-  // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_POR_ARTISTA_MS
-  // cada um). Os botões anterior/seguinte mudam à mão. Pára com o botão de pausa, ou
-  // logo de início se o sistema pedir menos movimento.
-  const [indice, setIndice] = useState(0);
-  const [pausado, setPausado] = useState<boolean | null>(null);
-  const menosMovimento = usePrefereMenosMovimento();
-  const parado = pausado ?? menosMovimento;
 
   const totais = useMemo(() => {
     const lista = porSeccao.totais;
@@ -78,16 +66,6 @@ export default function Dashboard() {
     <FiltroPeriodo periodo={periodos[s]} onMudar={(p) => setPeriodoDaSeccao(s, p)} seccao={nome} />
   );
 
-  // `% length`: se o filtro do Top 20 deixar menos artistas, o índice dá a volta.
-  const escolhido = artistas.length > 0 ? artistas[indice % artistas.length] : null;
-  const total = Math.max(1, artistas.length);
-  const irPara = (passo: number) => setIndice((i) => (((i % total) + passo) % total + total) % total);
-  const nomeEscolhido = escolhido ? (escolhido.artista ?? escolhido.nome) : null;
-  // Capas do topo: os 3 álbuns mais ouvidos do artista em destaque, no período do Top 20.
-  const albunsDoEscolhido = useMemo(
-    () => (nomeEscolhido ? topAlbuns(filtrarPorArtista(porSeccao.artistas, nomeEscolhido), 3) : []),
-    [porSeccao.artistas, nomeEscolhido],
-  );
   const pronto = status === "success" && todos.length > 0;
 
   return (
@@ -98,17 +76,6 @@ export default function Dashboard() {
             ? `O teu histórico de reproduções. Períodos contados a partir da última reprodução: ${formatarDataHora(referencia)}.`
             : "O teu histórico de reproduções."
         }
-        escolhido={pronto ? escolhido : null}
-        rotacao={{
-          posicao: artistas.length > 0 ? (indice % artistas.length) + 1 : 0,
-          total: artistas.length,
-          passoMs: DURACAO_POR_ARTISTA_MS,
-          parado,
-          onAnterior: () => irPara(-1),
-          onSeguinte: () => irPara(1),
-          onAlternar: () => setPausado(!parado),
-        }}
-        albuns={albunsDoEscolhido}
       />
 
       {status === "loading" && (

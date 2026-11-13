@@ -72,7 +72,7 @@ src/
   - *deduplicação* — pedidos iguais em simultâneo partilham a mesma promessa.
 - **Onde se guarda o quê.** No localStorage (via `persist`): o período e os perfis (artistas, álbuns, fotos). O histórico completo (~51 700 scrobbles, ~25 MB) não cabe no localStorage (~5 MB), por isso vai para o IndexedDB (`services/armazemLocal.ts`) e vale durante 1 hora: um refresh não volta a pedir `/scrobbles`.
 - **Links de artista com `encodeURIComponent`**, e o parâmetro da rota lido com `decodeURIComponent` (`lib/rotas.ts`).
-- **Design.** Vermelho e branco, títulos em Archivo larga e itálica, ícones [Solar](https://github.com/saoudi-h/solar-icons) (sem emojis). Responsivo de 390 px a ecrãs largos; o artista em destaque no topo passa sozinho pelo Top 20, com botão de pausa e respeito por "reduzir movimento".
+- **Design.** Vermelho e branco, títulos em Archivo larga e itálica, ícones [Solar](https://github.com/saoudi-h/solar-icons) (sem emojis). Responsivo de 390 px a ecrãs largos.
 
 ## Tecnologias
 
