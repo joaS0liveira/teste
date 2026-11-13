@@ -51,7 +51,7 @@ import {
   ultimasAudicoes,
 } from "../src/lib/artist";
 import type { AlbumInfo, ArtistInfo } from "../src/types";
-import { artistasDeMomento, momentoDaHora } from "../src/lib/analise";
+import { agruparPorMomento, artistasDeMomento, momentoDaHora } from "../src/lib/analise";
 import { caminhoArtista, nomeDaRota } from "../src/lib/rotas";
 
 let falhas = 0;
@@ -145,6 +145,12 @@ const h = (artista: string, hora: number, n: number) =>
 const dadosAnalise = [...h("Noturno", 2, 9), ...h("Noturno", 14, 1), ...h("Dividido", 8, 5), ...h("Dividido", 20, 5), ...h("Poucos", 3, 3), ...h("Manhã", 7, 12)];
 verificar("só entram os concentrados (≥70%) com ≥10 audições", artistasDeMomento(dadosAnalise).map((a) => [a.artista, a.momento, Math.round(a.percentagem)]),
   [["Manhã", "manhã", 100], ["Noturno", "madrugada", 90]]);
+{
+  const grupos = agruparPorMomento(artistasDeMomento(dadosAnalise));
+  verificar("agruparPorMomento: 4 momentos, por ordem", grupos.map((g) => g.momento), ["madrugada", "manhã", "tarde", "noite"]);
+  verificar("agruparPorMomento: cada artista no seu momento", grupos.every((g) => g.artistas.every((a) => a.momento === g.momento)), true);
+  verificar("agruparPorMomento: não perde nenhum", grupos.reduce((n, g) => n + g.artistas.length, 0), artistasDeMomento(dadosAnalise).length);
+}
 verificar("opções: mínimo 3 apanha 'Poucos'", artistasDeMomento(dadosAnalise, { minimoAudicoes: 3 }).map((a) => a.artista), ["Manhã", "Poucos", "Noturno"]);
 verificar("sem dados → []", artistasDeMomento([]), []);
 
