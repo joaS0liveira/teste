@@ -5,9 +5,10 @@
  * Responde às 4 perguntas do enunciado: quem ouves mais, o que ouves mais,
  * quando ouves e que género domina; e mostra a análise única.
  *
- * Cada secção tem o seu filtro de período: useFiltrados devolve as reproduções
- * de cada secção já filtradas, e os cálculos vêm das funções puras de lib/,
- * dentro de useMemo (um por secção: mudar o filtro de uma só recalcula essa).
+ * Filtro de período global no topo (usePeriodo), que muda todas as secções ao
+ * mesmo tempo; cada secção pode ainda ter uma exceção, no seu próprio filtro.
+ * useFiltrados devolve as reproduções de cada secção já filtradas, e os cálculos
+ * vêm das funções puras de lib/, dentro de useMemo (um por secção).
  */
 import { useMemo, useState } from "react";
 import type { Seccao } from "@/types";
@@ -26,6 +27,7 @@ import {
 import { artistasDeMomento } from "@/lib/analise";
 import { filtrarPorArtista } from "@/lib/filters";
 import { useFiltrados } from "@/hooks/useFiltrados";
+import { usePeriodo, usePeriodoDasSeccoes } from "@/hooks/usePeriodo";
 import { usePrefereMenosMovimento } from "@/hooks/usePrefereMenosMovimento";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
@@ -43,7 +45,9 @@ import { AnaliseUnica } from "./AnaliseUnica";
 const DURACAO_POR_ARTISTA_MS = 10_000;
 
 export default function Dashboard() {
-  const { porSeccao, todas, referencia, periodos, setPeriodo, status, error, recarregar } = useFiltrados();
+  const { porSeccao, todos, referencia, status, error, recarregar } = useFiltrados();
+  const { periodo, setPeriodo } = usePeriodo();
+  const { periodos, setPeriodoDaSeccao } = usePeriodoDasSeccoes();
   // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_POR_ARTISTA_MS
   // cada um). Os botões anterior/seguinte mudam à mão. Pára com o botão de pausa, ou
   // logo de início se o sistema pedir menos movimento.
@@ -72,7 +76,7 @@ export default function Dashboard() {
 
   const frase = (s: Seccao) => OPCOES_PERIODO.find((o) => o.valor === periodos[s])?.frase ?? "";
   const filtro = (s: Seccao, nome: string) => (
-    <FiltroPeriodo periodo={periodos[s]} onMudar={(p) => setPeriodo(s, p)} seccao={nome} />
+    <FiltroPeriodo periodo={periodos[s]} onMudar={(p) => setPeriodoDaSeccao(s, p)} seccao={nome} />
   );
 
   // `% length`: se o filtro do Top 20 deixar menos artistas, o índice dá a volta.
@@ -85,7 +89,7 @@ export default function Dashboard() {
     () => (nomeEscolhido ? topAlbuns(filtrarPorArtista(porSeccao.artistas, nomeEscolhido), 3) : []),
     [porSeccao.artistas, nomeEscolhido],
   );
-  const pronto = status === "success" && todas.length > 0;
+  const pronto = status === "success" && todos.length > 0;
 
   return (
     <>
@@ -106,6 +110,7 @@ export default function Dashboard() {
           onAlternar: () => setPausado(!parado),
         }}
         albuns={albunsDoEscolhido}
+        filtro={<FiltroPeriodo periodo={periodo} onMudar={setPeriodo} seccao="todo o dashboard" titulo="Período de todo o dashboard" />}
       />
 
       {status === "loading" && (
@@ -120,7 +125,7 @@ export default function Dashboard() {
         </Faixa>
       )}
 
-      {status === "success" && todas.length === 0 && (
+      {status === "success" && todos.length === 0 && (
         <Faixa>
           <EstadoVazio titulo="Ainda não há reproduções">O teu histórico do Last.fm está vazio.</EstadoVazio>
         </Faixa>

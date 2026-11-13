@@ -20,8 +20,11 @@ export type Periodo = "tudo" | "30d" | "14d" | "7d" | "24h";
 /** Secções do dashboard com filtro de período próprio. */
 export type Seccao = "totais" | "artistas" | "horas" | "musicas" | "albuns" | "analise";
 
-/** O período escolhido em cada secção. */
+/** O período efetivo de cada secção (o global, ou a exceção dessa secção). */
 export type PeriodosPorSeccao = Record<Seccao, Periodo>;
+
+/** Secções com um período diferente do global. */
+export type ExcecoesDePeriodo = Partial<Record<Seccao, Periodo>>;
 
 /** Estado de qualquer dado que vem da rede. */
 export type Status = "idle" | "loading" | "success" | "error" | "not-found";

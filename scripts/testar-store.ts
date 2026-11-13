@@ -84,9 +84,10 @@ async function main() {
   verificar("álbum: 1 fetch (mesma chave)", contar("/album-info"), 1);
 
   console.log("\n=== Persistência (localStorage) ===");
-  loja().setPeriodo("musicas", "7d");
+  loja().setPeriodo("7d");
+  loja().setPeriodoDaSeccao("musicas", "tudo");
   const guardado = JSON.parse(memoria.get("fmdata") ?? "{}").state ?? {};
-  verificar("guarda o período de cada secção", [guardado.periodos?.musicas, guardado.periodos?.artistas], ["7d", "tudo"]);
+  verificar("guarda o período global e as exceções", [guardado.periodo, guardado.excecoes], ["7d", { musicas: "tudo" }]);
   verificar("NÃO guarda os scrobbles (~25 MB)", "scrobbles" in guardado, false);
   verificar("guarda perfis com resposta (success e not-found)", Object.keys(guardado.artistas).sort(), ["adele", "beyoncé", "ninguém"]);
   verificar("guarda fotos e álbuns", [Object.keys(guardado.imagensArtistas), Object.keys(guardado.albuns)], [["adele"], ["adele::25"]]);
@@ -94,19 +95,29 @@ async function main() {
   console.log("\n=== Reidratação (simula um refresh) ===");
   // Simula abrir a página de novo: memória limpa, localStorage intacto.
   const noDisco = memoria.get("fmdata") as string;
-  useStore.setState({ periodos: { ...loja().periodos, musicas: "tudo" }, artistas: {}, albuns: {}, imagensArtistas: {} });
+  useStore.setState({ periodo: "tudo", excecoes: {}, artistas: {}, albuns: {}, imagensArtistas: {} });
   memoria.set("fmdata", noDisco); // o setState acima também grava; repõe o que estava
   await useStore.persist.rehydrate();
-  verificar("período da secção volta", loja().periodos.musicas, "7d");
+  verificar("período global e exceção voltam", [loja().periodo, loja().excecoes.musicas], ["7d", "tudo"]);
   verificar("perfil volta sem novo fetch", loja().artistas["adele"]?.data?.name, "Adele");
   const antes = contar("/artist-info");
   await loja().carregarArtista("Adele");
   verificar("depois do refresh, Adele vem da cache", contar("/artist-info"), antes);
 
-  console.log("\n=== Migração v1 → v2 (um período → um por secção) ===");
-  memoria.set("fmdata", JSON.stringify({ state: { periodo: "30d", artistas: {}, albuns: {}, imagensArtistas: {} }, version: 1 }));
+  console.log("\n=== Filtro global apaga as exceções ===");
+  loja().setPeriodoDaSeccao("albuns", "24h");
+  loja().setPeriodo("30d");
+  verificar("setPeriodo muda tudo e apaga exceções", [loja().periodo, loja().excecoes], ["30d", {}]);
+  loja().setPeriodoDaSeccao("horas", "30d");
+  verificar("exceção igual ao global não fica guardada", loja().excecoes, {});
+
+  console.log("\n=== Migrações do formato guardado ===");
+  memoria.set("fmdata", JSON.stringify({ state: { periodo: "14d", artistas: {}, albuns: {}, imagensArtistas: {} }, version: 1 }));
   await useStore.persist.rehydrate();
-  verificar("o período antigo passa para todas as secções", Object.values(loja().periodos), ["30d", "30d", "30d", "30d", "30d", "30d"]);
+  verificar("v1 (um período) → v3", [loja().periodo, loja().excecoes], ["14d", {}]);
+  memoria.set("fmdata", JSON.stringify({ state: { periodos: { totais: "7d", artistas: "7d", horas: "7d", musicas: "tudo", albuns: "7d", analise: "24h" }, artistas: {}, albuns: {}, imagensArtistas: {} }, version: 2 }));
+  await useStore.persist.rehydrate();
+  verificar("v2 (um por secção) → v3: global + exceções", [loja().periodo, loja().excecoes], ["7d", { musicas: "tudo", analise: "24h" }]);
 
   console.log(falhas === 0 ? "\nTudo certo OK" : `\n${falhas} teste(s) falharam FALHA`);
   process.exit(falhas === 0 ? 0 : 1);
