@@ -55,6 +55,20 @@
 @theme {
   --animate-entrar-menu: entrar-menu 200ms ease-out 150ms both;
 
+  /* Barra de tempo do artista em destaque (a duração vem do componente) */
+  --animate-progresso: progresso linear both;
+  /* Troca de artista em destaque: entra com um fade curto */
+  --animate-aparecer: entrar-menu 250ms ease-out both;
+
+  @keyframes progresso {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   @keyframes entrar-menu {
     from {
       opacity: 0;

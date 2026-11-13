@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MusicNote2Icon } from "@solar-icons/react/bold/music-note-2";
 import { SquareArrowRightUpIcon } from "@solar-icons/react/linear/square-arrow-right-up";
 import { AltArrowRightIcon } from "@solar-icons/react/linear/alt-arrow-right";
+import { PauseIcon } from "@solar-icons/react/bold/pause";
+import { PlayIcon } from "@solar-icons/react/bold/play";
 import type { ItemRanking } from "@/types";
 import { plural } from "@/lib/formatar";
 import { caminhoArtista } from "@/lib/rotas";
@@ -20,6 +22,9 @@ const BARRAS = [18, 30, 22, 45, 34, 60, 40, 72, 55, 88, 64, 100, 70, 52, 80, 58,
  * cabeçalho e, ao centro, o cartão com "Música", o artista em destaque, a sua
  * foto e as capas dos seus álbuns mais ouvidos (no período do filtro do Top 20).
  * Não acrescenta dados: o destaque é do Top 20.
+ * O artista em destaque passa sozinho por todo o Top 20 (`rotacao`): uma barra de
+ * tempo enche-se e, ao acabar, avança. Pára ao passar o rato ou com o foco no cartão,
+ * e o botão de pausa pára de vez (WCAG 2.2.2: conteúdo que se mexe sozinho).
  * Quando o cartão sai do ecrã, aparece a versão pequena (MenuFlutuante) à esquerda,
  * com a lista para escolher outro artista em destaque.
  */
@@ -30,6 +35,7 @@ export function Destaque({
   onEscolher,
   fraseDoPeriodo,
   albuns,
+  rotacao,
 }: {
   subtitulo: string;
   artistas: ItemRanking[];
@@ -38,7 +44,19 @@ export function Destaque({
   fraseDoPeriodo: string;
   /** Os álbuns mais ouvidos do artista em destaque (até 3). */
   albuns: ItemRanking[];
+  rotacao: {
+    /** Posição do artista em destaque no Top 20 (1 a total). */
+    posicao: number;
+    total: number;
+    /** Quanto tempo fica cada artista. */
+    passoMs: number;
+    parado: boolean;
+    onAvancar: () => void;
+    onAlternar: () => void;
+  };
 }) {
+  // Rato por cima ou foco dentro do cartão: suspende a barra (e, com ela, a troca).
+  const [suspenso, setSuspenso] = useState(false);
   const nome = escolhido ? (escolhido.artista ?? escolhido.nome) : "";
   const foto = useImagemArtista(nome);
   const cartao = useRef<HTMLDivElement>(null);
@@ -56,7 +74,14 @@ export function Destaque({
         </div>
 
         <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-10 sm:px-6 sm:py-16">
-          <div ref={cartao} className="relative w-full max-w-3xl">
+          <div
+            ref={cartao}
+            onPointerEnter={() => setSuspenso(true)}
+            onPointerLeave={() => setSuspenso(false)}
+            onFocus={() => setSuspenso(true)}
+            onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setSuspenso(false)}
+            className="relative w-full max-w-3xl"
+          >
             {/* Patilhas no topo do cartão (decoração) */}
             <span aria-hidden="true" className="absolute -top-2 left-8 h-4 w-24 rounded-t-lg border-2 border-b-0 border-destaque bg-superficie/90" />
             <span aria-hidden="true" className="absolute -top-2 right-8 h-4 w-32 rounded-t-lg border-2 border-b-0 border-destaque bg-superficie/90" />
@@ -76,8 +101,8 @@ export function Destaque({
               </div>
 
               {escolhido && (
-                <>
-                  <div className="flex flex-wrap items-center gap-x-5 gap-y-4 border-t border-borda pt-5">
+                <div key={escolhido.chave} className="flex flex-col gap-5 border-t border-borda pt-5 motion-safe:animate-aparecer">
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-4">
                     <div className="flex min-w-0 flex-[1_1_16rem] items-center gap-4 sm:gap-5">
                       <span
                         aria-hidden="true"
@@ -116,7 +141,35 @@ export function Destaque({
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
+              )}
+
+              {escolhido && rotacao.total > 1 && (
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={rotacao.onAlternar}
+                    aria-pressed={rotacao.parado}
+                    aria-label={rotacao.parado ? "Retomar a passagem pelos artistas" : "Pausar a passagem pelos artistas"}
+                    className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-destaque text-destaque transition hover:bg-destaque hover:text-sobre-destaque"
+                  >
+                    {rotacao.parado ? <PlayIcon size={18} /> : <PauseIcon size={18} />}
+                  </button>
+                  <span className="shrink-0 font-display text-sm font-black text-destaque italic tabular-nums">
+                    {rotacao.posicao} <span className="font-semibold text-texto-suave not-italic">de {rotacao.total}</span>
+                  </span>
+                  {/* Barra de tempo: ao acabar a animação, passa ao artista seguinte */}
+                  <span aria-hidden="true" className="h-1.5 flex-1 overflow-hidden rounded-full bg-superficie-alta">
+                    {!rotacao.parado && (
+                      <span
+                        key={rotacao.posicao}
+                        onAnimationEnd={rotacao.onAvancar}
+                        className="block h-full origin-left animate-progresso rounded-full bg-destaque"
+                        style={{ animationDuration: `${rotacao.passoMs}ms`, animationPlayState: suspenso ? "paused" : "running" }}
+                      />
+                    )}
+                  </span>
+                </div>
               )}
 
             </div>
