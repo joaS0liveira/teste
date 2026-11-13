@@ -1,33 +1,35 @@
 import { MusicNotesIcon } from "@solar-icons/react/linear/music-notes";
 import type { ReactNode } from "react";
 import type { ItemRanking } from "@/types";
-import { plural } from "@/lib/formatar";
+import { formatarNumero } from "@/lib/formatar";
 import { Bloco } from "@/components/ui/Bloco";
 import { Capa } from "@/components/ui/Capa";
 import { VazioDoPeriodo } from "@/components/ui/Estados";
 
-/** Top 10 músicas em grelha, como os álbuns: capa como fundo, posição, faixa, álbum e contagem. */
+/**
+ * Top 10 músicas em lista compacta, em duas colunas (1.º–5.º e 6.º–10.º), como a do
+ * 11.º ao 20.º artista: posição, capa, faixa, álbum e contagem.
+ */
 export function TopMusicas({ itens, filtro }: { itens: ItemRanking[]; filtro?: ReactNode }) {
   return (
     <Bloco titulo="Top 10 músicas" icone={<MusicNotesIcon size={20} />} descricao="As faixas que mais ouves no período." filtro={filtro}>
       {itens.length === 0 && <VazioDoPeriodo />}
-      <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+      <ol className="grid gap-x-10 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-5">
         {itens.map((m, i) => (
-          <li key={m.chave} className="relative aspect-square overflow-hidden border border-borda">
-            <Capa src={m.imagem} className="absolute inset-0 size-full" />
-            {/* Sombra escura por baixo do texto branco: legível sobre qualquer capa */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent" />
-            <span className="absolute top-0 left-0 bg-destaque px-2 py-0.5 font-display text-lg font-black text-sobre-destaque italic">
+          <li key={m.chave} className="flex items-center gap-3 border-b border-borda py-2.5">
+            <span className="w-7 shrink-0 text-right font-display text-lg font-black text-destaque italic">
               <span className="sr-only">Posição </span>
               {i + 1}
             </span>
-            <div className="absolute inset-x-0 bottom-0 p-2.5">
-              <p className="line-clamp-2 text-sm leading-tight font-extrabold text-white">{m.nome}</p>
-              {m.album && <p className="truncate text-xs text-white/85">{m.album}</p>}
-              <p className="mt-1 inline-block bg-destaque px-1.5 py-0.5 text-[11px] font-extrabold tabular-nums text-sobre-destaque">
-                {plural(m.contagem, "reprodução", "reproduções")}
-              </p>
+            <Capa src={m.imagem} alt={m.album ? `Capa de ${m.album}` : ""} className="size-12 shrink-0 border border-borda" />
+            <div className="min-w-0 flex-1">
+              <p className="truncate font-semibold">{m.nome}</p>
+              {m.album && <p className="truncate text-xs text-texto-suave">{m.album}</p>}
             </div>
+            <span className="shrink-0 font-bold tabular-nums">
+              {formatarNumero(m.contagem)}
+              <span className="sr-only"> reproduções</span>
+            </span>
           </li>
         ))}
       </ol>

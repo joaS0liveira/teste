@@ -5,8 +5,8 @@
  * Responde às 4 perguntas do enunciado: quem ouves mais, o que ouves mais,
  * quando ouves e que género domina; e mostra a análise única.
  *
- * Filtro de período global no topo (usePeriodo), que muda todas as secções ao
- * mesmo tempo; cada secção pode ainda ter uma exceção, no seu próprio filtro.
+ * Cada secção tem o seu filtro de período (no cabeçalho), guardado no store
+ * como exceção ao período global (`periodo`).
  * useFiltrados devolve as reproduções de cada secção já filtradas, e os cálculos
  * vêm das funções puras de lib/, dentro de useMemo (um por secção).
  */
@@ -27,7 +27,7 @@ import {
 import { artistasDeMomento } from "@/lib/analise";
 import { filtrarPorArtista } from "@/lib/filters";
 import { useFiltrados } from "@/hooks/useFiltrados";
-import { usePeriodo, usePeriodoDasSeccoes } from "@/hooks/usePeriodo";
+import { usePeriodoDasSeccoes } from "@/hooks/usePeriodo";
 import { usePrefereMenosMovimento } from "@/hooks/usePrefereMenosMovimento";
 import { Bloco } from "@/components/ui/Bloco";
 import { Faixa } from "@/components/ui/Faixa";
@@ -46,7 +46,6 @@ const DURACAO_POR_ARTISTA_MS = 10_000;
 
 export default function Dashboard() {
   const { porSeccao, todos, referencia, status, error, recarregar } = useFiltrados();
-  const { periodo, setPeriodo } = usePeriodo();
   const { periodos, setPeriodoDaSeccao } = usePeriodoDasSeccoes();
   // Artista em destaque no topo: passa sozinho por todo o Top 20 (DURACAO_POR_ARTISTA_MS
   // cada um). Os botões anterior/seguinte mudam à mão. Pára com o botão de pausa, ou
@@ -110,7 +109,6 @@ export default function Dashboard() {
           onAlternar: () => setPausado(!parado),
         }}
         albuns={albunsDoEscolhido}
-        filtro={<FiltroPeriodo periodo={periodo} onMudar={setPeriodo} seccao="todo o dashboard" titulo="Período de todo o dashboard" />}
       />
 
       {status === "loading" && (
