@@ -126,10 +126,8 @@ export default function Dashboard() {
           </Faixa>
 
           <Faixa className="space-y-10">
-            <div className="grid gap-6 lg:grid-cols-2">
-              <TopMusicas itens={dados.topMusicas} />
-              <TopAlbuns itens={dados.topAlbuns} />
-            </div>
+            <TopMusicas itens={dados.topMusicas} />
+            <TopAlbuns itens={dados.topAlbuns} />
             <div className="mx-auto max-w-4xl">
               <AnaliseUnica itens={dados.analise} />
             </div>
