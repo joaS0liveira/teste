@@ -1,0 +1,66 @@
+[
+ {
+  "id": "E01",
+  "nome": "Entidade Social Norte",
+  "regiao": "Norte",
+  "especialidade": "emprego",
+  "capacidade_acompanhamento": 60,
+  "data_inicio_atividade": "2016-10-01"
+ },
+ {
+  "id": "E02",
+  "nome": "Entidade Social Centro",
+  "regiao": "Centro",
+  "especialidade": "formacao",
+  "capacidade_acompanhamento": 72,
+  "data_inicio_atividade": "2019-06-01"
+ },
+ {
+  "id": "E03",
+  "nome": "Entidade Social Lisboa",
+  "regiao": "Lisboa",
+  "especialidade": "apoio_social",
+  "capacidade_acompanhamento": 84,
+  "data_inicio_atividade": "2018-11-01"
+ },
+ {
+  "id": "E04",
+  "nome": "Entidade Social Sul",
+  "regiao": "Sul",
+  "especialidade": "juventude",
+  "capacidade_acompanhamento": 96,
+  "data_inicio_atividade": "2016-09-01"
+ },
+ {
+  "id": "E05",
+  "nome": "Entidade Social Minho",
+  "regiao": "Norte",
+  "especialidade": "adultos",
+  "capacidade_acompanhamento": 108,
+  "data_inicio_atividade": "2017-02-01"
+ },
+ {
+  "id": "E06",
+  "nome": "Entidade Social Alentejo",
+  "regiao": "Centro",
+  "especialidade": "saude",
+  "capacidade_acompanhamento": 120,
+  "data_inicio_atividade": "2019-12-01"
+ },
+ {
+  "id": "E07",
+  "nome": "Entidade Social Algarve",
+  "regiao": "Sul",
+  "especialidade": "emprego",
+  "capacidade_acompanhamento": 132,
+  "data_inicio_atividade": "2020-10-01"
+ },
+ {
+  "id": "E08",
+  "nome": "Entidade Social Ilhas",
+  "regiao": "Ilhas",
+  "especialidade": "formacao",
+  "capacidade_acompanhamento": 144,
+  "data_inicio_atividade": "2020-10-01"
+ }
+]

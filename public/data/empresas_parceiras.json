@@ -1,0 +1,146 @@
+[
+ {
+  "id": "P01",
+  "nome_ficticio": "Empresa Parceira 01",
+  "regiao": "Norte",
+  "setor": "servicos",
+  "dimensao": "pequena",
+  "data_parceria": "2020-02-15",
+  "historico_parceria": "recente"
+ },
+ {
+  "id": "P02",
+  "nome_ficticio": "Empresa Parceira 02",
+  "regiao": "Lisboa",
+  "setor": "comercio",
+  "dimensao": "pequena",
+  "data_parceria": "2022-06-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P03",
+  "nome_ficticio": "Empresa Parceira 03",
+  "regiao": "Centro",
+  "setor": "industria",
+  "dimensao": "grande",
+  "data_parceria": "2020-05-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P04",
+  "nome_ficticio": "Empresa Parceira 04",
+  "regiao": "Ilhas",
+  "setor": "saude",
+  "dimensao": "pequena",
+  "data_parceria": "2018-12-15",
+  "historico_parceria": "recente"
+ },
+ {
+  "id": "P05",
+  "nome_ficticio": "Empresa Parceira 05",
+  "regiao": "Sul",
+  "setor": "hotelaria",
+  "dimensao": "pequena",
+  "data_parceria": "2022-08-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P06",
+  "nome_ficticio": "Empresa Parceira 06",
+  "regiao": "Norte",
+  "setor": "logistica",
+  "dimensao": "pequena",
+  "data_parceria": "2019-10-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P07",
+  "nome_ficticio": "Empresa Parceira 07",
+  "regiao": "Ilhas",
+  "setor": "tecnologia",
+  "dimensao": "grande",
+  "data_parceria": "2020-06-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P08",
+  "nome_ficticio": "Empresa Parceira 08",
+  "regiao": "Ilhas",
+  "setor": "agricultura",
+  "dimensao": "pequena",
+  "data_parceria": "2020-03-15",
+  "historico_parceria": "recente"
+ },
+ {
+  "id": "P09",
+  "nome_ficticio": "Empresa Parceira 09",
+  "regiao": "Ilhas",
+  "setor": "servicos",
+  "dimensao": "media",
+  "data_parceria": "2017-07-15",
+  "historico_parceria": "longa"
+ },
+ {
+  "id": "P10",
+  "nome_ficticio": "Empresa Parceira 10",
+  "regiao": "Sul",
+  "setor": "comercio",
+  "dimensao": "grande",
+  "data_parceria": "2023-01-15",
+  "historico_parceria": "media"
+ },
+ {
+  "id": "P11",
+  "nome_ficticio": "Empresa Parceira 11",
+  "regiao": "Norte",
+  "setor": "industria",
+  "dimensao": "pequena",
+  "data_parceria": "2023-10-15",
+  "historico_parceria": "recente"
+ },
+ {
+  "id": "P12",
+  "nome_ficticio": "Empresa Parceira 12",
+  "regiao": "Sul",
+  "setor": "saude",
+  "dimensao": "media",
+  "data_parceria": "2018-08-15",
+  "historico_parceria": "media"
+ },
+ {
+  "id": "P13",
+  "nome_ficticio": "Empresa Parceira 13",
+  "regiao": "Centro",
+  "setor": "hotelaria",
+  "dimensao": "pequena",
+  "data_parceria": "2018-10-15",
+  "historico_parceria": "media"
+ },
+ {
+  "id": "P14",
+  "nome_ficticio": "Empresa Parceira 14",
+  "regiao": "Norte",
+  "setor": "logistica",
+  "dimensao": "pequena",
+  "data_parceria": "2021-05-15",
+  "historico_parceria": "media"
+ },
+ {
+  "id": "P15",
+  "nome_ficticio": "Empresa Parceira 15",
+  "regiao": "Norte",
+  "setor": "tecnologia",
+  "dimensao": "media",
+  "data_parceria": "2017-12-15",
+  "historico_parceria": "media"
+ },
+ {
+  "id": "P16",
+  "nome_ficticio": "Empresa Parceira 16",
+  "regiao": "Ilhas",
+  "setor": "agricultura",
+  "dimensao": "media",
+  "data_parceria": "2020-11-15",
+  "historico_parceria": "longa"
+ }
+]

@@ -1,0 +1,1538 @@
+[
+ {
+  "id": "RC0001",
+  "id_entidade": "E01",
+  "mes": "2024-01",
+  "horas_acompanhamento": 48.62,
+  "contactos_previstos": 13,
+  "custo": 1138.42
+ },
+ {
+  "id": "RC0002",
+  "id_entidade": "E01",
+  "mes": "2024-02",
+  "horas_acompanhamento": 64.4,
+  "contactos_previstos": 14,
+  "custo": 2420.14
+ },
+ {
+  "id": "RC0003",
+  "id_entidade": "E01",
+  "mes": "2024-03",
+  "horas_acompanhamento": 68.39,
+  "contactos_previstos": 17,
+  "custo": 2180.32
+ },
+ {
+  "id": "RC0004",
+  "id_entidade": "E01",
+  "mes": "2024-04",
+  "horas_acompanhamento": 83.77,
+  "contactos_previstos": 20,
+  "custo": 2650.38
+ },
+ {
+  "id": "RC0005",
+  "id_entidade": "E01",
+  "mes": "2024-05",
+  "horas_acompanhamento": 40.07,
+  "contactos_previstos": 10,
+  "custo": 1107.16
+ },
+ {
+  "id": "RC0006",
+  "id_entidade": "E01",
+  "mes": "2024-06",
+  "horas_acompanhamento": 43.55,
+  "contactos_previstos": 7,
+  "custo": 1263.17
+ },
+ {
+  "id": "RC0007",
+  "id_entidade": "E01",
+  "mes": "2024-07",
+  "horas_acompanhamento": 61.07,
+  "contactos_previstos": 16,
+  "custo": 1889.17
+ },
+ {
+  "id": "RC0008",
+  "id_entidade": "E01",
+  "mes": "2024-08",
+  "horas_acompanhamento": 41.99,
+  "contactos_previstos": 13,
+  "custo": 1371.08
+ },
+ {
+  "id": "RC0009",
+  "id_entidade": "E01",
+  "mes": "2024-09",
+  "horas_acompanhamento": 54.07,
+  "contactos_previstos": 14,
+  "custo": 1591.67
+ },
+ {
+  "id": "RC0010",
+  "id_entidade": "E01",
+  "mes": "2024-10",
+  "horas_acompanhamento": 49.89,
+  "contactos_previstos": 10,
+  "custo": 1125.09
+ },
+ {
+  "id": "RC0011",
+  "id_entidade": "E01",
+  "mes": "2024-11",
+  "horas_acompanhamento": 88.8,
+  "contactos_previstos": 22,
+  "custo": 2426.16
+ },
+ {
+  "id": "RC0012",
+  "id_entidade": "E01",
+  "mes": "2024-12",
+  "horas_acompanhamento": 81.18,
+  "contactos_previstos": 20,
+  "custo": 2908.95
+ },
+ {
+  "id": "RC0013",
+  "id_entidade": "E01",
+  "mes": "2025-01",
+  "horas_acompanhamento": 42.21,
+  "contactos_previstos": 11,
+  "custo": 1084.4
+ },
+ {
+  "id": "RC0014",
+  "id_entidade": "E01",
+  "mes": "2025-02",
+  "horas_acompanhamento": 50.46,
+  "contactos_previstos": 10,
+  "custo": 1448.29
+ },
+ {
+  "id": "RC0015",
+  "id_entidade": "E01",
+  "mes": "2025-03",
+  "horas_acompanhamento": 75.89,
+  "contactos_previstos": 17,
+  "custo": 1834.17
+ },
+ {
+  "id": "RC0016",
+  "id_entidade": "E01",
+  "mes": "2025-04",
+  "horas_acompanhamento": 83.39,
+  "contactos_previstos": 21,
+  "custo": 1901.57
+ },
+ {
+  "id": "RC0017",
+  "id_entidade": "E01",
+  "mes": "2025-05",
+  "horas_acompanhamento": 64.37,
+  "contactos_previstos": 17,
+  "custo": 2000.44
+ },
+ {
+  "id": "RC0018",
+  "id_entidade": "E01",
+  "mes": "2025-06",
+  "horas_acompanhamento": 43.5,
+  "contactos_previstos": 9,
+  "custo": 1101.1
+ },
+ {
+  "id": "RC0019",
+  "id_entidade": "E01",
+  "mes": "2025-07",
+  "horas_acompanhamento": 85.14,
+  "contactos_previstos": 24,
+  "custo": 2730.41
+ },
+ {
+  "id": "RC0020",
+  "id_entidade": "E01",
+  "mes": "2025-08",
+  "horas_acompanhamento": 61.19,
+  "contactos_previstos": 17,
+  "custo": 1474.3
+ },
+ {
+  "id": "RC0021",
+  "id_entidade": "E01",
+  "mes": "2025-09",
+  "horas_acompanhamento": 65.5,
+  "contactos_previstos": 17,
+  "custo": 2151.79
+ },
+ {
+  "id": "RC0022",
+  "id_entidade": "E01",
+  "mes": "2025-10",
+  "horas_acompanhamento": 56.9,
+  "contactos_previstos": 17,
+  "custo": 1859.94
+ },
+ {
+  "id": "RC0023",
+  "id_entidade": "E01",
+  "mes": "2025-11",
+  "horas_acompanhamento": 61.02,
+  "contactos_previstos": 12,
+  "custo": 2009.49
+ },
+ {
+  "id": "RC0024",
+  "id_entidade": "E01",
+  "mes": "2025-12",
+  "horas_acompanhamento": 87.27,
+  "contactos_previstos": 18,
+  "custo": 1987.91
+ },
+ {
+  "id": "RC0025",
+  "id_entidade": "E02",
+  "mes": "2024-01",
+  "horas_acompanhamento": 83.57,
+  "contactos_previstos": 22,
+  "custo": 2034.1
+ },
+ {
+  "id": "RC0026",
+  "id_entidade": "E02",
+  "mes": "2024-02",
+  "horas_acompanhamento": 77.59,
+  "contactos_previstos": 18,
+  "custo": 1752.48
+ },
+ {
+  "id": "RC0027",
+  "id_entidade": "E02",
+  "mes": "2024-03",
+  "horas_acompanhamento": 70.12,
+  "contactos_previstos": 16,
+  "custo": 2183.61
+ },
+ {
+  "id": "RC0028",
+  "id_entidade": "E02",
+  "mes": "2024-04",
+  "horas_acompanhamento": 70.09,
+  "contactos_previstos": 17,
+  "custo": 1867.49
+ },
+ {
+  "id": "RC0029",
+  "id_entidade": "E02",
+  "mes": "2024-05",
+  "horas_acompanhamento": 46.98,
+  "contactos_previstos": 13,
+  "custo": 1389.26
+ },
+ {
+  "id": "RC0030",
+  "id_entidade": "E02",
+  "mes": "2024-06",
+  "horas_acompanhamento": 54.44,
+  "contactos_previstos": 16,
+  "custo": 1508.25
+ },
+ {
+  "id": "RC0031",
+  "id_entidade": "E02",
+  "mes": "2024-07",
+  "horas_acompanhamento": 70.82,
+  "contactos_previstos": 16,
+  "custo": 2020.07
+ },
+ {
+  "id": "RC0032",
+  "id_entidade": "E02",
+  "mes": "2024-08",
+  "horas_acompanhamento": 73.08,
+  "contactos_previstos": 19,
+  "custo": 1991.11
+ },
+ {
+  "id": "RC0033",
+  "id_entidade": "E02",
+  "mes": "2024-09",
+  "horas_acompanhamento": 66.76,
+  "contactos_previstos": 17,
+  "custo": 1576.09
+ },
+ {
+  "id": "RC0034",
+  "id_entidade": "E02",
+  "mes": "2024-10",
+  "horas_acompanhamento": 74.19,
+  "contactos_previstos": 25,
+  "custo": 2130.2
+ },
+ {
+  "id": "RC0035",
+  "id_entidade": "E02",
+  "mes": "2024-11",
+  "horas_acompanhamento": 83.36,
+  "contactos_previstos": 21,
+  "custo": 2413.87
+ },
+ {
+  "id": "RC0036",
+  "id_entidade": "E02",
+  "mes": "2024-12",
+  "horas_acompanhamento": 48.11,
+  "contactos_previstos": 12,
+  "custo": 1820.43
+ },
+ {
+  "id": "RC0037",
+  "id_entidade": "E02",
+  "mes": "2025-01",
+  "horas_acompanhamento": 75.08,
+  "contactos_previstos": 18,
+  "custo": 2570.79
+ },
+ {
+  "id": "RC0038",
+  "id_entidade": "E02",
+  "mes": "2025-02",
+  "horas_acompanhamento": 61.99,
+  "contactos_previstos": 16,
+  "custo": 2002.4
+ },
+ {
+  "id": "RC0039",
+  "id_entidade": "E02",
+  "mes": "2025-03",
+  "horas_acompanhamento": 89.26,
+  "contactos_previstos": 24,
+  "custo": 2251.49
+ },
+ {
+  "id": "RC0040",
+  "id_entidade": "E02",
+  "mes": "2025-04",
+  "horas_acompanhamento": 54.6,
+  "contactos_previstos": 14,
+  "custo": 1485.39
+ },
+ {
+  "id": "RC0041",
+  "id_entidade": "E02",
+  "mes": "2025-05",
+  "horas_acompanhamento": 43.77,
+  "contactos_previstos": 10,
+  "custo": 1349.5
+ },
+ {
+  "id": "RC0042",
+  "id_entidade": "E02",
+  "mes": "2025-06",
+  "horas_acompanhamento": 70.93,
+  "contactos_previstos": 16,
+  "custo": 1957.92
+ },
+ {
+  "id": "RC0043",
+  "id_entidade": "E02",
+  "mes": "2025-07",
+  "horas_acompanhamento": 44.9,
+  "contactos_previstos": 12,
+  "custo": 1142.98
+ },
+ {
+  "id": "RC0044",
+  "id_entidade": "E02",
+  "mes": "2025-08",
+  "horas_acompanhamento": 70.65,
+  "contactos_previstos": 22,
+  "custo": 1645.12
+ },
+ {
+  "id": "RC0045",
+  "id_entidade": "E02",
+  "mes": "2025-09",
+  "horas_acompanhamento": 53.41,
+  "contactos_previstos": 13,
+  "custo": 1660.36
+ },
+ {
+  "id": "RC0046",
+  "id_entidade": "E02",
+  "mes": "2025-10",
+  "horas_acompanhamento": 87.67,
+  "contactos_previstos": 21,
+  "custo": 2696.17
+ },
+ {
+  "id": "RC0047",
+  "id_entidade": "E02",
+  "mes": "2025-11",
+  "horas_acompanhamento": 45.63,
+  "contactos_previstos": 10,
+  "custo": 1373.99
+ },
+ {
+  "id": "RC0048",
+  "id_entidade": "E02",
+  "mes": "2025-12",
+  "horas_acompanhamento": 75.69,
+  "contactos_previstos": 19,
+  "custo": 2024.4
+ },
+ {
+  "id": "RC0049",
+  "id_entidade": "E03",
+  "mes": "2024-01",
+  "horas_acompanhamento": 30.18,
+  "contactos_previstos": 10,
+  "custo": 772.15
+ },
+ {
+  "id": "RC0050",
+  "id_entidade": "E03",
+  "mes": "2024-02",
+  "horas_acompanhamento": 61.15,
+  "contactos_previstos": 15,
+  "custo": 2271.63
+ },
+ {
+  "id": "RC0051",
+  "id_entidade": "E03",
+  "mes": "2024-03",
+  "horas_acompanhamento": 53.11,
+  "contactos_previstos": 15,
+  "custo": 1574.72
+ },
+ {
+  "id": "RC0052",
+  "id_entidade": "E03",
+  "mes": "2024-04",
+  "horas_acompanhamento": 42.2,
+  "contactos_previstos": 7,
+  "custo": 1024.02
+ },
+ {
+  "id": "RC0053",
+  "id_entidade": "E03",
+  "mes": "2024-05",
+  "horas_acompanhamento": 61.67,
+  "contactos_previstos": 16,
+  "custo": 1765.67
+ },
+ {
+  "id": "RC0054",
+  "id_entidade": "E03",
+  "mes": "2024-06",
+  "horas_acompanhamento": 49.03,
+  "contactos_previstos": 16,
+  "custo": 1554.05
+ },
+ {
+  "id": "RC0055",
+  "id_entidade": "E03",
+  "mes": "2024-07",
+  "horas_acompanhamento": 43.01,
+  "contactos_previstos": 13,
+  "custo": 1059.91
+ },
+ {
+  "id": "RC0056",
+  "id_entidade": "E03",
+  "mes": "2024-08",
+  "horas_acompanhamento": 55.21,
+  "contactos_previstos": 15,
+  "custo": 1591.61
+ },
+ {
+  "id": "RC0057",
+  "id_entidade": "E03",
+  "mes": "2024-09",
+  "horas_acompanhamento": 33.54,
+  "contactos_previstos": 9,
+  "custo": 1149.19
+ },
+ {
+  "id": "RC0058",
+  "id_entidade": "E03",
+  "mes": "2024-10",
+  "horas_acompanhamento": 61.72,
+  "contactos_previstos": 17,
+  "custo": 2240.91
+ },
+ {
+  "id": "RC0059",
+  "id_entidade": "E03",
+  "mes": "2024-11",
+  "horas_acompanhamento": 42.43,
+  "contactos_previstos": 10,
+  "custo": 1187.09
+ },
+ {
+  "id": "RC0060",
+  "id_entidade": "E03",
+  "mes": "2024-12",
+  "horas_acompanhamento": 41.13,
+  "contactos_previstos": 9,
+  "custo": 1140.38
+ },
+ {
+  "id": "RC0061",
+  "id_entidade": "E03",
+  "mes": "2025-01",
+  "horas_acompanhamento": 29.26,
+  "contactos_previstos": 8,
+  "custo": 817.28
+ },
+ {
+  "id": "RC0062",
+  "id_entidade": "E03",
+  "mes": "2025-02",
+  "horas_acompanhamento": 60.17,
+  "contactos_previstos": 15,
+  "custo": 1935.75
+ },
+ {
+  "id": "RC0063",
+  "id_entidade": "E03",
+  "mes": "2025-03",
+  "horas_acompanhamento": 53.11,
+  "contactos_previstos": 13,
+  "custo": 1314.47
+ },
+ {
+  "id": "RC0064",
+  "id_entidade": "E03",
+  "mes": "2025-04",
+  "horas_acompanhamento": 61.66,
+  "contactos_previstos": 16,
+  "custo": 1825.64
+ },
+ {
+  "id": "RC0065",
+  "id_entidade": "E03",
+  "mes": "2025-05",
+  "horas_acompanhamento": 62.5,
+  "contactos_previstos": 16,
+  "custo": 1526.99
+ },
+ {
+  "id": "RC0066",
+  "id_entidade": "E03",
+  "mes": "2025-06",
+  "horas_acompanhamento": 52.35,
+  "contactos_previstos": 14,
+  "custo": 1416.37
+ },
+ {
+  "id": "RC0067",
+  "id_entidade": "E03",
+  "mes": "2025-07",
+  "horas_acompanhamento": 34.58,
+  "contactos_previstos": 8,
+  "custo": 1242.44
+ },
+ {
+  "id": "RC0068",
+  "id_entidade": "E03",
+  "mes": "2025-08",
+  "horas_acompanhamento": 61.74,
+  "contactos_previstos": 17,
+  "custo": 1430.33
+ },
+ {
+  "id": "RC0069",
+  "id_entidade": "E03",
+  "mes": "2025-09",
+  "horas_acompanhamento": 43.66,
+  "contactos_previstos": 11,
+  "custo": 1148.21
+ },
+ {
+  "id": "RC0070",
+  "id_entidade": "E03",
+  "mes": "2025-10",
+  "horas_acompanhamento": 47.49,
+  "contactos_previstos": 7,
+  "custo": 1413.21
+ },
+ {
+  "id": "RC0071",
+  "id_entidade": "E03",
+  "mes": "2025-11",
+  "horas_acompanhamento": 33.41,
+  "contactos_previstos": 7,
+  "custo": 1121.03
+ },
+ {
+  "id": "RC0072",
+  "id_entidade": "E03",
+  "mes": "2025-12",
+  "horas_acompanhamento": 32.99,
+  "contactos_previstos": 6,
+  "custo": 783.9
+ },
+ {
+  "id": "RC0073",
+  "id_entidade": "E04",
+  "mes": "2024-01",
+  "horas_acompanhamento": 47.34,
+  "contactos_previstos": 8,
+  "custo": 1203.09
+ },
+ {
+  "id": "RC0074",
+  "id_entidade": "E04",
+  "mes": "2024-02",
+  "horas_acompanhamento": 56.07,
+  "contactos_previstos": 14,
+  "custo": 1720.75
+ },
+ {
+  "id": "RC0075",
+  "id_entidade": "E04",
+  "mes": "2024-03",
+  "horas_acompanhamento": 57.1,
+  "contactos_previstos": 9,
+  "custo": 1257.91
+ },
+ {
+  "id": "RC0076",
+  "id_entidade": "E04",
+  "mes": "2024-04",
+  "horas_acompanhamento": 57.98,
+  "contactos_previstos": 13,
+  "custo": 1780.78
+ },
+ {
+  "id": "RC0077",
+  "id_entidade": "E04",
+  "mes": "2024-05",
+  "horas_acompanhamento": 55.85,
+  "contactos_previstos": 10,
+  "custo": 1384.42
+ },
+ {
+  "id": "RC0078",
+  "id_entidade": "E04",
+  "mes": "2024-06",
+  "horas_acompanhamento": 87.98,
+  "contactos_previstos": 22,
+  "custo": 2233.37
+ },
+ {
+  "id": "RC0079",
+  "id_entidade": "E04",
+  "mes": "2024-07",
+  "horas_acompanhamento": 85.98,
+  "contactos_previstos": 20,
+  "custo": 1944.85
+ },
+ {
+  "id": "RC0080",
+  "id_entidade": "E04",
+  "mes": "2024-08",
+  "horas_acompanhamento": 40.68,
+  "contactos_previstos": 13,
+  "custo": 951.34
+ },
+ {
+  "id": "RC0081",
+  "id_entidade": "E04",
+  "mes": "2024-09",
+  "horas_acompanhamento": 42.58,
+  "contactos_previstos": 14,
+  "custo": 1347.95
+ },
+ {
+  "id": "RC0082",
+  "id_entidade": "E04",
+  "mes": "2024-10",
+  "horas_acompanhamento": 80.0,
+  "contactos_previstos": 22,
+  "custo": 2215.62
+ },
+ {
+  "id": "RC0083",
+  "id_entidade": "E04",
+  "mes": "2024-11",
+  "horas_acompanhamento": 59.66,
+  "contactos_previstos": 15,
+  "custo": 1952.41
+ },
+ {
+  "id": "RC0084",
+  "id_entidade": "E04",
+  "mes": "2024-12",
+  "horas_acompanhamento": 45.39,
+  "contactos_previstos": 12,
+  "custo": 1450.97
+ },
+ {
+  "id": "RC0085",
+  "id_entidade": "E04",
+  "mes": "2025-01",
+  "horas_acompanhamento": 61.72,
+  "contactos_previstos": 17,
+  "custo": 2266.58
+ },
+ {
+  "id": "RC0086",
+  "id_entidade": "E04",
+  "mes": "2025-02",
+  "horas_acompanhamento": 52.08,
+  "contactos_previstos": 13,
+  "custo": 1220.05
+ },
+ {
+  "id": "RC0087",
+  "id_entidade": "E04",
+  "mes": "2025-03",
+  "horas_acompanhamento": 86.96,
+  "contactos_previstos": 24,
+  "custo": 3132.34
+ },
+ {
+  "id": "RC0088",
+  "id_entidade": "E04",
+  "mes": "2025-04",
+  "horas_acompanhamento": 75.2,
+  "contactos_previstos": 21,
+  "custo": 2182.41
+ },
+ {
+  "id": "RC0089",
+  "id_entidade": "E04",
+  "mes": "2025-05",
+  "horas_acompanhamento": 70.26,
+  "contactos_previstos": 17,
+  "custo": 1645.97
+ },
+ {
+  "id": "RC0090",
+  "id_entidade": "E04",
+  "mes": "2025-06",
+  "horas_acompanhamento": 76.05,
+  "contactos_previstos": 17,
+  "custo": 2581.45
+ },
+ {
+  "id": "RC0091",
+  "id_entidade": "E04",
+  "mes": "2025-07",
+  "horas_acompanhamento": 74.85,
+  "contactos_previstos": 15,
+  "custo": 1650.63
+ },
+ {
+  "id": "RC0092",
+  "id_entidade": "E04",
+  "mes": "2025-08",
+  "horas_acompanhamento": 44.93,
+  "contactos_previstos": 12,
+  "custo": 1348.0
+ },
+ {
+  "id": "RC0093",
+  "id_entidade": "E04",
+  "mes": "2025-09",
+  "horas_acompanhamento": 82.73,
+  "contactos_previstos": 24,
+  "custo": 2551.53
+ },
+ {
+  "id": "RC0094",
+  "id_entidade": "E04",
+  "mes": "2025-10",
+  "horas_acompanhamento": 59.47,
+  "contactos_previstos": 11,
+  "custo": 1498.25
+ },
+ {
+  "id": "RC0095",
+  "id_entidade": "E04",
+  "mes": "2025-11",
+  "horas_acompanhamento": 58.94,
+  "contactos_previstos": 13,
+  "custo": 1592.46
+ },
+ {
+  "id": "RC0096",
+  "id_entidade": "E04",
+  "mes": "2025-12",
+  "horas_acompanhamento": 63.04,
+  "contactos_previstos": 15,
+  "custo": 1693.51
+ },
+ {
+  "id": "RC0097",
+  "id_entidade": "E05",
+  "mes": "2024-01",
+  "horas_acompanhamento": 74.65,
+  "contactos_previstos": 20,
+  "custo": 1769.67
+ },
+ {
+  "id": "RC0098",
+  "id_entidade": "E05",
+  "mes": "2024-02",
+  "horas_acompanhamento": 77.84,
+  "contactos_previstos": 18,
+  "custo": 2244.52
+ },
+ {
+  "id": "RC0099",
+  "id_entidade": "E05",
+  "mes": "2024-03",
+  "horas_acompanhamento": 46.27,
+  "contactos_previstos": 11,
+  "custo": 1157.05
+ },
+ {
+  "id": "RC0100",
+  "id_entidade": "E05",
+  "mes": "2024-04",
+  "horas_acompanhamento": 59.84,
+  "contactos_previstos": 13,
+  "custo": 1629.82
+ },
+ {
+  "id": "RC0101",
+  "id_entidade": "E05",
+  "mes": "2024-05",
+  "horas_acompanhamento": 51.59,
+  "contactos_previstos": 15,
+  "custo": 1239.22
+ },
+ {
+  "id": "RC0102",
+  "id_entidade": "E05",
+  "mes": "2024-06",
+  "horas_acompanhamento": 89.91,
+  "contactos_previstos": 24,
+  "custo": 2614.18
+ },
+ {
+  "id": "RC0103",
+  "id_entidade": "E05",
+  "mes": "2024-07",
+  "horas_acompanhamento": 60.56,
+  "contactos_previstos": 14,
+  "custo": 2128.6
+ },
+ {
+  "id": "RC0104",
+  "id_entidade": "E05",
+  "mes": "2024-08",
+  "horas_acompanhamento": 43.9,
+  "contactos_previstos": 10,
+  "custo": 1021.12
+ },
+ {
+  "id": "RC0105",
+  "id_entidade": "E05",
+  "mes": "2024-09",
+  "horas_acompanhamento": 88.84,
+  "contactos_previstos": 23,
+  "custo": 2134.42
+ },
+ {
+  "id": "RC0106",
+  "id_entidade": "E05",
+  "mes": "2024-10",
+  "horas_acompanhamento": 43.28,
+  "contactos_previstos": 9,
+  "custo": 1272.1
+ },
+ {
+  "id": "RC0107",
+  "id_entidade": "E05",
+  "mes": "2024-11",
+  "horas_acompanhamento": 66.12,
+  "contactos_previstos": 15,
+  "custo": 2093.86
+ },
+ {
+  "id": "RC0108",
+  "id_entidade": "E05",
+  "mes": "2024-12",
+  "horas_acompanhamento": 89.88,
+  "contactos_previstos": 22,
+  "custo": 3013.37
+ },
+ {
+  "id": "RC0109",
+  "id_entidade": "E05",
+  "mes": "2025-01",
+  "horas_acompanhamento": 82.1,
+  "contactos_previstos": 20,
+  "custo": 2371.77
+ },
+ {
+  "id": "RC0110",
+  "id_entidade": "E05",
+  "mes": "2025-02",
+  "horas_acompanhamento": 75.99,
+  "contactos_previstos": 20,
+  "custo": 2168.47
+ },
+ {
+  "id": "RC0111",
+  "id_entidade": "E05",
+  "mes": "2025-03",
+  "horas_acompanhamento": 50.05,
+  "contactos_previstos": 13,
+  "custo": 1819.13
+ },
+ {
+  "id": "RC0112",
+  "id_entidade": "E05",
+  "mes": "2025-04",
+  "horas_acompanhamento": 71.35,
+  "contactos_previstos": 21,
+  "custo": 2086.17
+ },
+ {
+  "id": "RC0113",
+  "id_entidade": "E05",
+  "mes": "2025-05",
+  "horas_acompanhamento": 68.9,
+  "contactos_previstos": 17,
+  "custo": 2435.27
+ },
+ {
+  "id": "RC0114",
+  "id_entidade": "E05",
+  "mes": "2025-06",
+  "horas_acompanhamento": 61.3,
+  "contactos_previstos": 16,
+  "custo": 1803.8
+ },
+ {
+  "id": "RC0115",
+  "id_entidade": "E05",
+  "mes": "2025-07",
+  "horas_acompanhamento": 56.87,
+  "contactos_previstos": 16,
+  "custo": 1286.19
+ },
+ {
+  "id": "RC0116",
+  "id_entidade": "E05",
+  "mes": "2025-08",
+  "horas_acompanhamento": 59.78,
+  "contactos_previstos": 14,
+  "custo": 1476.99
+ },
+ {
+  "id": "RC0117",
+  "id_entidade": "E05",
+  "mes": "2025-09",
+  "horas_acompanhamento": 77.09,
+  "contactos_previstos": 21,
+  "custo": 2233.29
+ },
+ {
+  "id": "RC0118",
+  "id_entidade": "E05",
+  "mes": "2025-10",
+  "horas_acompanhamento": 82.66,
+  "contactos_previstos": 18,
+  "custo": 2168.32
+ },
+ {
+  "id": "RC0119",
+  "id_entidade": "E05",
+  "mes": "2025-11",
+  "horas_acompanhamento": 65.49,
+  "contactos_previstos": 18,
+  "custo": 2248.21
+ },
+ {
+  "id": "RC0120",
+  "id_entidade": "E05",
+  "mes": "2025-12",
+  "horas_acompanhamento": 40.64,
+  "contactos_previstos": 10,
+  "custo": 1495.22
+ },
+ {
+  "id": "RC0121",
+  "id_entidade": "E06",
+  "mes": "2024-01",
+  "horas_acompanhamento": 87.45,
+  "contactos_previstos": 22,
+  "custo": 2123.61
+ },
+ {
+  "id": "RC0122",
+  "id_entidade": "E06",
+  "mes": "2024-02",
+  "horas_acompanhamento": 72.33,
+  "contactos_previstos": 16,
+  "custo": 2271.67
+ },
+ {
+  "id": "RC0123",
+  "id_entidade": "E06",
+  "mes": "2024-03",
+  "horas_acompanhamento": 81.29,
+  "contactos_previstos": 24,
+  "custo": 1970.33
+ },
+ {
+  "id": "RC0124",
+  "id_entidade": "E06",
+  "mes": "2024-04",
+  "horas_acompanhamento": 77.53,
+  "contactos_previstos": 19,
+  "custo": 2854.13
+ },
+ {
+  "id": "RC0125",
+  "id_entidade": "E06",
+  "mes": "2024-05",
+  "horas_acompanhamento": 83.32,
+  "contactos_previstos": 20,
+  "custo": 2803.73
+ },
+ {
+  "id": "RC0126",
+  "id_entidade": "E06",
+  "mes": "2024-06",
+  "horas_acompanhamento": 85.23,
+  "contactos_previstos": 22,
+  "custo": 1891.57
+ },
+ {
+  "id": "RC0127",
+  "id_entidade": "E06",
+  "mes": "2024-07",
+  "horas_acompanhamento": 78.64,
+  "contactos_previstos": 21,
+  "custo": 1864.87
+ },
+ {
+  "id": "RC0128",
+  "id_entidade": "E06",
+  "mes": "2024-08",
+  "horas_acompanhamento": 66.88,
+  "contactos_previstos": 18,
+  "custo": 2134.58
+ },
+ {
+  "id": "RC0129",
+  "id_entidade": "E06",
+  "mes": "2024-09",
+  "horas_acompanhamento": 72.45,
+  "contactos_previstos": 18,
+  "custo": 2664.68
+ },
+ {
+  "id": "RC0130",
+  "id_entidade": "E06",
+  "mes": "2024-10",
+  "horas_acompanhamento": 60.35,
+  "contactos_previstos": 16,
+  "custo": 2134.46
+ },
+ {
+  "id": "RC0131",
+  "id_entidade": "E06",
+  "mes": "2024-11",
+  "horas_acompanhamento": 54.58,
+  "contactos_previstos": 14,
+  "custo": 1442.24
+ },
+ {
+  "id": "RC0132",
+  "id_entidade": "E06",
+  "mes": "2024-12",
+  "horas_acompanhamento": 65.01,
+  "contactos_previstos": 19,
+  "custo": 1915.55
+ },
+ {
+  "id": "RC0133",
+  "id_entidade": "E06",
+  "mes": "2025-01",
+  "horas_acompanhamento": 41.83,
+  "contactos_previstos": 11,
+  "custo": 1137.68
+ },
+ {
+  "id": "RC0134",
+  "id_entidade": "E06",
+  "mes": "2025-02",
+  "horas_acompanhamento": 66.87,
+  "contactos_previstos": 14,
+  "custo": 1657.36
+ },
+ {
+  "id": "RC0135",
+  "id_entidade": "E06",
+  "mes": "2025-03",
+  "horas_acompanhamento": 57.28,
+  "contactos_previstos": 14,
+  "custo": 1795.65
+ },
+ {
+  "id": "RC0136",
+  "id_entidade": "E06",
+  "mes": "2025-04",
+  "horas_acompanhamento": 69.05,
+  "contactos_previstos": 17,
+  "custo": 2155.64
+ },
+ {
+  "id": "RC0137",
+  "id_entidade": "E06",
+  "mes": "2025-05",
+  "horas_acompanhamento": 72.12,
+  "contactos_previstos": 20,
+  "custo": 1650.56
+ },
+ {
+  "id": "RC0138",
+  "id_entidade": "E06",
+  "mes": "2025-06",
+  "horas_acompanhamento": 67.41,
+  "contactos_previstos": 14,
+  "custo": 1505.45
+ },
+ {
+  "id": "RC0139",
+  "id_entidade": "E06",
+  "mes": "2025-07",
+  "horas_acompanhamento": 56.42,
+  "contactos_previstos": 16,
+  "custo": 1297.06
+ },
+ {
+  "id": "RC0140",
+  "id_entidade": "E06",
+  "mes": "2025-08",
+  "horas_acompanhamento": 88.13,
+  "contactos_previstos": 21,
+  "custo": 3323.07
+ },
+ {
+  "id": "RC0141",
+  "id_entidade": "E06",
+  "mes": "2025-09",
+  "horas_acompanhamento": 86.92,
+  "contactos_previstos": 23,
+  "custo": 1975.05
+ },
+ {
+  "id": "RC0142",
+  "id_entidade": "E06",
+  "mes": "2025-10",
+  "horas_acompanhamento": 74.16,
+  "contactos_previstos": 18,
+  "custo": 2581.71
+ },
+ {
+  "id": "RC0143",
+  "id_entidade": "E06",
+  "mes": "2025-11",
+  "horas_acompanhamento": 86.02,
+  "contactos_previstos": 22,
+  "custo": 2607.89
+ },
+ {
+  "id": "RC0144",
+  "id_entidade": "E06",
+  "mes": "2025-12",
+  "horas_acompanhamento": 83.28,
+  "contactos_previstos": 19,
+  "custo": 2210.2
+ },
+ {
+  "id": "RC0145",
+  "id_entidade": "E07",
+  "mes": "2024-01",
+  "horas_acompanhamento": 82.24,
+  "contactos_previstos": 23,
+  "custo": 2929.15
+ },
+ {
+  "id": "RC0146",
+  "id_entidade": "E07",
+  "mes": "2024-02",
+  "horas_acompanhamento": 90.58,
+  "contactos_previstos": 22,
+  "custo": 2590.07
+ },
+ {
+  "id": "RC0147",
+  "id_entidade": "E07",
+  "mes": "2024-03",
+  "horas_acompanhamento": 100.26,
+  "contactos_previstos": 27,
+  "custo": 3150.0
+ },
+ {
+  "id": "RC0148",
+  "id_entidade": "E07",
+  "mes": "2024-04",
+  "horas_acompanhamento": 85.86,
+  "contactos_previstos": 23,
+  "custo": 2172.33
+ },
+ {
+  "id": "RC0149",
+  "id_entidade": "E07",
+  "mes": "2024-05",
+  "horas_acompanhamento": 109.44,
+  "contactos_previstos": 28,
+  "custo": 2966.82
+ },
+ {
+  "id": "RC0150",
+  "id_entidade": "E07",
+  "mes": "2024-06",
+  "horas_acompanhamento": 155.11,
+  "contactos_previstos": 38,
+  "custo": 3742.75
+ },
+ {
+  "id": "RC0151",
+  "id_entidade": "E07",
+  "mes": "2024-07",
+  "horas_acompanhamento": 99.85,
+  "contactos_previstos": 26,
+  "custo": 2242.62
+ },
+ {
+  "id": "RC0152",
+  "id_entidade": "E07",
+  "mes": "2024-08",
+  "horas_acompanhamento": 118.06,
+  "contactos_previstos": 30,
+  "custo": 4022.39
+ },
+ {
+  "id": "RC0153",
+  "id_entidade": "E07",
+  "mes": "2024-09",
+  "horas_acompanhamento": 145.9,
+  "contactos_previstos": 36,
+  "custo": 3843.66
+ },
+ {
+  "id": "RC0154",
+  "id_entidade": "E07",
+  "mes": "2024-10",
+  "horas_acompanhamento": 128.1,
+  "contactos_previstos": 32,
+  "custo": 4337.27
+ },
+ {
+  "id": "RC0155",
+  "id_entidade": "E07",
+  "mes": "2024-11",
+  "horas_acompanhamento": 161.01,
+  "contactos_previstos": 40,
+  "custo": 5286.64
+ },
+ {
+  "id": "RC0156",
+  "id_entidade": "E07",
+  "mes": "2024-12",
+  "horas_acompanhamento": 126.24,
+  "contactos_previstos": 33,
+  "custo": 4546.55
+ },
+ {
+  "id": "RC0157",
+  "id_entidade": "E07",
+  "mes": "2025-01",
+  "horas_acompanhamento": 141.38,
+  "contactos_previstos": 38,
+  "custo": 4941.41
+ },
+ {
+  "id": "RC0158",
+  "id_entidade": "E07",
+  "mes": "2025-02",
+  "horas_acompanhamento": 97.21,
+  "contactos_previstos": 23,
+  "custo": 3333.88
+ },
+ {
+  "id": "RC0159",
+  "id_entidade": "E07",
+  "mes": "2025-03",
+  "horas_acompanhamento": 117.53,
+  "contactos_previstos": 31,
+  "custo": 4295.0
+ },
+ {
+  "id": "RC0160",
+  "id_entidade": "E07",
+  "mes": "2025-04",
+  "horas_acompanhamento": 126.6,
+  "contactos_previstos": 32,
+  "custo": 3521.66
+ },
+ {
+  "id": "RC0161",
+  "id_entidade": "E07",
+  "mes": "2025-05",
+  "horas_acompanhamento": 117.67,
+  "contactos_previstos": 29,
+  "custo": 3217.93
+ },
+ {
+  "id": "RC0162",
+  "id_entidade": "E07",
+  "mes": "2025-06",
+  "horas_acompanhamento": 86.82,
+  "contactos_previstos": 22,
+  "custo": 2464.54
+ },
+ {
+  "id": "RC0163",
+  "id_entidade": "E07",
+  "mes": "2025-07",
+  "horas_acompanhamento": 149.96,
+  "contactos_previstos": 38,
+  "custo": 5207.08
+ },
+ {
+  "id": "RC0164",
+  "id_entidade": "E07",
+  "mes": "2025-08",
+  "horas_acompanhamento": 145.94,
+  "contactos_previstos": 36,
+  "custo": 5197.17
+ },
+ {
+  "id": "RC0165",
+  "id_entidade": "E07",
+  "mes": "2025-09",
+  "horas_acompanhamento": 82.66,
+  "contactos_previstos": 23,
+  "custo": 2949.94
+ },
+ {
+  "id": "RC0166",
+  "id_entidade": "E07",
+  "mes": "2025-10",
+  "horas_acompanhamento": 157.42,
+  "contactos_previstos": 38,
+  "custo": 5323.04
+ },
+ {
+  "id": "RC0167",
+  "id_entidade": "E07",
+  "mes": "2025-11",
+  "horas_acompanhamento": 136.36,
+  "contactos_previstos": 35,
+  "custo": 3926.99
+ },
+ {
+  "id": "RC0168",
+  "id_entidade": "E07",
+  "mes": "2025-12",
+  "horas_acompanhamento": 170.67,
+  "contactos_previstos": 44,
+  "custo": 6307.96
+ },
+ {
+  "id": "RC0169",
+  "id_entidade": "E08",
+  "mes": "2024-01",
+  "horas_acompanhamento": 43.83,
+  "contactos_previstos": 16,
+  "custo": 1513.84
+ },
+ {
+  "id": "RC0170",
+  "id_entidade": "E08",
+  "mes": "2024-02",
+  "horas_acompanhamento": 60.19,
+  "contactos_previstos": 14,
+  "custo": 1488.85
+ },
+ {
+  "id": "RC0171",
+  "id_entidade": "E08",
+  "mes": "2024-03",
+  "horas_acompanhamento": 56.78,
+  "contactos_previstos": 17,
+  "custo": 1709.25
+ },
+ {
+  "id": "RC0172",
+  "id_entidade": "E08",
+  "mes": "2024-04",
+  "horas_acompanhamento": 44.63,
+  "contactos_previstos": 10,
+  "custo": 1242.81
+ },
+ {
+  "id": "RC0173",
+  "id_entidade": "E08",
+  "mes": "2024-05",
+  "horas_acompanhamento": 61.72,
+  "contactos_previstos": 16,
+  "custo": 1563.64
+ },
+ {
+  "id": "RC0174",
+  "id_entidade": "E08",
+  "mes": "2024-06",
+  "horas_acompanhamento": 68.62,
+  "contactos_previstos": 17,
+  "custo": 1694.24
+ },
+ {
+  "id": "RC0175",
+  "id_entidade": "E08",
+  "mes": "2024-07",
+  "horas_acompanhamento": 65.05,
+  "contactos_previstos": 18,
+  "custo": 2153.81
+ },
+ {
+  "id": "RC0176",
+  "id_entidade": "E08",
+  "mes": "2024-08",
+  "horas_acompanhamento": 67.48,
+  "contactos_previstos": 16,
+  "custo": 2157.87
+ },
+ {
+  "id": "RC0177",
+  "id_entidade": "E08",
+  "mes": "2024-09",
+  "horas_acompanhamento": 67.68,
+  "contactos_previstos": 18,
+  "custo": 1633.8
+ },
+ {
+  "id": "RC0178",
+  "id_entidade": "E08",
+  "mes": "2024-10",
+  "horas_acompanhamento": 67.52,
+  "contactos_previstos": 20,
+  "custo": 1977.76
+ },
+ {
+  "id": "RC0179",
+  "id_entidade": "E08",
+  "mes": "2024-11",
+  "horas_acompanhamento": 72.81,
+  "contactos_previstos": 19,
+  "custo": 2171.61
+ },
+ {
+  "id": "RC0180",
+  "id_entidade": "E08",
+  "mes": "2024-12",
+  "horas_acompanhamento": 43.82,
+  "contactos_previstos": 11,
+  "custo": 1214.97
+ },
+ {
+  "id": "RC0181",
+  "id_entidade": "E08",
+  "mes": "2025-01",
+  "horas_acompanhamento": 58.74,
+  "contactos_previstos": 12,
+  "custo": 1711.14
+ },
+ {
+  "id": "RC0182",
+  "id_entidade": "E08",
+  "mes": "2025-02",
+  "horas_acompanhamento": 63.01,
+  "contactos_previstos": 17,
+  "custo": 1624.18
+ },
+ {
+  "id": "RC0183",
+  "id_entidade": "E08",
+  "mes": "2025-03",
+  "horas_acompanhamento": 86.79,
+  "contactos_previstos": 25,
+  "custo": 3234.53
+ },
+ {
+  "id": "RC0184",
+  "id_entidade": "E08",
+  "mes": "2025-04",
+  "horas_acompanhamento": 76.95,
+  "contactos_previstos": 15,
+  "custo": 2698.71
+ },
+ {
+  "id": "RC0185",
+  "id_entidade": "E08",
+  "mes": "2025-05",
+  "horas_acompanhamento": 74.02,
+  "contactos_previstos": 19,
+  "custo": 2475.32
+ },
+ {
+  "id": "RC0186",
+  "id_entidade": "E08",
+  "mes": "2025-06",
+  "horas_acompanhamento": 75.28,
+  "contactos_previstos": 21,
+  "custo": 1686.54
+ },
+ {
+  "id": "RC0187",
+  "id_entidade": "E08",
+  "mes": "2025-07",
+  "horas_acompanhamento": 53.09,
+  "contactos_previstos": 17,
+  "custo": 1389.27
+ },
+ {
+  "id": "RC0188",
+  "id_entidade": "E08",
+  "mes": "2025-08",
+  "horas_acompanhamento": 41.55,
+  "contactos_previstos": 9,
+  "custo": 1139.33
+ },
+ {
+  "id": "RC0189",
+  "id_entidade": "E08",
+  "mes": "2025-09",
+  "horas_acompanhamento": 64.8,
+  "contactos_previstos": 11,
+  "custo": 1903.93
+ },
+ {
+  "id": "RC0190",
+  "id_entidade": "E08",
+  "mes": "2025-10",
+  "horas_acompanhamento": 69.12,
+  "contactos_previstos": 19,
+  "custo": 2617.81
+ },
+ {
+  "id": "RC0191",
+  "id_entidade": "E08",
+  "mes": "2025-11",
+  "horas_acompanhamento": 77.04,
+  "contactos_previstos": 18,
+  "custo": 2098.94
+ },
+ {
+  "id": "RC0192",
+  "id_entidade": "E08",
+  "mes": "2025-12",
+  "horas_acompanhamento": 63.67,
+  "contactos_previstos": 16,
+  "custo": 2081.77
+ }
+]

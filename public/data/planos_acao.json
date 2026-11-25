@@ -1,0 +1,3755 @@
+[
+ {
+  "id": "PL00001",
+  "id_participante": "PT00355",
+  "id_entidade": "E01",
+  "data": "2025-07-13",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00002",
+  "id_participante": "PT02865",
+  "id_entidade": "E06",
+  "data": "2024-11-11",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00003",
+  "id_participante": "PT01863",
+  "id_entidade": "E03",
+  "data": "2025-05-19",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00004",
+  "id_participante": "PT00025",
+  "id_entidade": "E01",
+  "data": "2024-08-30",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00005",
+  "id_participante": "PT01495",
+  "id_entidade": "E03",
+  "data": "2025-10-17",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00006",
+  "id_participante": "PT00854",
+  "id_entidade": "E02",
+  "data": "2025-10-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00007",
+  "id_participante": "PT00522",
+  "id_entidade": "E01",
+  "data": "2025-03-01",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00008",
+  "id_participante": "PT04312",
+  "id_entidade": "E08",
+  "data": "2025-06-19",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00009",
+  "id_participante": "PT01384",
+  "id_entidade": "E03",
+  "data": "2024-08-27",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00010",
+  "id_participante": "PT02093",
+  "id_entidade": "E04",
+  "data": "2025-09-18",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00011",
+  "id_participante": "PT03018",
+  "id_entidade": "E06",
+  "data": "2024-12-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00012",
+  "id_participante": "PT01726",
+  "id_entidade": "E03",
+  "data": "2025-11-11",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00013",
+  "id_participante": "PT01160",
+  "id_entidade": "E03",
+  "data": "2025-08-16",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00014",
+  "id_participante": "PT01529",
+  "id_entidade": "E03",
+  "data": "2025-10-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00015",
+  "id_participante": "PT03696",
+  "id_entidade": "E07",
+  "data": "2025-06-21",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00016",
+  "id_participante": "PT01895",
+  "id_entidade": "E03",
+  "data": "2025-02-17",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00017",
+  "id_participante": "PT02514",
+  "id_entidade": "E05",
+  "data": "2024-10-20",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00018",
+  "id_participante": "PT00584",
+  "id_entidade": "E02",
+  "data": "2024-12-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00019",
+  "id_participante": "PT00800",
+  "id_entidade": "E02",
+  "data": "2025-04-15",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00020",
+  "id_participante": "PT00656",
+  "id_entidade": "E02",
+  "data": "2024-12-27",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00021",
+  "id_participante": "PT00945",
+  "id_entidade": "E02",
+  "data": "2024-11-22",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00022",
+  "id_participante": "PT00553",
+  "id_entidade": "E02",
+  "data": "2025-09-09",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00023",
+  "id_participante": "PT02213",
+  "id_entidade": "E04",
+  "data": "2025-05-12",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00024",
+  "id_participante": "PT03287",
+  "id_entidade": "E06",
+  "data": "2024-12-05",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00025",
+  "id_participante": "PT00879",
+  "id_entidade": "E02",
+  "data": "2025-11-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00026",
+  "id_participante": "PT01558",
+  "id_entidade": "E03",
+  "data": "2025-08-17",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00027",
+  "id_participante": "PT02850",
+  "id_entidade": "E05",
+  "data": "2025-07-15",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00028",
+  "id_participante": "PT03505",
+  "id_entidade": "E07",
+  "data": "2025-05-06",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00029",
+  "id_participante": "PT00236",
+  "id_entidade": "E01",
+  "data": "2025-02-04",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00030",
+  "id_participante": "PT03882",
+  "id_entidade": "E08",
+  "data": "2025-12-13",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00031",
+  "id_participante": "PT03924",
+  "id_entidade": "E08",
+  "data": "2025-10-18",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00032",
+  "id_participante": "PT03511",
+  "id_entidade": "E07",
+  "data": "2025-03-23",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00033",
+  "id_participante": "PT03345",
+  "id_entidade": "E06",
+  "data": "2025-08-26",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00034",
+  "id_participante": "PT00102",
+  "id_entidade": "E01",
+  "data": "2024-05-25",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00035",
+  "id_participante": "PT01872",
+  "id_entidade": "E03",
+  "data": "2025-09-15",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00036",
+  "id_participante": "PT03647",
+  "id_entidade": "E07",
+  "data": "2025-09-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00037",
+  "id_participante": "PT01579",
+  "id_entidade": "E03",
+  "data": "2024-11-06",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00038",
+  "id_participante": "PT03229",
+  "id_entidade": "E06",
+  "data": "2025-03-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00039",
+  "id_participante": "PT03458",
+  "id_entidade": "E07",
+  "data": "2025-04-22",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00040",
+  "id_participante": "PT01405",
+  "id_entidade": "E03",
+  "data": "2025-11-17",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00041",
+  "id_participante": "PT04001",
+  "id_entidade": "E08",
+  "data": "2025-09-28",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00042",
+  "id_participante": "PT02887",
+  "id_entidade": "E06",
+  "data": "2025-03-15",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00043",
+  "id_participante": "PT00287",
+  "id_entidade": "E01",
+  "data": "2025-12-30",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00044",
+  "id_participante": "PT03556",
+  "id_entidade": "E07",
+  "data": "2025-05-02",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00045",
+  "id_participante": "PT03757",
+  "id_entidade": "E07",
+  "data": "2025-05-27",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00046",
+  "id_participante": "PT01623",
+  "id_entidade": "E03",
+  "data": "2025-06-21",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00047",
+  "id_participante": "PT01126",
+  "id_entidade": "E03",
+  "data": "2025-10-09",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00048",
+  "id_participante": "PT00274",
+  "id_entidade": "E01",
+  "data": "2024-09-16",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00049",
+  "id_participante": "PT01740",
+  "id_entidade": "E03",
+  "data": "2025-07-31",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00050",
+  "id_participante": "PT00175",
+  "id_entidade": "E01",
+  "data": "2024-07-11",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00051",
+  "id_participante": "PT01604",
+  "id_entidade": "E03",
+  "data": "2024-11-21",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00052",
+  "id_participante": "PT02538",
+  "id_entidade": "E05",
+  "data": "2025-07-15",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00053",
+  "id_participante": "PT01921",
+  "id_entidade": "E04",
+  "data": "2025-09-04",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00054",
+  "id_participante": "PT00209",
+  "id_entidade": "E01",
+  "data": "2024-10-04",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00055",
+  "id_participante": "PT01553",
+  "id_entidade": "E03",
+  "data": "2025-01-01",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00056",
+  "id_participante": "PT03304",
+  "id_entidade": "E06",
+  "data": "2025-05-29",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00057",
+  "id_participante": "PT03723",
+  "id_entidade": "E07",
+  "data": "2024-08-21",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00058",
+  "id_participante": "PT00876",
+  "id_entidade": "E02",
+  "data": "2025-12-28",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00059",
+  "id_participante": "PT00929",
+  "id_entidade": "E02",
+  "data": "2025-12-13",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00060",
+  "id_participante": "PT02850",
+  "id_entidade": "E05",
+  "data": "2025-11-06",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00061",
+  "id_participante": "PT03023",
+  "id_entidade": "E06",
+  "data": "2024-06-26",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00062",
+  "id_participante": "PT03890",
+  "id_entidade": "E08",
+  "data": "2025-01-17",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00063",
+  "id_participante": "PT00163",
+  "id_entidade": "E01",
+  "data": "2025-06-24",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00064",
+  "id_participante": "PT03589",
+  "id_entidade": "E07",
+  "data": "2025-05-16",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00065",
+  "id_participante": "PT00704",
+  "id_entidade": "E02",
+  "data": "2025-07-02",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00066",
+  "id_participante": "PT00212",
+  "id_entidade": "E01",
+  "data": "2025-06-13",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00067",
+  "id_participante": "PT01309",
+  "id_entidade": "E03",
+  "data": "2025-08-07",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00068",
+  "id_participante": "PT03064",
+  "id_entidade": "E06",
+  "data": "2025-08-10",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00069",
+  "id_participante": "PT01012",
+  "id_entidade": "E02",
+  "data": "2025-05-03",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00070",
+  "id_participante": "PT03903",
+  "id_entidade": "E08",
+  "data": "2025-03-29",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00071",
+  "id_participante": "PT02079",
+  "id_entidade": "E04",
+  "data": "2025-11-17",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00072",
+  "id_participante": "PT02150",
+  "id_entidade": "E04",
+  "data": "2024-05-06",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00073",
+  "id_participante": "PT00360",
+  "id_entidade": "E01",
+  "data": "2025-11-14",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00074",
+  "id_participante": "PT02677",
+  "id_entidade": "E05",
+  "data": "2025-09-03",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00075",
+  "id_participante": "PT03285",
+  "id_entidade": "E06",
+  "data": "2025-03-21",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00076",
+  "id_participante": "PT00153",
+  "id_entidade": "E01",
+  "data": "2025-10-24",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00077",
+  "id_participante": "PT01574",
+  "id_entidade": "E03",
+  "data": "2025-12-01",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00078",
+  "id_participante": "PT00344",
+  "id_entidade": "E01",
+  "data": "2025-05-15",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00079",
+  "id_participante": "PT03118",
+  "id_entidade": "E06",
+  "data": "2025-12-26",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00080",
+  "id_participante": "PT04425",
+  "id_entidade": "E08",
+  "data": "2024-10-19",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00081",
+  "id_participante": "PT03185",
+  "id_entidade": "E06",
+  "data": "2025-11-16",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00082",
+  "id_participante": "PT01475",
+  "id_entidade": "E03",
+  "data": "2024-08-12",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00083",
+  "id_participante": "PT03138",
+  "id_entidade": "E06",
+  "data": "2025-04-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00084",
+  "id_participante": "PT00044",
+  "id_entidade": "E01",
+  "data": "2025-11-03",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00085",
+  "id_participante": "PT01210",
+  "id_entidade": "E03",
+  "data": "2025-10-20",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00086",
+  "id_participante": "PT03071",
+  "id_entidade": "E06",
+  "data": "2025-02-09",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00087",
+  "id_participante": "PT02389",
+  "id_entidade": "E05",
+  "data": "2025-01-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00088",
+  "id_participante": "PT03612",
+  "id_entidade": "E07",
+  "data": "2025-01-20",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00089",
+  "id_participante": "PT00070",
+  "id_entidade": "E01",
+  "data": "2024-11-26",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00090",
+  "id_participante": "PT03859",
+  "id_entidade": "E08",
+  "data": "2025-01-20",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00091",
+  "id_participante": "PT03585",
+  "id_entidade": "E07",
+  "data": "2025-11-09",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00092",
+  "id_participante": "PT00521",
+  "id_entidade": "E01",
+  "data": "2025-11-25",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00093",
+  "id_participante": "PT01159",
+  "id_entidade": "E03",
+  "data": "2025-07-04",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00094",
+  "id_participante": "PT01109",
+  "id_entidade": "E03",
+  "data": "2024-10-01",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00095",
+  "id_participante": "PT02212",
+  "id_entidade": "E04",
+  "data": "2025-01-07",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00096",
+  "id_participante": "PT04303",
+  "id_entidade": "E08",
+  "data": "2025-01-08",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00097",
+  "id_participante": "PT01144",
+  "id_entidade": "E03",
+  "data": "2025-05-22",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00098",
+  "id_participante": "PT01219",
+  "id_entidade": "E03",
+  "data": "2024-10-18",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00099",
+  "id_participante": "PT01602",
+  "id_entidade": "E03",
+  "data": "2025-03-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00100",
+  "id_participante": "PT02170",
+  "id_entidade": "E04",
+  "data": "2025-10-14",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00101",
+  "id_participante": "PT01790",
+  "id_entidade": "E03",
+  "data": "2025-11-14",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00102",
+  "id_participante": "PT00415",
+  "id_entidade": "E01",
+  "data": "2025-09-18",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00103",
+  "id_participante": "PT02767",
+  "id_entidade": "E05",
+  "data": "2025-04-27",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00104",
+  "id_participante": "PT00334",
+  "id_entidade": "E01",
+  "data": "2025-12-22",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00105",
+  "id_participante": "PT02722",
+  "id_entidade": "E05",
+  "data": "2025-07-16",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00106",
+  "id_participante": "PT01210",
+  "id_entidade": "E03",
+  "data": "2024-08-13",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00107",
+  "id_participante": "PT00062",
+  "id_entidade": "E01",
+  "data": "2025-01-22",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00108",
+  "id_participante": "PT00680",
+  "id_entidade": "E02",
+  "data": "2025-06-23",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00109",
+  "id_participante": "PT01674",
+  "id_entidade": "E03",
+  "data": "2025-09-29",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00110",
+  "id_participante": "PT00718",
+  "id_entidade": "E02",
+  "data": "2025-04-06",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00111",
+  "id_participante": "PT00114",
+  "id_entidade": "E01",
+  "data": "2025-12-28",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00112",
+  "id_participante": "PT01916",
+  "id_entidade": "E04",
+  "data": "2024-06-23",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00113",
+  "id_participante": "PT01431",
+  "id_entidade": "E03",
+  "data": "2025-01-06",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00114",
+  "id_participante": "PT04280",
+  "id_entidade": "E08",
+  "data": "2024-08-23",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00115",
+  "id_participante": "PT02893",
+  "id_entidade": "E06",
+  "data": "2025-10-08",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00116",
+  "id_participante": "PT02177",
+  "id_entidade": "E04",
+  "data": "2024-12-26",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00117",
+  "id_participante": "PT01597",
+  "id_entidade": "E03",
+  "data": "2025-09-05",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00118",
+  "id_participante": "PT00983",
+  "id_entidade": "E02",
+  "data": "2025-05-08",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00119",
+  "id_participante": "PT00942",
+  "id_entidade": "E02",
+  "data": "2025-07-30",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00120",
+  "id_participante": "PT01310",
+  "id_entidade": "E03",
+  "data": "2025-05-12",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00121",
+  "id_participante": "PT01350",
+  "id_entidade": "E03",
+  "data": "2025-10-09",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00122",
+  "id_participante": "PT02308",
+  "id_entidade": "E04",
+  "data": "2024-08-07",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00123",
+  "id_participante": "PT01455",
+  "id_entidade": "E03",
+  "data": "2024-08-29",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00124",
+  "id_participante": "PT02915",
+  "id_entidade": "E06",
+  "data": "2025-12-08",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00125",
+  "id_participante": "PT03578",
+  "id_entidade": "E07",
+  "data": "2025-05-27",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00126",
+  "id_participante": "PT04035",
+  "id_entidade": "E08",
+  "data": "2024-12-16",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00127",
+  "id_participante": "PT03425",
+  "id_entidade": "E07",
+  "data": "2025-03-29",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00128",
+  "id_participante": "PT00263",
+  "id_entidade": "E01",
+  "data": "2025-11-03",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00129",
+  "id_participante": "PT02826",
+  "id_entidade": "E05",
+  "data": "2025-07-09",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00130",
+  "id_participante": "PT00353",
+  "id_entidade": "E01",
+  "data": "2024-10-12",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00131",
+  "id_participante": "PT03249",
+  "id_entidade": "E06",
+  "data": "2025-07-01",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00132",
+  "id_participante": "PT00591",
+  "id_entidade": "E02",
+  "data": "2025-01-16",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00133",
+  "id_participante": "PT01343",
+  "id_entidade": "E03",
+  "data": "2025-10-26",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00134",
+  "id_participante": "PT02282",
+  "id_entidade": "E04",
+  "data": "2024-09-19",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00135",
+  "id_participante": "PT03740",
+  "id_entidade": "E07",
+  "data": "2025-12-30",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00136",
+  "id_participante": "PT00718",
+  "id_entidade": "E02",
+  "data": "2025-07-07",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00137",
+  "id_participante": "PT02595",
+  "id_entidade": "E05",
+  "data": "2025-09-21",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00138",
+  "id_participante": "PT02258",
+  "id_entidade": "E04",
+  "data": "2024-09-11",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00139",
+  "id_participante": "PT00572",
+  "id_entidade": "E02",
+  "data": "2025-12-22",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00140",
+  "id_participante": "PT02093",
+  "id_entidade": "E04",
+  "data": "2025-05-17",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00141",
+  "id_participante": "PT01805",
+  "id_entidade": "E03",
+  "data": "2025-07-03",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00142",
+  "id_participante": "PT01147",
+  "id_entidade": "E03",
+  "data": "2025-02-12",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00143",
+  "id_participante": "PT03054",
+  "id_entidade": "E06",
+  "data": "2024-05-30",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00144",
+  "id_participante": "PT03606",
+  "id_entidade": "E07",
+  "data": "2024-10-24",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00145",
+  "id_participante": "PT01328",
+  "id_entidade": "E03",
+  "data": "2025-02-28",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00146",
+  "id_participante": "PT02033",
+  "id_entidade": "E04",
+  "data": "2025-09-22",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00147",
+  "id_participante": "PT03965",
+  "id_entidade": "E08",
+  "data": "2024-02-28",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00148",
+  "id_participante": "PT01780",
+  "id_entidade": "E03",
+  "data": "2025-11-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00149",
+  "id_participante": "PT01422",
+  "id_entidade": "E03",
+  "data": "2025-07-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00150",
+  "id_participante": "PT04084",
+  "id_entidade": "E08",
+  "data": "2025-08-04",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00151",
+  "id_participante": "PT03960",
+  "id_entidade": "E08",
+  "data": "2025-04-03",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00152",
+  "id_participante": "PT01809",
+  "id_entidade": "E03",
+  "data": "2025-02-08",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00153",
+  "id_participante": "PT02626",
+  "id_entidade": "E05",
+  "data": "2024-12-20",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00154",
+  "id_participante": "PT04153",
+  "id_entidade": "E08",
+  "data": "2025-10-22",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00155",
+  "id_participante": "PT03177",
+  "id_entidade": "E06",
+  "data": "2025-09-24",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00156",
+  "id_participante": "PT00782",
+  "id_entidade": "E02",
+  "data": "2025-08-03",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00157",
+  "id_participante": "PT03564",
+  "id_entidade": "E07",
+  "data": "2025-09-02",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00158",
+  "id_participante": "PT00573",
+  "id_entidade": "E02",
+  "data": "2025-06-20",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00159",
+  "id_participante": "PT03213",
+  "id_entidade": "E06",
+  "data": "2025-02-12",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00160",
+  "id_participante": "PT01056",
+  "id_entidade": "E03",
+  "data": "2025-10-08",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00161",
+  "id_participante": "PT04114",
+  "id_entidade": "E08",
+  "data": "2025-07-16",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00162",
+  "id_participante": "PT02599",
+  "id_entidade": "E05",
+  "data": "2025-05-26",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00163",
+  "id_participante": "PT01961",
+  "id_entidade": "E04",
+  "data": "2025-05-20",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00164",
+  "id_participante": "PT01749",
+  "id_entidade": "E03",
+  "data": "2024-04-12",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00165",
+  "id_participante": "PT00720",
+  "id_entidade": "E02",
+  "data": "2025-06-14",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00166",
+  "id_participante": "PT03772",
+  "id_entidade": "E07",
+  "data": "2024-05-29",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00167",
+  "id_participante": "PT01134",
+  "id_entidade": "E03",
+  "data": "2025-11-18",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00168",
+  "id_participante": "PT00191",
+  "id_entidade": "E01",
+  "data": "2024-11-17",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00169",
+  "id_participante": "PT03492",
+  "id_entidade": "E07",
+  "data": "2025-11-25",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00170",
+  "id_participante": "PT01006",
+  "id_entidade": "E02",
+  "data": "2025-04-21",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00171",
+  "id_participante": "PT04247",
+  "id_entidade": "E08",
+  "data": "2025-05-07",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00172",
+  "id_participante": "PT02894",
+  "id_entidade": "E06",
+  "data": "2024-09-01",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00173",
+  "id_participante": "PT04157",
+  "id_entidade": "E08",
+  "data": "2024-09-25",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00174",
+  "id_participante": "PT00025",
+  "id_entidade": "E01",
+  "data": "2025-02-07",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00175",
+  "id_participante": "PT00769",
+  "id_entidade": "E02",
+  "data": "2025-10-07",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00176",
+  "id_participante": "PT01450",
+  "id_entidade": "E03",
+  "data": "2025-10-24",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00177",
+  "id_participante": "PT02108",
+  "id_entidade": "E04",
+  "data": "2025-08-04",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00178",
+  "id_participante": "PT02212",
+  "id_entidade": "E04",
+  "data": "2025-05-12",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00179",
+  "id_participante": "PT04035",
+  "id_entidade": "E08",
+  "data": "2025-08-12",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00180",
+  "id_participante": "PT04098",
+  "id_entidade": "E08",
+  "data": "2025-04-16",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00181",
+  "id_participante": "PT04185",
+  "id_entidade": "E08",
+  "data": "2025-02-17",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00182",
+  "id_participante": "PT03926",
+  "id_entidade": "E08",
+  "data": "2025-09-17",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00183",
+  "id_participante": "PT03515",
+  "id_entidade": "E07",
+  "data": "2025-09-15",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00184",
+  "id_participante": "PT04067",
+  "id_entidade": "E08",
+  "data": "2025-02-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00185",
+  "id_participante": "PT03341",
+  "id_entidade": "E06",
+  "data": "2024-07-19",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00186",
+  "id_participante": "PT02150",
+  "id_entidade": "E04",
+  "data": "2025-07-02",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00187",
+  "id_participante": "PT04157",
+  "id_entidade": "E08",
+  "data": "2025-09-26",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00188",
+  "id_participante": "PT03092",
+  "id_entidade": "E06",
+  "data": "2025-07-22",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00189",
+  "id_participante": "PT00275",
+  "id_entidade": "E01",
+  "data": "2025-08-16",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00190",
+  "id_participante": "PT03019",
+  "id_entidade": "E06",
+  "data": "2025-08-03",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00191",
+  "id_participante": "PT01013",
+  "id_entidade": "E02",
+  "data": "2025-12-22",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00192",
+  "id_participante": "PT03807",
+  "id_entidade": "E08",
+  "data": "2025-08-21",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00193",
+  "id_participante": "PT03390",
+  "id_entidade": "E06",
+  "data": "2025-06-22",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00194",
+  "id_participante": "PT02691",
+  "id_entidade": "E05",
+  "data": "2025-08-02",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00195",
+  "id_participante": "PT02154",
+  "id_entidade": "E04",
+  "data": "2025-04-21",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00196",
+  "id_participante": "PT03091",
+  "id_entidade": "E06",
+  "data": "2025-05-20",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00197",
+  "id_participante": "PT02142",
+  "id_entidade": "E04",
+  "data": "2025-03-24",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00198",
+  "id_participante": "PT00218",
+  "id_entidade": "E01",
+  "data": "2024-10-10",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00199",
+  "id_participante": "PT02122",
+  "id_entidade": "E04",
+  "data": "2024-04-02",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00200",
+  "id_participante": "PT04068",
+  "id_entidade": "E08",
+  "data": "2025-08-13",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00201",
+  "id_participante": "PT01179",
+  "id_entidade": "E03",
+  "data": "2025-08-28",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00202",
+  "id_participante": "PT01538",
+  "id_entidade": "E03",
+  "data": "2025-07-18",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00203",
+  "id_participante": "PT00091",
+  "id_entidade": "E01",
+  "data": "2025-08-15",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00204",
+  "id_participante": "PT01818",
+  "id_entidade": "E03",
+  "data": "2024-09-26",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00205",
+  "id_participante": "PT03821",
+  "id_entidade": "E08",
+  "data": "2024-09-29",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00206",
+  "id_participante": "PT01770",
+  "id_entidade": "E03",
+  "data": "2025-02-23",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00207",
+  "id_participante": "PT01916",
+  "id_entidade": "E04",
+  "data": "2025-10-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00208",
+  "id_participante": "PT00935",
+  "id_entidade": "E02",
+  "data": "2025-03-07",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00209",
+  "id_participante": "PT04479",
+  "id_entidade": "E08",
+  "data": "2025-09-10",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00210",
+  "id_participante": "PT01317",
+  "id_entidade": "E03",
+  "data": "2024-05-01",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00211",
+  "id_participante": "PT04111",
+  "id_entidade": "E08",
+  "data": "2025-10-01",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00212",
+  "id_participante": "PT02392",
+  "id_entidade": "E05",
+  "data": "2025-01-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00213",
+  "id_participante": "PT02232",
+  "id_entidade": "E04",
+  "data": "2025-11-12",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00214",
+  "id_participante": "PT02722",
+  "id_entidade": "E05",
+  "data": "2025-04-13",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00215",
+  "id_participante": "PT01520",
+  "id_entidade": "E03",
+  "data": "2024-10-03",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00216",
+  "id_participante": "PT01601",
+  "id_entidade": "E03",
+  "data": "2025-05-02",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00217",
+  "id_participante": "PT02008",
+  "id_entidade": "E04",
+  "data": "2025-06-21",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00218",
+  "id_participante": "PT03121",
+  "id_entidade": "E06",
+  "data": "2025-09-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00219",
+  "id_participante": "PT00693",
+  "id_entidade": "E02",
+  "data": "2024-07-07",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00220",
+  "id_participante": "PT04366",
+  "id_entidade": "E08",
+  "data": "2024-07-23",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00221",
+  "id_participante": "PT04476",
+  "id_entidade": "E08",
+  "data": "2024-03-14",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00222",
+  "id_participante": "PT02232",
+  "id_entidade": "E04",
+  "data": "2024-10-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00223",
+  "id_participante": "PT04414",
+  "id_entidade": "E08",
+  "data": "2024-12-03",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00224",
+  "id_participante": "PT03340",
+  "id_entidade": "E06",
+  "data": "2025-08-21",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00225",
+  "id_participante": "PT00107",
+  "id_entidade": "E01",
+  "data": "2025-10-19",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00226",
+  "id_participante": "PT03238",
+  "id_entidade": "E06",
+  "data": "2025-10-02",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00227",
+  "id_participante": "PT00316",
+  "id_entidade": "E01",
+  "data": "2025-04-24",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00228",
+  "id_participante": "PT03258",
+  "id_entidade": "E06",
+  "data": "2025-03-03",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00229",
+  "id_participante": "PT01520",
+  "id_entidade": "E03",
+  "data": "2025-08-21",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00230",
+  "id_participante": "PT03767",
+  "id_entidade": "E07",
+  "data": "2024-09-25",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00231",
+  "id_participante": "PT01388",
+  "id_entidade": "E03",
+  "data": "2025-07-19",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00232",
+  "id_participante": "PT04037",
+  "id_entidade": "E08",
+  "data": "2025-10-12",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00233",
+  "id_participante": "PT04084",
+  "id_entidade": "E08",
+  "data": "2025-04-10",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00234",
+  "id_participante": "PT00601",
+  "id_entidade": "E02",
+  "data": "2025-10-14",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00235",
+  "id_participante": "PT00736",
+  "id_entidade": "E02",
+  "data": "2025-12-11",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00236",
+  "id_participante": "PT04248",
+  "id_entidade": "E08",
+  "data": "2024-12-01",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00237",
+  "id_participante": "PT00260",
+  "id_entidade": "E01",
+  "data": "2025-06-14",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00238",
+  "id_participante": "PT01308",
+  "id_entidade": "E03",
+  "data": "2025-07-10",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00239",
+  "id_participante": "PT00679",
+  "id_entidade": "E02",
+  "data": "2024-12-28",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00240",
+  "id_participante": "PT00364",
+  "id_entidade": "E01",
+  "data": "2025-11-13",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00241",
+  "id_participante": "PT03097",
+  "id_entidade": "E06",
+  "data": "2025-10-26",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00242",
+  "id_participante": "PT01393",
+  "id_entidade": "E03",
+  "data": "2024-12-09",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00243",
+  "id_participante": "PT04063",
+  "id_entidade": "E08",
+  "data": "2025-03-14",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00244",
+  "id_participante": "PT02545",
+  "id_entidade": "E05",
+  "data": "2025-04-21",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00245",
+  "id_participante": "PT04018",
+  "id_entidade": "E08",
+  "data": "2025-07-11",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00246",
+  "id_participante": "PT01749",
+  "id_entidade": "E03",
+  "data": "2025-03-28",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00247",
+  "id_participante": "PT02603",
+  "id_entidade": "E05",
+  "data": "2025-07-23",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00248",
+  "id_participante": "PT00879",
+  "id_entidade": "E02",
+  "data": "2024-11-14",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00249",
+  "id_participante": "PT02340",
+  "id_entidade": "E04",
+  "data": "2025-02-12",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00250",
+  "id_participante": "PT02118",
+  "id_entidade": "E04",
+  "data": "2024-09-23",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00251",
+  "id_participante": "PT02318",
+  "id_entidade": "E04",
+  "data": "2025-10-29",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00252",
+  "id_participante": "PT01735",
+  "id_entidade": "E03",
+  "data": "2025-04-11",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00253",
+  "id_participante": "PT00349",
+  "id_entidade": "E01",
+  "data": "2025-12-31",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00254",
+  "id_participante": "PT01194",
+  "id_entidade": "E03",
+  "data": "2025-11-27",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00255",
+  "id_participante": "PT00921",
+  "id_entidade": "E02",
+  "data": "2025-07-16",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00256",
+  "id_participante": "PT00608",
+  "id_entidade": "E02",
+  "data": "2025-07-03",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00257",
+  "id_participante": "PT03821",
+  "id_entidade": "E08",
+  "data": "2024-10-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00258",
+  "id_participante": "PT02498",
+  "id_entidade": "E05",
+  "data": "2025-09-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00259",
+  "id_participante": "PT01813",
+  "id_entidade": "E03",
+  "data": "2025-08-27",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00260",
+  "id_participante": "PT03514",
+  "id_entidade": "E07",
+  "data": "2025-07-06",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00261",
+  "id_participante": "PT03107",
+  "id_entidade": "E06",
+  "data": "2025-08-11",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00262",
+  "id_participante": "PT00703",
+  "id_entidade": "E02",
+  "data": "2025-05-02",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00263",
+  "id_participante": "PT02890",
+  "id_entidade": "E06",
+  "data": "2024-05-03",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00264",
+  "id_participante": "PT00929",
+  "id_entidade": "E02",
+  "data": "2024-11-14",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00265",
+  "id_participante": "PT01036",
+  "id_entidade": "E02",
+  "data": "2025-06-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00266",
+  "id_participante": "PT03529",
+  "id_entidade": "E07",
+  "data": "2025-02-24",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00267",
+  "id_participante": "PT02243",
+  "id_entidade": "E04",
+  "data": "2025-09-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00268",
+  "id_participante": "PT01974",
+  "id_entidade": "E04",
+  "data": "2025-07-31",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00269",
+  "id_participante": "PT03178",
+  "id_entidade": "E06",
+  "data": "2024-12-06",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00270",
+  "id_participante": "PT03917",
+  "id_entidade": "E08",
+  "data": "2025-11-30",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00271",
+  "id_participante": "PT04167",
+  "id_entidade": "E08",
+  "data": "2025-01-13",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00272",
+  "id_participante": "PT01439",
+  "id_entidade": "E03",
+  "data": "2024-12-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00273",
+  "id_participante": "PT02290",
+  "id_entidade": "E04",
+  "data": "2024-06-13",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00274",
+  "id_participante": "PT02230",
+  "id_entidade": "E04",
+  "data": "2024-11-23",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00275",
+  "id_participante": "PT00392",
+  "id_entidade": "E01",
+  "data": "2025-05-23",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00276",
+  "id_participante": "PT02896",
+  "id_entidade": "E06",
+  "data": "2025-10-28",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00277",
+  "id_participante": "PT01270",
+  "id_entidade": "E03",
+  "data": "2025-11-12",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00278",
+  "id_participante": "PT00916",
+  "id_entidade": "E02",
+  "data": "2025-11-10",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00279",
+  "id_participante": "PT03886",
+  "id_entidade": "E08",
+  "data": "2025-07-03",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00280",
+  "id_participante": "PT03201",
+  "id_entidade": "E06",
+  "data": "2025-10-24",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00281",
+  "id_participante": "PT02477",
+  "id_entidade": "E05",
+  "data": "2025-03-30",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00282",
+  "id_participante": "PT03795",
+  "id_entidade": "E07",
+  "data": "2024-10-19",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00283",
+  "id_participante": "PT01494",
+  "id_entidade": "E03",
+  "data": "2024-05-07",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00284",
+  "id_participante": "PT00702",
+  "id_entidade": "E02",
+  "data": "2024-11-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00285",
+  "id_participante": "PT03495",
+  "id_entidade": "E07",
+  "data": "2024-10-19",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00286",
+  "id_participante": "PT01725",
+  "id_entidade": "E03",
+  "data": "2024-07-22",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00287",
+  "id_participante": "PT03459",
+  "id_entidade": "E07",
+  "data": "2025-01-09",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00288",
+  "id_participante": "PT03158",
+  "id_entidade": "E06",
+  "data": "2025-11-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00289",
+  "id_participante": "PT03080",
+  "id_entidade": "E06",
+  "data": "2025-07-06",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00290",
+  "id_participante": "PT03976",
+  "id_entidade": "E08",
+  "data": "2025-04-18",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00291",
+  "id_participante": "PT02082",
+  "id_entidade": "E04",
+  "data": "2025-11-05",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00292",
+  "id_participante": "PT02782",
+  "id_entidade": "E05",
+  "data": "2025-10-23",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00293",
+  "id_participante": "PT02485",
+  "id_entidade": "E05",
+  "data": "2024-10-13",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00294",
+  "id_participante": "PT02348",
+  "id_entidade": "E04",
+  "data": "2025-01-18",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00295",
+  "id_participante": "PT02939",
+  "id_entidade": "E06",
+  "data": "2025-11-16",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00296",
+  "id_participante": "PT00734",
+  "id_entidade": "E02",
+  "data": "2025-09-30",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00297",
+  "id_participante": "PT03803",
+  "id_entidade": "E08",
+  "data": "2024-10-29",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00298",
+  "id_participante": "PT01778",
+  "id_entidade": "E03",
+  "data": "2025-07-04",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00299",
+  "id_participante": "PT00969",
+  "id_entidade": "E02",
+  "data": "2025-05-19",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00300",
+  "id_participante": "PT00328",
+  "id_entidade": "E01",
+  "data": "2024-07-05",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00301",
+  "id_participante": "PT03604",
+  "id_entidade": "E07",
+  "data": "2025-04-30",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00302",
+  "id_participante": "PT02730",
+  "id_entidade": "E05",
+  "data": "2025-06-16",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00303",
+  "id_participante": "PT00896",
+  "id_entidade": "E02",
+  "data": "2024-06-11",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00304",
+  "id_participante": "PT04073",
+  "id_entidade": "E08",
+  "data": "2025-07-14",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00305",
+  "id_participante": "PT01894",
+  "id_entidade": "E03",
+  "data": "2025-03-17",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00306",
+  "id_participante": "PT01131",
+  "id_entidade": "E03",
+  "data": "2024-08-26",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00307",
+  "id_participante": "PT03293",
+  "id_entidade": "E06",
+  "data": "2025-09-08",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00308",
+  "id_participante": "PT04495",
+  "id_entidade": "E08",
+  "data": "2025-05-26",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00309",
+  "id_participante": "PT00327",
+  "id_entidade": "E01",
+  "data": "2025-01-29",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00310",
+  "id_participante": "PT04103",
+  "id_entidade": "E08",
+  "data": "2025-02-21",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00311",
+  "id_participante": "PT00499",
+  "id_entidade": "E01",
+  "data": "2025-12-06",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00312",
+  "id_participante": "PT00771",
+  "id_entidade": "E02",
+  "data": "2025-12-21",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00313",
+  "id_participante": "PT01139",
+  "id_entidade": "E03",
+  "data": "2025-07-29",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00314",
+  "id_participante": "PT03893",
+  "id_entidade": "E08",
+  "data": "2024-10-17",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00315",
+  "id_participante": "PT03091",
+  "id_entidade": "E06",
+  "data": "2024-07-17",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00316",
+  "id_participante": "PT00601",
+  "id_entidade": "E02",
+  "data": "2025-03-13",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00317",
+  "id_participante": "PT02277",
+  "id_entidade": "E04",
+  "data": "2025-11-28",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00318",
+  "id_participante": "PT03433",
+  "id_entidade": "E07",
+  "data": "2024-11-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00319",
+  "id_participante": "PT02962",
+  "id_entidade": "E06",
+  "data": "2025-08-25",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00320",
+  "id_participante": "PT00809",
+  "id_entidade": "E02",
+  "data": "2025-11-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00321",
+  "id_participante": "PT00859",
+  "id_entidade": "E02",
+  "data": "2025-11-08",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00322",
+  "id_participante": "PT03209",
+  "id_entidade": "E06",
+  "data": "2025-06-09",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00323",
+  "id_participante": "PT03641",
+  "id_entidade": "E07",
+  "data": "2024-12-14",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00324",
+  "id_participante": "PT00911",
+  "id_entidade": "E02",
+  "data": "2025-03-31",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00325",
+  "id_participante": "PT01742",
+  "id_entidade": "E03",
+  "data": "2025-09-18",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00326",
+  "id_participante": "PT02164",
+  "id_entidade": "E04",
+  "data": "2024-11-03",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00327",
+  "id_participante": "PT04287",
+  "id_entidade": "E08",
+  "data": "2025-05-25",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00328",
+  "id_participante": "PT02928",
+  "id_entidade": "E06",
+  "data": "2025-02-20",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00329",
+  "id_participante": "PT00176",
+  "id_entidade": "E01",
+  "data": "2024-10-08",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00330",
+  "id_participante": "PT04239",
+  "id_entidade": "E08",
+  "data": "2025-10-26",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00331",
+  "id_participante": "PT01388",
+  "id_entidade": "E03",
+  "data": "2025-01-29",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00332",
+  "id_participante": "PT03664",
+  "id_entidade": "E07",
+  "data": "2024-11-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00333",
+  "id_participante": "PT00594",
+  "id_entidade": "E02",
+  "data": "2025-08-25",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00334",
+  "id_participante": "PT03556",
+  "id_entidade": "E07",
+  "data": "2025-01-20",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00335",
+  "id_participante": "PT00918",
+  "id_entidade": "E02",
+  "data": "2025-11-02",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00336",
+  "id_participante": "PT04087",
+  "id_entidade": "E08",
+  "data": "2025-11-14",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00337",
+  "id_participante": "PT01515",
+  "id_entidade": "E03",
+  "data": "2025-06-15",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00338",
+  "id_participante": "PT04024",
+  "id_entidade": "E08",
+  "data": "2025-07-08",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00339",
+  "id_participante": "PT00055",
+  "id_entidade": "E01",
+  "data": "2024-04-19",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00340",
+  "id_participante": "PT01179",
+  "id_entidade": "E03",
+  "data": "2025-09-27",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00341",
+  "id_participante": "PT00656",
+  "id_entidade": "E02",
+  "data": "2025-07-12",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00342",
+  "id_participante": "PT00804",
+  "id_entidade": "E02",
+  "data": "2025-09-27",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00343",
+  "id_participante": "PT00609",
+  "id_entidade": "E02",
+  "data": "2025-09-27",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00344",
+  "id_participante": "PT01971",
+  "id_entidade": "E04",
+  "data": "2025-12-30",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00345",
+  "id_participante": "PT03001",
+  "id_entidade": "E06",
+  "data": "2024-08-14",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00346",
+  "id_participante": "PT00954",
+  "id_entidade": "E02",
+  "data": "2025-12-12",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00347",
+  "id_participante": "PT03427",
+  "id_entidade": "E07",
+  "data": "2024-11-22",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00348",
+  "id_participante": "PT01541",
+  "id_entidade": "E03",
+  "data": "2025-11-17",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00349",
+  "id_participante": "PT04028",
+  "id_entidade": "E08",
+  "data": "2025-04-10",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00350",
+  "id_participante": "PT03869",
+  "id_entidade": "E08",
+  "data": "2025-04-19",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00351",
+  "id_participante": "PT04309",
+  "id_entidade": "E08",
+  "data": "2025-01-24",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00352",
+  "id_participante": "PT03704",
+  "id_entidade": "E07",
+  "data": "2025-09-24",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00353",
+  "id_participante": "PT04316",
+  "id_entidade": "E08",
+  "data": "2025-03-30",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00354",
+  "id_participante": "PT00674",
+  "id_entidade": "E02",
+  "data": "2024-09-29",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00355",
+  "id_participante": "PT04180",
+  "id_entidade": "E08",
+  "data": "2024-08-22",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00356",
+  "id_participante": "PT02862",
+  "id_entidade": "E06",
+  "data": "2024-10-10",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00357",
+  "id_participante": "PT02315",
+  "id_entidade": "E04",
+  "data": "2025-12-27",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00358",
+  "id_participante": "PT01533",
+  "id_entidade": "E03",
+  "data": "2025-01-13",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00359",
+  "id_participante": "PT01826",
+  "id_entidade": "E03",
+  "data": "2024-09-22",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00360",
+  "id_participante": "PT03239",
+  "id_entidade": "E06",
+  "data": "2025-02-19",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00361",
+  "id_participante": "PT01961",
+  "id_entidade": "E04",
+  "data": "2025-11-10",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00362",
+  "id_participante": "PT02088",
+  "id_entidade": "E04",
+  "data": "2025-12-23",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00363",
+  "id_participante": "PT04157",
+  "id_entidade": "E08",
+  "data": "2025-05-02",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00364",
+  "id_participante": "PT01309",
+  "id_entidade": "E03",
+  "data": "2024-10-25",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00365",
+  "id_participante": "PT02452",
+  "id_entidade": "E05",
+  "data": "2025-05-18",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00366",
+  "id_participante": "PT04265",
+  "id_entidade": "E08",
+  "data": "2025-03-20",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00367",
+  "id_participante": "PT01675",
+  "id_entidade": "E03",
+  "data": "2025-07-10",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00368",
+  "id_participante": "PT03042",
+  "id_entidade": "E06",
+  "data": "2024-09-19",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00369",
+  "id_participante": "PT00759",
+  "id_entidade": "E02",
+  "data": "2025-12-28",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00370",
+  "id_participante": "PT03748",
+  "id_entidade": "E07",
+  "data": "2024-12-28",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00371",
+  "id_participante": "PT04366",
+  "id_entidade": "E08",
+  "data": "2025-09-19",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00372",
+  "id_participante": "PT02763",
+  "id_entidade": "E05",
+  "data": "2025-07-06",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00373",
+  "id_participante": "PT04128",
+  "id_entidade": "E08",
+  "data": "2025-10-05",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00374",
+  "id_participante": "PT01161",
+  "id_entidade": "E03",
+  "data": "2025-04-30",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00375",
+  "id_participante": "PT00980",
+  "id_entidade": "E02",
+  "data": "2025-09-14",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00376",
+  "id_participante": "PT03224",
+  "id_entidade": "E06",
+  "data": "2025-10-02",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00377",
+  "id_participante": "PT03565",
+  "id_entidade": "E07",
+  "data": "2025-11-10",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00378",
+  "id_participante": "PT03495",
+  "id_entidade": "E07",
+  "data": "2024-05-08",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00379",
+  "id_participante": "PT01022",
+  "id_entidade": "E02",
+  "data": "2025-11-30",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00380",
+  "id_participante": "PT01790",
+  "id_entidade": "E03",
+  "data": "2025-09-20",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00381",
+  "id_participante": "PT00055",
+  "id_entidade": "E01",
+  "data": "2025-09-24",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00382",
+  "id_participante": "PT00552",
+  "id_entidade": "E02",
+  "data": "2025-11-09",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00383",
+  "id_participante": "PT00342",
+  "id_entidade": "E01",
+  "data": "2025-12-21",
+  "tipo_acao": "revisao_plano",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00384",
+  "id_participante": "PT00869",
+  "id_entidade": "E02",
+  "data": "2025-09-13",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00385",
+  "id_participante": "PT01903",
+  "id_entidade": "E04",
+  "data": "2024-10-26",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00386",
+  "id_participante": "PT03471",
+  "id_entidade": "E07",
+  "data": "2025-01-20",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00387",
+  "id_participante": "PT03724",
+  "id_entidade": "E07",
+  "data": "2025-09-21",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00388",
+  "id_participante": "PT02873",
+  "id_entidade": "E06",
+  "data": "2025-05-26",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00389",
+  "id_participante": "PT02937",
+  "id_entidade": "E06",
+  "data": "2024-08-06",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00390",
+  "id_participante": "PT01953",
+  "id_entidade": "E04",
+  "data": "2025-08-14",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "Revisao Individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00391",
+  "id_participante": "PT03846",
+  "id_entidade": "E08",
+  "data": "2025-10-12",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00392",
+  "id_participante": "PT04084",
+  "id_entidade": "E08",
+  "data": "2025-09-08",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00393",
+  "id_participante": "PT01557",
+  "id_entidade": "E03",
+  "data": "2024-08-28",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00394",
+  "id_participante": "PT03778",
+  "id_entidade": "E07",
+  "data": "2025-01-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00395",
+  "id_participante": "PT00902",
+  "id_entidade": "E02",
+  "data": "2024-10-28",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00396",
+  "id_participante": "PT03531",
+  "id_entidade": "E07",
+  "data": "2025-04-05",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00397",
+  "id_participante": "PT01815",
+  "id_entidade": "E03",
+  "data": "2025-10-05",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00398",
+  "id_participante": "PT01243",
+  "id_entidade": "E03",
+  "data": "2025-12-02",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00399",
+  "id_participante": "PT02860",
+  "id_entidade": "E06",
+  "data": "2025-12-25",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00400",
+  "id_participante": "PT02521",
+  "id_entidade": "E05",
+  "data": "2024-10-11",
+  "tipo_acao": "revisao_plano",
+  "descricao": "Revisao Individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00401",
+  "id_participante": "PT02181",
+  "id_entidade": "E04",
+  "data": "2025-07-02",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00402",
+  "id_participante": "PT03985",
+  "id_entidade": "E08",
+  "data": "2024-12-08",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "plano individual",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00403",
+  "id_participante": "PT01439",
+  "id_entidade": "E03",
+  "data": "2025-07-19",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acordo de acompanhamento",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00404",
+  "id_participante": "PT00529",
+  "id_entidade": "E01",
+  "data": "2025-01-15",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00405",
+  "id_participante": "PT01621",
+  "id_entidade": "E03",
+  "data": "2024-12-14",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00406",
+  "id_participante": "PT01496",
+  "id_entidade": "E03",
+  "data": "2025-11-29",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "plano individual",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00407",
+  "id_participante": "PT03606",
+  "id_entidade": "E07",
+  "data": "2025-01-05",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "plano individual",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00408",
+  "id_participante": "PT02159",
+  "id_entidade": "E04",
+  "data": "2025-03-15",
+  "tipo_acao": "formacao_complementar",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00409",
+  "id_participante": "PT02441",
+  "id_entidade": "E05",
+  "data": "2024-11-17",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00410",
+  "id_participante": "PT01907",
+  "id_entidade": "E04",
+  "data": "2025-09-13",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00411",
+  "id_participante": "PT03866",
+  "id_entidade": "E08",
+  "data": "2024-11-23",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "revisao trimestral",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00412",
+  "id_participante": "PT03212",
+  "id_entidade": "E06",
+  "data": "2024-10-18",
+  "tipo_acao": "apoio_documentacao",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00413",
+  "id_participante": "PT02486",
+  "id_entidade": "E05",
+  "data": "2025-07-29",
+  "tipo_acao": "revisao_plano",
+  "descricao": "revisao trimestral",
+  "estado": "em_curso"
+ },
+ {
+  "id": "PL00414",
+  "id_participante": "PT00645",
+  "id_entidade": "E02",
+  "data": "2025-05-08",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "revisao trimestral",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00415",
+  "id_participante": "PT02416",
+  "id_entidade": "E05",
+  "data": "2025-09-22",
+  "tipo_acao": "visita_domiciliaria",
+  "descricao": "acoes de aproximacao ao emprego",
+  "estado": "suspensa"
+ },
+ {
+  "id": "PL00416",
+  "id_participante": "PT02336",
+  "id_entidade": "E04",
+  "data": "2025-04-15",
+  "tipo_acao": "encaminhamento_emprego",
+  "descricao": "acordo de acompanhamento",
+  "estado": "concluida"
+ },
+ {
+  "id": "PL00417",
+  "id_participante": "PT00345",
+  "id_entidade": "E01",
+  "data": "2025-08-04",
+  "tipo_acao": "revisao_plano",
+  "descricao": "acordo de acompanhamento",
+  "estado": "suspensa"
+ }
+]
